@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo d'Identité Bébé à Domicile Île-de-France | Agréé ANTS</title>
+    <meta name="description" content="Photographe professionnel agréé ANTS pour photos d'identité de votre bébé, enfants et PMR directement chez vous en Île-de-France.">
+    <link rel="canonical" href="https://www.photo-identite-bebe-domicile.fr/index-erreur.html" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { brand: '#ff7d00', dark: '#1a1a1a', light: '#faf8f5' },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        .logo-img { height: 40px; width: auto; max-width: 100%; }
+        @media (min-width: 768px) { .logo-img { height: 50px; } }
+        .bg-hero {
+            background: linear-gradient(rgba(26, 26, 26, 0.75), rgba(26, 26, 26, 0.6)), url('https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+        }
+    </style>
+</head>
+<body class="antialiased font-sans">
+    <!-- Script Alpine.js pour l'interactivité mobile -->
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+    <!-- BARRE DE NAVIGATION (MENU) -->
+    <nav class="bg-white shadow-md sticky top-0 z-50" x-data="{ open: false }">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="/" class="text-xl md:text-2xl font-serif font-bold text-dark flex items-center gap-2">
+                <img src="/Images/logo.png" alt="Logo" class="logo-img h-8 md:h-10 w-auto">
+                <span class="hidden sm:inline">Photo-identite-bebe-domicile.fr</span>
+                <span class="sm:hidden">Photo Identité</span>
+            </a>
+            
+            <!-- Menu Desktop -->
+            <div class="hidden lg:flex gap-6 items-center">
+                <a href="/#booking-funnel" class="font-medium text-gray-700 hover:text-brand transition">Réservation</a>
+                <a href="/#faq" class="font-medium text-gray-700 hover:text-brand transition">FAQ & Normes</a>
+                <a href="/#zones" class="font-medium text-gray-700 hover:text-brand transition">Zones d'intervention</a>
+                <a href="tel:+33781757754" class="inline-block bg-brand text-white px-5 py-2 rounded-full font-bold hover:bg-orange-600 transition text-sm">📞 07 81 75 77 54</a>
+            </div>
+
+            <!-- Bouton Mobile -->
+            <div class="lg:hidden flex items-center gap-4">
+                <a href="tel:+33781757754" class="text-brand text-xl">📞</a>
+                <button @click="open = !open" class="text-dark focus:outline-none">
+                    <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path :class="{'hidden': open, 'inline-flex': !open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        <path :class="{'hidden': !open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menu Mobile Overlay -->
+        <div x-show="open" 
+             x-transition:enter="transition ease-out duration-200"
+             x-transition:enter-start="opacity-0 -translate-y-4"
+             x-transition:enter-end="opacity-100 translate-y-0"
+             class="lg:hidden bg-white border-t border-gray-100 px-4 py-6 space-y-4 shadow-xl"
+             style="display: none;">
+            <a href="/#booking-funnel" @click="open = false" class="block text-lg font-medium text-gray-700 hover:text-brand">Réservation</a>
+            <a href="/#faq" @click="open = false" class="block text-lg font-medium text-gray-700 hover:text-brand">FAQ & Normes</a>
+            <a href="/#zones" @click="open = false" class="block text-lg font-medium text-gray-700 hover:text-brand">Zones d'intervention</a>
+            <a href="tel:+33781757754" class="block w-full text-center bg-brand text-white py-3 rounded-xl font-bold">Appeler le 07 81 75 77 54</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="bg-hero text-white min-h-[80vh] flex flex-col justify-center px-4 py-20">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-4xl md:text-6xl font-serif font-bold mb-6 leading-tight">
+                Photo d'Identité Bébé à Domicile Île-de-France <span class="text-brand">| Agréé ANTS</span>
+            </h1>
+            <p class="text-lg md:text-xl font-light mb-10 max-w-2xl mx-auto text-gray-200">
+                Évitez le stress du studio. Photographe professionnel agréé ANTS pour photos d'identité de votre bébé, enfants et PMR directement chez vous.
+            </p>
+            <a href="#booking-funnel" class="inline-block bg-brand hover:bg-orange-600 text-white font-bold text-lg px-8 py-4 rounded-full shadow-lg transition transform hover:-translate-y-1">
+                Estimer mon tarif & Prendre RDV
+            </a>
+        </div>
+    </header>
+
+    <!-- FUNNEL : SIMULATEUR & FORMULAIRE -->
+    <main id="booking-funnel" class="max-w-6xl mx-auto px-4 py-20">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-serif font-bold mb-4">Votre séance en 2 étapes</h2>
+            <p class="text-gray-600">Estimez vos frais de déplacement, laissez vos coordonnées, et je vous rappelle rapidement pour valider la date.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-white p-6 md:p-10 rounded-2xl shadow-xl border border-gray-100">
+            <div class="flex flex-col">
+                <h3 class="text-2xl font-serif font-bold text-brand mb-2">1. Frais de déplacement</h3>
+                <div class="w-full bg-gray-50 rounded-xl border border-gray-200 overflow-hidden"><iframe src="https://project-wn83e.vercel.app/" class="w-full h-[600px] border-0"></iframe></div>
+            </div>
+
+            <div class="flex flex-col bg-gray-50 p-6 rounded-xl border border-gray-100">
+                <h3 class="text-2xl font-serif font-bold text-brand mb-2">2. Demande de RDV</h3>
+                <form action="https://www.fotostudio.io/f/f69154aabb2ef71649b1d57fde2b3c14" method="POST" class="space-y-4">
+                    <input type="hidden" name="lead_form[page_origin]" value="page_principale">
+                    <div class="grid grid-cols-2 gap-4">
+                        <input type="text" name="lead_form[firstname]" placeholder="Prénom *" required class="w-full p-2 border rounded focus:ring-brand">
+                        <input type="text" name="lead_form[lastname]" placeholder="Nom *" required class="w-full p-2 border rounded focus:ring-brand">
+                    </div>
+                    <input type="email" name="lead_form[email]" placeholder="Email *" required class="w-full p-2 border rounded focus:ring-brand">
+                    <input type="tel" name="lead_form[phone]" placeholder="Téléphone *" required class="w-full p-2 border rounded focus:ring-brand">
+                    <div class="grid grid-cols-2 gap-4">
+                        <input type="text" name="lead_form[address][zipcode]" placeholder="Code postal *" required class="w-full p-2 border rounded">
+                        <input type="text" name="lead_form[address][city]" placeholder="Ville *" required class="w-full p-2 border rounded">
+                    </div>
+                    <select name="lead_form[project_type]" required class="w-full p-2 border rounded"><option value="241706">Photo Identite à domicile</option></select>
+                    <textarea name="lead_form[message]" placeholder="Votre message..." required class="w-full p-2 border rounded"></textarea>
+                    <select name="lead_form[prospect_origin_id]" required class="w-full p-2 border rounded"><option value="20698">Google</option></select>
+                    <button type="submit" class="w-full py-3 rounded font-bold text-white bg-brand hover:bg-orange-600 transition">Demander à être rappelé</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- FAQ & NORMES -->
+    <section id="faq" class="bg-white py-16 border-t border-gray-100">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-serif font-bold mb-8 text-center">Questions Fréquentes & Normes</h2>
+            <div class="space-y-4">
+                <details class="group bg-gray-50 rounded p-4 cursor-pointer">
+                    <summary class="font-bold text-lg outline-none">Comment préparer la séance pour mon bébé ?</summary>
+                    <p class="text-gray-600 mt-2">La séance dure entre 20 et 30 minutes. Assurez-vous que votre bébé soit éveillé. Prévoyez un espace dégagé de 2m x 1.5m dans une pièce claire.</p>
+                </details>
+                <details class="group bg-gray-50 rounded p-4 cursor-pointer">
+                    <summary class="font-bold text-lg outline-none">Proposez-vous le code e-photo immédiatement ?</summary>
+                    <p class="text-gray-600 mt-2">Oui, dès la fin de la séance, vous repartez avec un code e-photo valable pour l’ANTS, prêt pour vos démarches en ligne.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER & ZONES -->
+    <footer id="zones" class="bg-dark text-gray-300 py-10 border-t-4 border-brand">
+        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <a href="/" class="font-serif text-2xl font-bold text-white mb-2 flex items-center gap-2">
+                    <img src="/Images/logo.png" alt="Logo" class="logo-img h-10 w-auto">
+                    <span>Photo-identite-bebe-domicile.fr</span>
+                </a>
+                <p class="text-sm">EURL (SIREN: 984 595 538)</p>
+                <p class="text-sm">16 bd Carnot, 93330 Neuilly-sur-Marne</p>
+                <a href="tel:+33781757754" class="block text-white font-bold text-lg mt-4 hover:text-brand transition">📞 07 81 75 77 54</a>
+            </div>
+            <div>
+                <h4 class="font-bold text-white mb-3">Villes prioritaires</h4>
+                <ul class="space-y-1 text-sm">
+                    <li><a href="/villes/paris.html" class="hover:text-brand transition">Paris (75)</a></li>
+                    <li><a href="/villes/montreuil.html" class="hover:text-brand transition">Montreuil</a></li>
+                    <li><a href="/villes/boulogne-billancourt.html" class="hover:text-brand transition">Boulogne-Billancourt</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-white mb-3">Informations Légales</h4>
+                <ul class="space-y-1 text-sm">
+                    <li><a href="/mentions-legales.html" class="hover:text-brand transition">Mentions Légales</a></li>
+                    <li><a href="/confidentialite.html" class="hover:text-brand transition">Politique de Confidentialité</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
