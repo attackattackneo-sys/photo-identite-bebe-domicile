@@ -116,22 +116,101 @@
                 <h3 class="text-2xl font-serif font-bold text-brand mb-4">Demande de RDV à Saint-Denis</h3>
                 <form action="https://www.fotostudio.io/f/f69154aabb2ef71649b1d57fde2b3c14" method="POST" class="space-y-4">
                     <input type="hidden" name="lead_form[page_origin]" value="page_ville_saint_denis">
-                    <div class="grid grid-cols-2 gap-4">
-                        <input type="text" name="lead_form[firstname]" aria-label="Prénom" placeholder="Prénom *" required class="w-full p-2 border rounded">
-                        <input type="text" name="lead_form[lastname]" aria-label="Nom" placeholder="Nom *" required class="w-full p-2 border rounded">
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Votre nom *</label>
+                            <input type="text" name="lead_form[lastname]" required class="w-full p-2 border rounded focus:ring-brand focus:border-brand">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Votre prénom *</label>
+                            <input type="text" name="lead_form[firstname]" required class="w-full p-2 border rounded focus:ring-brand focus:border-brand">
+                        </div>
                     </div>
-                    <input type="email" name="lead_form[email]" aria-label="Email" placeholder="Email *" required class="w-full p-2 border rounded">
-                    <input type="tel" name="lead_form[phone]" aria-label="Téléphone" placeholder="Téléphone *" required class="w-full p-2 border rounded">
-                    <div class="grid grid-cols-2 gap-4">
-                        <input type="text" name="lead_form[address][zipcode]" aria-label="Code postal" value="93200" required class="w-full p-2 border rounded">
-                        <input type="text" name="lead_form[address][city]" aria-label="Ville" value="Saint-Denis" readonly class="w-full p-2 border rounded bg-gray-100">
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Votre date de naissance *</label>
+                            <input type="text" name="lead_form[birthdate]" placeholder="JJ/MM/AAAA" required class="w-full p-2 border rounded focus:ring-brand focus:border-brand">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Téléphone *</label>
+                            <input type="tel" name="lead_form[phone]" required class="w-full p-2 border rounded focus:ring-brand focus:border-brand">
+                        </div>
                     </div>
-                    <label for="project_type" class="sr-only">Type de projet</label>
-                    <select id="project_type" name="lead_form[project_type]" required class="w-full p-2 border rounded"><option value="241706">Photo Identite à domicile</option></select>
-                    <textarea name="lead_form[message]" aria-label="Votre message" placeholder="Votre message..." required class="w-full p-2 border rounded"></textarea>
-                    <label for="prospect_origin" class="sr-only">Origine</label>
-                    <select id="prospect_origin" name="lead_form[prospect_origin_id]" required class="w-full p-2 border rounded"><option value="20698">Google</option></select>
-                    <button type="submit" class="w-full py-3 rounded font-bold text-white bg-brand">Demander à être rappelé</button>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Votre adresse email *</label>
+                        <input type="email" name="lead_form[email]" required class="w-full p-2 border rounded focus:ring-brand focus:border-brand">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Votre adresse (Rue) *</label>
+                        <input type="text" name="lead_form[address][street]" required class="w-full p-2 border rounded focus:ring-brand focus:border-brand">
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Code postal *</label>
+                            <input type="text" name="lead_form[address][zipcode]" value="93200" required class="w-full p-2 border rounded focus:ring-brand focus:border-brand">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Ville *</label>
+                            <input type="text" name="lead_form[address][city]" value="Saint-Denis" required class="w-full p-2 border rounded focus:ring-brand focus:border-brand">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Date de séance souhaitée *</label>
+                            <input type="text" name="lead_form[start_date]" placeholder="JJ/MM/AAAA" required class="w-full p-2 border rounded focus:ring-brand focus:border-brand">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Type de séance *</label>
+                            <select name="lead_form[project_type]" required class="w-full p-2 border rounded focus:ring-brand focus:border-brand">
+                                <option value="">-- Choisir --</option>
+                                <option value="34544">Photos Identités Au STUDIO ⚠️</option>
+                                <option value="241706">Photo Identite à domicile</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Prénom et date de naissance de l'enfant ?</label>
+                        <input type="text" name="lead_form[notes_104917]" class="w-full p-2 border rounded focus:ring-brand focus:border-brand">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Votre message *</label>
+                        <textarea name="lead_form[message]" required class="w-full p-2 border rounded focus:ring-brand focus:border-brand" rows="3"></textarea>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Comment avez-vous entendu parler de moi ? *</label>
+                        <select name="lead_form[prospect_origin_id]" required class="w-full p-2 border rounded focus:ring-brand focus:border-brand">
+                            <option value="">-- Choisir --</option>
+                            <option value="20697">Bouche à oreille</option>
+                            <option value="20698" selected>Google</option>
+                            <option value="20699">Facebook</option>
+                            <option value="20700">Instagram</option>
+                            <option value="20701">Salon</option>
+                            <option value="20702">Evénement</option>
+                            <option value="20703">Autre</option>
+                            <option value="20967">Leboncoin</option>
+                            <option value="20969">Mariage.net</option>
+                            <option value="21498">Messenger</option>
+                            <option value="21499">Site Web</option>
+                            <option value="24002">Linked In</option>
+                            <option value="27531">ShootingBox</option>
+                            <option value="27404">Les Pages Jaunes - Solocal</option>
+                            <option value="81928">Kabook</option>
+                        </select>
+                    </div>
+
+                    <!-- Anti-spam : ne pas supprimer -->
+                    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+                    <button type="submit" class="w-full py-3 rounded font-bold text-white bg-brand hover:bg-orange-600 transition shadow-lg mt-4">Envoyer ma demande</button>
                 </form>
             </div>
         </div>
