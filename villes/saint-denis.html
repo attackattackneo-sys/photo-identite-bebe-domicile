@@ -3,38 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photo d'Identité Domicile ANTS Saint-Denis (93) : Bébé, Permis & Ehpad | Photo-identite-bebe-domicile.fr</title>
-    <meta name="description" content="Je suis photographe agréé ANTS à Saint-Denis (93) pour vos photos d'identité à domicile. Spécialiste bébés, e-photo permis et seniors en Ehpad/Hôpital. Service premium, conforme et sans stress.">
+    <title>Photographe Identité ANTS Saint-Denis (93) : Bébé, Permis & Seniors à Domicile</title>
+    <meta name="description" content="Besoin d'une photo d'identité à domicile à Saint-Denis ? Photographe agréé ANTS pour bébé, e-photo permis et seniors. Service conforme ISO livrée immédiatement.">
     <link rel="canonical" href="https://www.photo-identite-bebe-domicile.fr/villes/saint-denis.html" />
     <link rel="preconnect" href="https://project-wn83e.vercel.app">
     <link rel="icon" type="image/png" href="../favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
     <link rel="shortcut icon" href="../favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: { brand: '#e67000', dark: '#1a1a1a', light: '#faf8f5' },
-                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] }
-                }
-            }
-        }
-    </script>
-    <style>
-        .logo-img { height: 40px; width: auto; max-width: 100%; }
-        @media (min-width: 768px) { .logo-img { height: 50px; } }
-    </style>
-    <!-- Schema.org JSON-LD ProfessionalService & FAQ -->
+
+    <!-- Schema.org JSON-LD @graph 2025 (Paris Optimized) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [
         {
           "@type": "ProfessionalService",
-          "name": "Photo-identite-bebe-domicile.fr - Expert Photo d'Identité ANTS Saint-Denis (93)",
-          "image": "https://images.unsplash.com/photo-1519689680058-324335c77eba",
+          "name": "Greg Photographe - Identité Domicile ANTS Saint-Denis",
+          "image": "https://www.photo-identite-bebe-domicile.fr/Images/logo.png",
           "url": "https://www.photo-identite-bebe-domicile.fr/villes/saint-denis.html",
           "telephone": "+33781757754",
           "priceRange": "$$",
@@ -47,35 +33,33 @@
           },
           "geo": {
             "@type": "GeoCoordinates",
-            "latitude": 48.8566,
-            "longitude": 2.5361
+            "latitude": 48.9358,
+            "longitude": 2.3598
           },
+          "areaServed": { "@type": "AdministrativeArea", "name": "Saint-Denis (93)" },
           "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "4.9",
             "reviewCount": "156"
-          },
-          "areaServed": [
-            {"@type": "AdministrativeArea", "name": "Saint-Denis (93)"}
-          ]
+          }
         },
         {
           "@type": "FAQPage",
           "mainEntity": [
             {
               "@type": "Question",
-              "name": "Où faire une photo d'identité pour bébé à domicile à Saint-Denis ?",
+              "name": "Délai d'intervention pour une photo d'identité à Saint-Denis ?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Je me déplace dans tous les quartiers de Saint-Denis (93) pour réaliser les photos d'identité de votre bébé à domicile. Je garantis la conformité ANTS pour les passeports et cartes d'identité des nourrissons dès la naissance."
+                "text": "J'interviens généralement sous 24h à 48h à Saint-Denis."
               }
             },
             {
               "@type": "Question",
-              "name": "Peut-on obtenir une e-photo permis de conduire à domicile à Saint-Denis ?",
+              "name": "Le code e-photo est-il valable pour le permis à Saint-Denis ?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Oui, en tant que photographe agréé ANTS, j'interviens à votre domicile à Saint-Denis pour réaliser votre e-photo officielle. Je vous remets immédiatement votre code de signature numérique pour votre demande de permis en ligne."
+                "text": "Oui, je suis agréé ANTS. Le code est immédiatement utilisable sur le site officiel."
               }
             }
           ]
@@ -83,203 +67,197 @@
       ]
     }
     </script>
+
+    <!-- Script d'Interactivité Légère (Performance) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const nav = document.querySelector('nav');
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    nav.classList.add('bg-white/90', 'backdrop-blur-md', 'shadow-lg', 'py-2');
+                    nav.classList.remove('bg-transparent', 'py-6', 'shadow-none');
+                    nav.querySelectorAll('.nav-link').forEach(link => link.classList.add('text-gray-700'));
+                    nav.querySelector('.logo-text').classList.add('text-dark');
+                    nav.querySelector('.logo-img').classList.remove('brightness-0', 'invert');
+                } else {
+                    nav.classList.remove('bg-white/90', 'backdrop-blur-md', 'shadow-lg', 'py-2');
+                    nav.classList.add('bg-transparent', 'py-6', 'shadow-none');
+                    nav.querySelectorAll('.nav-link').forEach(link => link.classList.remove('text-gray-700'));
+                    nav.querySelector('.logo-text').classList.remove('text-dark');
+                    nav.querySelector('.logo-img').classList.add('brightness-0', 'invert');
+                }
+            });
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-in-up');
+                        entry.target.style.opacity = 1;
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+        });
+    </script>
+
+    <!-- Tailwind CSS Enhanced Config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { brand: '#e67000', dark: '#1a1a1a', light: '#faf8f5' },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] },
+                    animation: {
+                        'ken-burns': 'kenburns 20s ease-in-out infinite alternate',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        kenburns: { '0%': { transform: 'scale(1)' }, '100%': { transform: 'scale(1.1)' } },
+                        fadeInUp: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #faf8f5; color: #1a1a1a; overflow-x: hidden; }
+        .bg-hero { position: relative; overflow: hidden; }
+        .bg-hero::before {
+            content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(rgba(26, 26, 26, 0.75), rgba(26, 26, 26, 0.6)), url('https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            z-index: -1; animation: kenburns 20s ease-in-out infinite alternate;
+        }
+        .logo-img { height: 40px; width: auto; max-width: 100%; transition: all 0.3s ease; }
+        @media (min-width: 768px) { .logo-img { height: 50px; } }
+        .animate-on-scroll { opacity: 0; transition: all 0.8s ease-out; }
+        .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+    </style>
 </head>
 <body class="antialiased font-sans">
-    <!-- Script Alpine.js pour l'interactivité mobile -->
-    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-
-    <!-- BARRE DE NAVIGATION (MENU) -->
-    <nav class="bg-white shadow-md sticky top-0 z-50" x-data="{ open: false }" aria-label="Menu principal">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="../index.html" class="text-xl md:text-2xl font-serif font-bold text-dark flex items-center gap-2">
-                <img src="../Images/logo.png" alt="Logo Photo-identite-bebe-domicile.fr" class="logo-img h-8 md:h-10 w-auto" width="200" height="135">
+    <!-- NAVIGATION -->
+    <nav class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent py-6 shadow-none" aria-label="Menu principal">
+        <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
+            <a href="../index.html" class="logo-text text-xl md:text-2xl font-serif font-bold flex items-center gap-2 text-white">
+                <img src="../Images/logo.png" alt="Logo Photo Identité" class="logo-img h-8 md:h-10 w-auto brightness-0 invert" width="200" height="135">
                 <span class="hidden sm:inline">Photo-identite-bebe-domicile.fr</span>
-                <span class="sm:hidden">Photo Identité</span>
             </a>
             
-            <!-- Menu Desktop -->
-            <div class="hidden lg:flex gap-6 items-center">
-                <a href="../index.html#booking-funnel" class="font-medium text-gray-700 hover:text-brand transition">Réservation</a>
-                <a href="../index.html#faq" class="font-medium text-gray-700 hover:text-brand transition">FAQ & Normes</a>
-                <a href="../index.html#zones" class="font-medium text-gray-700 hover:text-brand transition">Zones d'intervention</a>
-                <a href="tel:+33781757754" class="inline-block bg-brand text-white px-5 py-2 rounded-full font-bold hover:bg-orange-600 transition text-sm">📞 07 81 75 77 54</a>
+            <div class="hidden lg:flex gap-8 items-center text-white/90">
+                <a href="../index.html#booking-funnel" class="nav-link font-medium hover:text-brand transition">Réservation</a>
+                <a href="../index.html#faq" class="nav-link font-medium hover:text-brand transition">FAQ</a>
+                <a href="tel:+33781757754" class="bg-brand text-white px-6 py-2.5 rounded-full font-bold shadow-lg text-sm">📞 07 81 75 77 54</a>
             </div>
 
-            <!-- Bouton Mobile -->
-            <div class="lg:hidden flex items-center gap-4">
-                <a href="tel:+33781757754" class="text-brand text-xl" aria-label="Appeler le photographe">📞</a>
-                <button @click="open = !open" class="text-dark focus:outline-none" aria-label="Ouvrir le menu">
-                    <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path :class="{'hidden': open, 'inline-flex': !open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        <path :class="{'hidden': !open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
+            <button id="mobile-menu-btn" class="lg:hidden text-white focus:outline-none" aria-label="Menu mobile">
+                <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+            </button>
         </div>
-
-        <!-- Menu Mobile Overlay -->
-        <div x-show="open" 
-             x-transition:enter="transition ease-out duration-200"
-             x-transition:enter-start="opacity-0 -translate-y-4"
-             x-transition:enter-end="opacity-100 translate-y-0"
-             class="lg:hidden bg-white border-t border-gray-100 px-4 py-6 space-y-4 shadow-xl"
-             style="display: none;">
-            <a href="../index.html#booking-funnel" @click="open = false" class="block text-lg font-medium text-gray-700 hover:text-brand">Réservation</a>
-            <a href="../index.html#faq" @click="open = false" class="block text-lg font-medium text-gray-700 hover:text-brand">FAQ & Normes</a>
-            <a href="../index.html#zones" @click="open = false" class="block text-lg font-medium text-gray-700 hover:text-brand">Zones d'intervention</a>
-            <a href="tel:+33781757754" class="block w-full text-center bg-brand text-white py-3 rounded-xl font-bold">Appeler le 07 81 75 77 54</a>
+        <div id="mobile-menu" class="hidden lg:hidden bg-white px-4 py-8 space-y-6 shadow-2xl border-t border-gray-100">
+            <a href="../index.html#booking-funnel" class="block text-xl font-medium text-gray-700">Réservation</a>
+            <a href="tel:+33781757754" class="block w-full text-center bg-brand text-white py-4 rounded-xl font-bold">07 81 75 77 54</a>
         </div>
     </nav>
 
-    <!-- EN-TÊTE VILLE -->
-    <header class="bg-dark text-white pt-10 pb-16 px-4 text-center border-b-4 border-brand">
-        <h1 class="text-3xl md:text-5xl font-serif font-bold mb-4">Comment obtenir une photo d'identité à domicile à Saint-Denis (93) ?</h1>
-        <div class="bg-gray-800/80 p-4 rounded-lg inline-block text-sm text-left max-w-3xl mb-6 border border-gray-600 text-gray-200">
-            <p><strong>Besoin d'une photo d'identité à domicile à Saint-Denis ?</strong> Je suis photographe agréé ANTS et je me déplace à votre domicile à Saint-Denis pour vos photos de passeport, CNI et e-photo permis. Service spécialisé pour les bébés (dès la naissance), les seniors en Ehpad et les personnes à mobilité réduite.</p>
+    <!-- HEADER VILLE AEO -->
+    <header class="bg-hero text-white pt-40 pb-32 px-4 text-center border-b-4 border-brand">
+        <div class="max-w-4xl mx-auto animate-fade-in-up">
+            <h1 class="text-4xl md:text-6xl font-serif font-bold mb-8">Photo d'Identité à Domicile à Saint-Denis (93)</h1>
+            
+            <!-- BLOC RÉPONSE COURTE AEO (3 PHRASES) -->
+            <div class="bg-gray-900/40 backdrop-blur-md p-6 rounded-2xl inline-block text-sm md:text-base text-left max-w-3xl mb-8 border border-white/10 shadow-2xl">
+                <p><strong>Besoin d'une photo d'identité certifiée à Saint-Denis ?</strong> Je me déplace à Saint-Denis pour vos documents officiels. Je réalise les photos ANTS pour passeports, CNI et permis de conduire. Recevez vos clichés conformes ISO/IEC 19794-5 immédiatement chez vous à Saint-Denis.</p>
+            </div>
+
+            <p class="max-w-2xl mx-auto text-gray-300 text-lg">Expertise spécifique pour les nouveau-nés et les seniors en Ehpad à Saint-Denis.</p>
         </div>
-        <p class="max-w-2xl mx-auto text-gray-300">Je suis spécialiste des photos d’identité ANTS pour nourrissons, personnes âgées en Ehpad et e-photo permis à Saint-Denis.</p>
     </header>
 
-    <main class="max-w-6xl mx-auto px-4 py-12">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div class="bg-white rounded-xl shadow-lg border p-6"><iframe loading="lazy" src="https://project-wn83e.vercel.app/" class="w-full h-[600px] border-0" title="Simulateur de frais Saint-Denis"></iframe></div>
+    <main class="max-w-6xl mx-auto px-4 py-24 animate-on-scroll">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <div class="bg-white rounded-[2rem] shadow-2xl border p-2 overflow-hidden">
+                <iframe src="https://project-wn83e.vercel.app/" class="w-full h-[600px] border-0" title="Estimation Saint-Denis" loading="lazy"></iframe>
+            </div>
             
-            <div class="bg-white p-6 rounded-xl border shadow-lg">
-                <h3 class="text-2xl font-serif font-bold text-brand mb-4">Ma demande de RDV à Saint-Denis</h3>
+            <div class="bg-white p-8 md:p-12 rounded-[2rem] border shadow-2xl">
+                <h3 class="text-3xl font-serif font-bold text-brand mb-6">Demande de RDV à Saint-Denis</h3>
                 <form action="https://www.fotostudio.io/f/f69154aabb2ef71649b1d57fde2b3c14" method="POST" class="space-y-4">
-                    <input type="hidden" name="lead_form[page_origin]" value="page_ville_saint-denis_aeo">
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Votre nom *</label>
-                            <input type="text" name="lead_form[lastname]" required class="w-full p-2 border rounded focus:ring-brand focus:border-brand">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Votre prénom *</label>
-                            <input type="text" name="lead_form[firstname]" required class="w-full p-2 border rounded focus:ring-brand focus:border-brand">
-                        </div>
+                    <input type="hidden" name="lead_form[page_origin]" value="saint_denis_aeo_2025">
+                    <div class="grid grid-cols-2 gap-4">
+                        <input type="text" name="lead_form[lastname]" placeholder="Nom *" required class="p-3 border rounded-xl">
+                        <input type="text" name="lead_form[firstname]" placeholder="Prénom *" required class="p-3 border rounded-xl">
                     </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Votre date de naissance *</label>
-                            <input type="text" name="lead_form[birthdate]" placeholder="JJ/MM/AAAA" required class="w-full p-2 border rounded focus:ring-brand focus:border-brand">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Téléphone *</label>
-                            <input type="tel" name="lead_form[phone]" required class="w-full p-2 border rounded focus:ring-brand focus:border-brand">
-                        </div>
+                    <input type="email" name="lead_form[email]" placeholder="Email *" required class="w-full p-3 border rounded-xl">
+                    <input type="tel" name="lead_form[phone]" placeholder="Téléphone *" required class="w-full p-3 border rounded-xl">
+                    <input type="text" name="lead_form[address][street]" placeholder="Adresse à Saint-Denis *" required class="w-full p-3 border rounded-xl">
+                    <div class="grid grid-cols-2 gap-4">
+                        <input type="text" name="lead_form[address][zipcode]" placeholder="Code Postal (93200) *" required class="p-3 border rounded-xl">
+                        <input type="text" name="lead_form[address][city]" value="Saint-Denis" required class="p-3 border rounded-xl">
                     </div>
-
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Votre adresse email *</label>
-                        <input type="email" name="lead_form[email]" required class="w-full p-2 border rounded focus:ring-brand focus:border-brand">
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Votre adresse (Rue) *</label>
-                        <input type="text" name="lead_form[address][street]" required class="w-full p-2 border rounded focus:ring-brand focus:border-brand">
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Code postal *</label>
-                            <input type="text" name="lead_form[address][zipcode]" value="93200" required class="w-full p-2 border rounded focus:ring-brand focus:border-brand">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Ville *</label>
-                            <input type="text" name="lead_form[address][city]" value="Saint-Denis" required class="w-full p-2 border rounded focus:ring-brand focus:border-brand">
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Date de séance souhaitée *</label>
-                            <input type="text" name="lead_form[start_date]" placeholder="JJ/MM/AAAA" required class="w-full p-2 border rounded focus:ring-brand focus:border-brand">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Type de séance *</label>
-                            <select name="lead_form[project_type]" required class="w-full p-2 border rounded focus:ring-brand focus:border-brand">
-                                <option value="241706">Photo Identite à domicile</option>
-                                <option value="34544">Photos Identités Au STUDIO ⚠️</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Prénom et date de naissance de l'enfant ?</label>
-                        <input type="text" name="lead_form[notes_104917]" class="w-full p-2 border rounded focus:ring-brand focus:border-brand">
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Votre message *</label>
-                        <textarea name="lead_form[message]" required class="w-full p-2 border rounded focus:ring-brand focus:border-brand" rows="3"></textarea>
-                    </div>
-
-                    <!-- Anti-spam : ne pas supprimer -->
-                    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-
-                    <button type="submit" class="w-full py-3 rounded font-bold text-white bg-brand hover:bg-orange-600 transition shadow-lg mt-4">Envoyer ma demande</button>
+                    <button type="submit" class="w-full py-4 rounded-xl font-bold text-white bg-brand hover:bg-orange-600 transition shadow-lg mt-4">Envoyer ma demande à Saint-Denis</button>
                 </form>
             </div>
         </div>
     </main>
 
-    <!-- FOOTER COMPLET -->
-    
-    <!-- FAQ & NORMES SAINT-DENIS -->
-    <section class="bg-light py-12 border-t border-gray-100">
+    <!-- FAQ VILLE -->
+    <section class="bg-light py-24 animate-on-scroll">
         <div class="max-w-4xl mx-auto px-4">
-            <h2 class="text-2xl font-serif font-bold mb-8 text-center text-dark">Questions fréquentes sur mon service à Saint-Denis</h2>
-            <div class="space-y-4">
-                <details class="group bg-white rounded p-4 cursor-pointer shadow-sm border border-gray-100">
-                    <summary class="font-bold text-gray-800 outline-none flex justify-between items-center">
-                        <span>Quels sont les délais d'intervention à Saint-Denis ?</span>
-                        <span class="text-brand group-open:rotate-180 transition-transform">▼</span>
+            <h2 id="faq" class="text-4xl font-serif font-bold mb-12 text-center text-dark">Questions fréquentes Saint-Denis</h2>
+            <div class="space-y-6">
+                <details class="group bg-white rounded-2xl p-6 cursor-pointer shadow-sm border border-gray-100 transition-all hover:shadow-md">
+                    <summary class="font-bold text-xl outline-none flex justify-between items-center text-dark">
+                        <span>Quels sont les délais à Saint-Denis ?</span>
+                        <span class="bg-orange-50 text-brand p-2 rounded-full group-open:rotate-180 transition-transform">▼</span>
                     </summary>
-                    <p class="text-gray-600 mt-3 text-sm">J'interviens généralement sous 24h à 48h à Saint-Denis. La séance dure environ 20 minutes et les photos sont remises immédiatement.</p>
+                    <p class="text-gray-600 mt-6 leading-relaxed border-t border-gray-50 pt-6">J'interviens sous 24h à 48h à Saint-Denis (93200).</p>
                 </details>
-                <details class="group bg-white rounded p-4 cursor-pointer shadow-sm border border-gray-100">
-                    <summary class="font-bold text-gray-800 outline-none flex justify-between items-center">
-                        <span>Le code e-photo est-il valable pour le permis à Saint-Denis ?</span>
-                        <span class="text-brand group-open:rotate-180 transition-transform">▼</span>
+                <details class="group bg-white rounded-2xl p-6 cursor-pointer shadow-sm border border-gray-100 transition-all hover:shadow-md">
+                    <summary class="font-bold text-xl outline-none flex justify-between items-center text-dark">
+                        <span>Le code e-photo est-il valable à Saint-Denis ?</span>
+                        <span class="bg-orange-50 text-brand p-2 rounded-full group-open:rotate-180 transition-transform">▼</span>
                     </summary>
-                    <p class="text-gray-600 mt-3 text-sm">Oui, je suis agréé ANTS. Le code e-photo que je vous fournis à domicile à Saint-Denis est immédiatement utilisable sur le site de l'ANTS pour votre demande de permis de conduire.</p>
+                    <p class="text-gray-600 mt-6 leading-relaxed border-t border-gray-50 pt-6">Oui, je suis agréé ANTS. Le code e-photo est immédiatement utilisable pour votre demande de permis en ligne.</p>
                 </details>
             </div>
         </div>
     </section>
-    <footer id="zones" class="bg-dark text-gray-300 py-10 border-t-4 border-brand">
-        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-gray-300 py-16 border-t-4 border-brand">
+        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12">
             <div>
-                <a href="../index.html" class="font-serif text-2xl font-bold text-white mb-2 flex items-center gap-2">
-                    <img src="../Images/logo.png" alt="Logo Photo-identite-bebe-domicile.fr" class="logo-img h-10 w-auto" width="200" height="135">
-                    <span>Photo-identite-bebe-domicile.fr</span>
+                <a href="../index.html" class="logo-text text-2xl font-serif font-bold text-white flex items-center gap-2 mb-4">
+                    <img src="../Images/logo.png" alt="Logo" class="logo-img h-10 w-auto" width="200" height="135">
+                    <span>Photo Identité ANTS</span>
                 </a>
-                <p class="text-sm">EURL (SIREN: 984 595 538)</p>
-                <p class="text-sm">16 bd Carnot, 93330 Neuilly-sur-Marne</p>
-                <div class="flex items-center gap-1 mt-2 mb-4">
+                <p class="text-sm">EURL SIREN 984 595 538</p>
+                <div class="flex items-center gap-1 mt-4">
                     <span class="text-brand">★★★★★</span>
-                    <span class="text-xs text-gray-400">4.9/5 (156 avis)</span>
+                    <span class="text-xs">4.9/5 (156 avis certifiés)</span>
                 </div>
-                <a href="tel:+33781757754" class="block text-white font-bold text-lg mt-4 hover:text-brand transition">📞 07 81 75 77 54</a>
             </div>
             <div>
-                <h3 class="font-bold text-white mb-3">Villes prioritaires (93, 94, 75)</h3>
-                <ul class="grid grid-cols-2 gap-x-4 gap-y-1 text-sm">
+                <h3 class="font-bold text-white mb-4 uppercase tracking-wider text-sm">Villes Prioritaires</h3>
+                <ul class="grid grid-cols-2 gap-2 text-sm">
                     <li><a href="./paris.html" class="hover:text-brand transition">Paris (75)</a></li>
-                    <li><a href="./boulogne-billancourt.html" class="hover:text-brand transition">Boulogne-Billancourt</a></li>
-                    <li><a href="./neuilly-sur-seine.html" class="hover:text-brand transition">Neuilly-sur-Seine</a></li>
+                    <li><a href="./boulogne-billancourt.html" class="hover:text-brand transition">Boulogne</a></li>
                     <li><a href="./vincennes.html" class="hover:text-brand transition">Vincennes</a></li>
                     <li><a href="./montreuil.html" class="hover:text-brand transition">Montreuil</a></li>
-                    <li><a href="./creteil.html" class="hover:text-brand transition">Créteil</a></li>
-                    <li><a href="./noisy-le-grand.html" class="hover:text-brand transition">Noisy-le-Grand</a></li>
-                    <li><a href="./saint-denis.html" class="hover:text-brand transition">Saint-Denis</a></li>
                 </ul>
             </div>
             <div>
-                <h3 class="font-bold text-white mb-3">Expertise & SEO</h3>
-                <ul class="space-y-1 text-sm mt-4">
+                <h3 class="font-bold text-white mb-4 uppercase tracking-wider text-sm">Informations</h3>
+                <ul class="space-y-2 text-sm">
                     <li><a href="../mentions-legales.html" class="hover:text-brand transition">Mentions Légales</a></li>
                     <li><a href="../confidentialite.html" class="hover:text-brand transition">Politique de Confidentialité</a></li>
                 </ul>
