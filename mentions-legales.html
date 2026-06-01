@@ -3,16 +3,24 @@
 <head>
 <script>
   (function() {
+    const allowedHosts = [
+      'photo-identite-bebe-domicile.fr',
+      'www.photo-identite-bebe-domicile.fr',
+      'gregphotographe.github.io'
+    ];
     const canonicalHost = 'www.photo-identite-bebe-domicile.fr';
     const currentProtocol = window.location.protocol;
     const currentHost = window.location.hostname;
-    
-    if (currentProtocol !== 'https:' || currentHost !== canonicalHost) {
-      window.location.replace(
-        'https://' + canonicalHost + 
-        window.location.pathname + 
-        window.location.search
-      );
+
+    // Si on est déjà sur un hôte autorisé en HTTPS, on ne redirige pas
+    if (currentProtocol === 'https:' && allowedHosts.includes(currentHost)) {
+      return;
+    }
+
+    // Redirection unique vers le domaine canonical
+    const targetUrl = 'https://' + canonicalHost + window.location.pathname + window.location.search;
+    if (window.location.href !== targetUrl) {
+      window.location.replace(targetUrl);
     }
   })();
 </script>
