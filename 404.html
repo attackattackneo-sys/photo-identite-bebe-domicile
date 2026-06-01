@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">
 <head>
+<script>
+  (function() {
+    const canonicalHost = 'www.photo-identite-bebe-domicile.fr';
+    const currentProtocol = window.location.protocol;
+    const currentHost = window.location.hostname;
+    
+    if (currentProtocol !== 'https:' || currentHost !== canonicalHost) {
+      window.location.replace(
+        'https://' + canonicalHost + 
+        window.location.pathname + 
+        window.location.search
+      );
+    }
+  })();
+</script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQZSLDSMLZ"></script>
     <script>
@@ -12,6 +27,7 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://www.photo-identite-bebe-domicile.fr/" />
     <title>Page non trouvée | Photo-identite-bebe-domicile.fr</title>
     <meta name="description" content="Oups, cette page n'existe pas. Retournez sur l'accueil de Photo-identite-bebe-domicile.fr pour vos photos d'identité ANTS à domicile avec Grégory.">
     <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />

@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">
 <head>
+<script>
+  (function() {
+    const canonicalHost = 'www.photo-identite-bebe-domicile.fr';
+    const currentProtocol = window.location.protocol;
+    const currentHost = window.location.hostname;
+    
+    if (currentProtocol !== 'https:' || currentHost !== canonicalHost) {
+      window.location.replace(
+        'https://' + canonicalHost + 
+        window.location.pathname + 
+        window.location.search
+      );
+    }
+  })();
+</script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQZSLDSMLZ"></script>
     <script>
