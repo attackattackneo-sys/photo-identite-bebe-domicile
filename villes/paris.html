@@ -1,29 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">
 <head>
-<script>
-  (function() {
-    const allowedHosts = [
-      'photo-identite-bebe-domicile.fr',
-      'www.photo-identite-bebe-domicile.fr',
-      'gregphotographe.github.io'
-    ];
-    const canonicalHost = 'www.photo-identite-bebe-domicile.fr';
-    const currentProtocol = window.location.protocol;
-    const currentHost = window.location.hostname;
-
-    // Si on est déjà sur un hôte autorisé en HTTPS, on ne redirige pas
-    if (currentProtocol === 'https:' && allowedHosts.includes(currentHost)) {
-      return;
-    }
-
-    // Redirection unique vers le domaine canonical
-    const targetUrl = 'https://' + canonicalHost + window.location.pathname + window.location.search;
-    if (window.location.href !== targetUrl) {
-      window.location.replace(targetUrl);
-    }
-  })();
-</script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQZSLDSMLZ"></script>
     <script>
@@ -172,58 +149,18 @@
           "mainEntity": [
             {
               "@type": "Question",
-              "name": "Où faire des photos d'identité pour bébé à Paris ?",
+              "name": "Quels sont les délais d'intervention à Paris ?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Grégory, photographe professionnel agréé ANTS, se déplace à votre domicile dans tous les arrondissements de Paris pour réaliser des photos d'identité conformes pour votre bébé."
+                "text": "J'interviens sous 24h à 48h dans tous les arrondissements de Paris (75001 à 75020)."
               }
             },
             {
               "@type": "Question",
-              "name": "Quelles sont les normes pour un passeport de bébé à Paris ?",
+              "name": "Le code e-photo est-il valable pour le permis à Paris ?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "La photo doit respecter la norme ISO/IEC 19794-5:2005. Le bébé doit avoir la tête droite, les yeux ouverts vers l'objectif, et une expression neutre sans sourire."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Combien de temps dure une séance photo d'identité à domicile à Paris ?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "La séance dure environ 15 à 30 minutes. Le photographe prend le temps nécessaire pour s'adapter au rythme de votre bébé ou de la personne âgée."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Quels arrondissements de Paris sont couverts par le photographe à domicile ?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Le service de photographie à domicile couvre l'intégralité des 20 arrondissements de Paris, du 1er au 20ème arrondissement, sans frais de déplacement cachés."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Comment obtenir un code e-photo ANTS pour permis à Paris ?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Lors de sa venue à domicile à Paris, le photographe réalise votre cliché numérique agréé et vous remet instantanément votre code e-photo valide pour l'ANTS."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Le photographe à domicile à Paris intervient-il auprès des personnes âgées et PMR ?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Oui, Grégory est spécialisé dans les prises de vue à domicile ou en EHPAD pour les personnes âgées, alitées ou à mobilité réduite (PMR) à Paris."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Comment réserver un rendez-vous photo d'identité à domicile à Paris ?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Vous pouvez réserver directement via le formulaire en ligne sur ce site ou en contactant Grégory par téléphone au 07 81 75 77 54."
+                "text": "Oui, je suis agréé ANTS. Le code e-photo est immédiatement utilisable pour votre demande de permis en ligne."
               }
             }
           ]
@@ -259,6 +196,10 @@
                     if (logoImg) {
                         logoImg.classList.remove('brightness-0', 'invert');
                     }
+                    if (mobileMenuBtn) {
+                        mobileMenuBtn.classList.add('text-gray-800');
+                        mobileMenuBtn.classList.remove('text-white');
+                    }
                 } else {
                     nav.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-lg', 'py-2');
                     nav.classList.add('bg-transparent', 'py-6', 'shadow-none');
@@ -273,6 +214,10 @@
                     }
                     if (logoImg) {
                         logoImg.classList.add('brightness-0', 'invert');
+                    }
+                    if (mobileMenuBtn) {
+                        mobileMenuBtn.classList.remove('text-gray-800');
+                        mobileMenuBtn.classList.add('text-white');
                     }
                 }
             });
@@ -333,28 +278,51 @@
 </head>
 <body class="antialiased font-sans">
     <!-- NAVIGATION -->
-    <nav class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent py-6 shadow-none" aria-label="Menu principal">
+        <nav class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent py-6 shadow-none" aria-label="Menu principal">
         <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
             <a href="../index.html" class="logo-text text-xl md:text-2xl font-serif font-bold flex items-center gap-2 text-white transition-colors">
                 <img src="../Images/logo.png" alt="Logo Grégory - Photo Identité ANTS à Domicile" class="logo-img h-8 md:h-10 w-auto brightness-0 invert" width="200" height="135">
-                <span class="hidden sm:inline">Photo-identite-bebe-domicile.fr</span>
+                <span class="hidden sm:inline text-lg md:text-xl font-serif">Photo-identite-bebe-domicile.fr</span>
             </a>
             
-            <div class="nav-links-container hidden lg:flex gap-8 items-center text-white/90 transition-colors">
-                <a href="../index.html#booking-funnel" class="nav-link font-medium hover:text-brand transition">Réservation</a>
-                <a href="../studio-photo.html" class="nav-link font-medium hover:text-brand transition">Studio Photo</a>
-                <a href="../index.html#faq" class="nav-link font-medium hover:text-brand transition">FAQ</a>
-                <a href="tel:+33781757754" class="bg-brand text-white px-6 py-2.5 rounded-full font-bold shadow-lg text-sm">📞 07 81 75 77 54</a>
+            <div class="nav-links-container hidden lg:flex gap-6 lg:gap-8 items-center text-white/90 transition-colors font-medium">
+                <a href="../index.html" class="hover:text-brand transition">Accueil</a>
+                <a href="../photo-identite-bebe-ile-de-france.html" class="hover:text-brand transition">Photo Bébé</a>
+                <a href="../photographe-agree-ants-ile-de-france.html" class="hover:text-brand transition">Agréé ANTS</a>
+                <a href="../photo-identite-a-domicile-ile-de-france.html" class="hover:text-brand transition">À Domicile</a>
+                <a href="../prix-photo-identite.html" class="hover:text-brand transition">Tarifs</a>
+                <a href="../studio-photo.html" class="hover:text-brand transition">Studio</a>
+                <a href="tel:+33781757754" class="bg-brand text-white px-5 py-2 rounded-full font-bold hover:bg-orange-600 transition-all shadow-lg text-sm whitespace-nowrap">📞 07 81 75 77 54</a>
             </div>
 
             <button id="mobile-menu-btn" class="lg:hidden text-white focus:outline-none transition-colors" aria-label="Menu mobile">
                 <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
             </button>
         </div>
-        <div id="mobile-menu" class="hidden lg:hidden bg-white px-4 py-8 space-y-6 shadow-2xl border-t border-gray-100">
-            <a href="../index.html#booking-funnel" class="block text-xl font-medium text-gray-700">Réservation</a>
-            <a href="../studio-photo.html" class="block text-xl font-medium text-gray-700">Studio Photo</a>
-            <a href="tel:+33781757754" class="block w-full text-center bg-brand text-white py-4 rounded-xl font-bold">07 81 75 77 54</a>
+                <div id="mobile-menu" class="hidden lg:hidden bg-white/95 backdrop-blur-md border-t border-gray-100 absolute top-full left-0 right-0 p-8 shadow-2xl space-y-6 transition-all duration-300">
+            <div class="flex flex-col space-y-4">
+                <a href="../index.html" class="flex items-center gap-3 text-lg font-medium text-gray-800 hover:text-brand transition-colors py-2 border-b border-gray-50">
+                    🏠 Accueil
+                </a>
+                <a href="../photo-identite-bebe-ile-de-france.html" class="flex items-center gap-3 text-lg font-medium text-gray-800 hover:text-brand transition-colors py-2 border-b border-gray-50">
+                    👶 Photo Bébé & Nouveau-né
+                </a>
+                <a href="../photographe-agree-ants-ile-de-france.html" class="flex items-center gap-3 text-lg font-medium text-gray-800 hover:text-brand transition-colors py-2 border-b border-gray-50">
+                    ✅ Agréé ANTS (e-Photo)
+                </a>
+                <a href="../photo-identite-a-domicile-ile-de-france.html" class="flex items-center gap-3 text-lg font-medium text-gray-800 hover:text-brand transition-colors py-2 border-b border-gray-50">
+                    🚗 Photo d'Identité à Domicile
+                </a>
+                <a href="../prix-photo-identite.html" class="flex items-center gap-3 text-lg font-medium text-gray-800 hover:text-brand transition-colors py-2 border-b border-gray-50">
+                    💰 Tarifs Prestations
+                </a>
+                <a href="../studio-photo.html" class="flex items-center gap-3 text-lg font-medium text-gray-800 hover:text-brand transition-colors py-2 border-b border-gray-50">
+                    📸 Studio Photo
+                </a>
+            </div>
+            <a href="tel:+33781757754" class="block w-full text-center bg-brand hover:bg-orange-600 text-white py-4 rounded-full font-bold shadow-lg transition-all transform hover:scale-[1.01] active:scale-[0.99]">
+                📞 07 81 75 77 54
+            </a>
         </div>
     </nav>
 
@@ -483,35 +451,6 @@
         </div>
     </main>
 
-    <!-- PRÉSENTATION SÉMANTIQUE & AEO -->
-    <section class="bg-white py-20 border-t border-gray-100 animate-on-scroll">
-        <div class="max-w-4xl mx-auto px-4">
-            <h2 class="text-3xl font-serif font-bold mb-8 text-dark text-center">Votre Photographe Professionnel d'Identité à Domicile à Paris</h2>
-            <div class="prose prose-lg text-gray-600 space-y-6 leading-relaxed mb-12">
-                <p>Besoin d'un photographe agréé ANTS à Paris ? Grégory se déplace directement chez vous. Ce studio mobile s'adapte aux bébés dès leur naissance. Il convient également aux seniors et personnes à mobilité réduite. Les photos d'identité sont conformes à la norme ISO/IEC 19794-5:2005. Vos documents officiels seront validés à coup sûr. La séance à domicile évite les déplacements stressants pour vos nourrissons. Le photographe professionnel maîtrise parfaitement les exigences réglementaires préfectorales. Il gère patiemment la posture et l'expression neutre requises. L'arrière-plan uni et la lumière douce respectent les critères administratifs. Le code e-photo pour permis est généré instantanément. Vos tirages physiques de passeport sont imprimés sur place en direct. Ce service haut de gamme couvre tous les arrondissements parisiens. Plus besoin de chercher un photomaton inadapté près de chez vous. Gagnez du temps et profitez d'un confort optimal pour toute la famille. Contactez Grégory pour réserver votre séance photo d'identité à domicile à Paris.</p>
-            </div>
-            
-            <!-- BLOC RÉPONSE COURTE AEO -->
-            <div class="bg-orange-50/50 border border-brand/20 p-8 rounded-3xl mb-12">
-                <h3 class="font-serif font-bold text-xl text-dark mb-4">🔍 Synthèse Vocale & AEO : Photo d'Identité Bébé & PMR Paris</h3>
-                <p class="text-gray-700 leading-relaxed">Pour obtenir des photos d'identité conformes pour bébé à Paris, faites appel à un photographe agréé ANTS à domicile. Grégory réalise des clichés certifiés ISO/IEC 19794-5:2005 à votre domicile parisien sous 24h à 48h. Vos planches de photos imprimées et vos codes e-photo numériques sont livrés immédiatement en fin de séance.</p>
-            </div>
-            
-            <!-- MAILLAGE INTERNE CONTEXTUALISÉ -->
-            <div class="pt-8 border-t border-gray-100 text-sm text-gray-500">
-                <p class="font-bold text-gray-700 mb-3">📍 Secteurs d'intervention limitrophes en Île-de-France :</p>
-                <div class="flex flex-wrap gap-x-4 gap-y-2">
-                    <a href="boulogne-billancourt.html" class="text-brand hover:underline font-medium">Boulogne-Billancourt (92)</a>
-                    <a href="neuilly-sur-seine.html" class="text-brand hover:underline font-medium">Neuilly-sur-Seine (92)</a>
-                    <a href="vincennes.html" class="text-brand hover:underline font-medium">Vincennes (94)</a>
-                    <a href="montreuil.html" class="text-brand hover:underline font-medium">Montreuil (93)</a>
-                    <a href="saint-denis.html" class="text-brand hover:underline font-medium">Saint-Denis (93)</a>
-                    <a href="../index.html" class="text-gray-600 hover:text-brand font-medium">← Accueil Principal</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- FAQ VILLE -->
     <section class="bg-light py-24 animate-on-scroll">
         <div class="max-w-4xl mx-auto px-4">
@@ -519,58 +458,24 @@
             <div class="space-y-6">
                 <details class="group bg-white rounded-2xl p-6 cursor-pointer shadow-sm border border-gray-100 transition-all hover:shadow-md">
                     <summary class="font-bold text-xl outline-none flex justify-between items-center text-dark">
-                        <span>Où faire des photos d'identité pour bébé à Paris ?</span>
+                        <span>Quels sont les délais d'intervention à Paris ?</span>
                         <span class="bg-orange-50 text-brand p-2 rounded-full group-open:rotate-180 transition-transform">▼</span>
                     </summary>
-                    <p class="text-gray-600 mt-6 leading-relaxed border-t border-gray-50 pt-6">Grégory, photographe professionnel agréé ANTS, se déplace à votre domicile dans tous les arrondissements de Paris pour réaliser des photos d'identité conformes pour votre bébé.</p>
+                    <p class="text-gray-600 mt-6 leading-relaxed border-t border-gray-50 pt-6">J'interviens sous 24h à 48h dans tous les arrondissements de Paris (75001 à 75020). La prise de rendez-vous s'effectue en ligne ou par téléphone.</p>
                 </details>
                 <details class="group bg-white rounded-2xl p-6 cursor-pointer shadow-sm border border-gray-100 transition-all hover:shadow-md">
                     <summary class="font-bold text-xl outline-none flex justify-between items-center text-dark">
-                        <span>Quelles sont les normes pour un passeport de bébé à Paris ?</span>
+                        <span>Le code e-photo ANTS est-il valable à Paris ?</span>
                         <span class="bg-orange-50 text-brand p-2 rounded-full group-open:rotate-180 transition-transform">▼</span>
                     </summary>
-                    <p class="text-gray-600 mt-6 leading-relaxed border-t border-gray-50 pt-6">La photo doit respecter la norme ISO/IEC 19794-5:2005. Le bébé doit avoir la tête droite, les yeux ouverts vers l'objectif, et une expression neutre sans sourire.</p>
-                </details>
-                <details class="group bg-white rounded-2xl p-6 cursor-pointer shadow-sm border border-gray-100 transition-all hover:shadow-md">
-                    <summary class="font-bold text-xl outline-none flex justify-between items-center text-dark">
-                        <span>Combien de temps dure une séance photo d'identité à domicile à Paris ?</span>
-                        <span class="bg-orange-50 text-brand p-2 rounded-full group-open:rotate-180 transition-transform">▼</span>
-                    </summary>
-                    <p class="text-gray-600 mt-6 leading-relaxed border-t border-gray-50 pt-6">La séance dure environ 15 à 30 minutes. Le photographe prend le temps nécessaire pour s'adapter au rythme de votre bébé ou de la personne âgée.</p>
-                </details>
-                <details class="group bg-white rounded-2xl p-6 cursor-pointer shadow-sm border border-gray-100 transition-all hover:shadow-md">
-                    <summary class="font-bold text-xl outline-none flex justify-between items-center text-dark">
-                        <span>Quels arrondissements de Paris sont couverts par le photographe à domicile ?</span>
-                        <span class="bg-orange-50 text-brand p-2 rounded-full group-open:rotate-180 transition-transform">▼</span>
-                    </summary>
-                    <p class="text-gray-600 mt-6 leading-relaxed border-t border-gray-50 pt-6">Le service de photographie à domicile couvre l'intégralité des 20 arrondissements de Paris, du 1er au 20ème arrondissement, sans frais de déplacement cachés.</p>
-                </details>
-                <details class="group bg-white rounded-2xl p-6 cursor-pointer shadow-sm border border-gray-100 transition-all hover:shadow-md">
-                    <summary class="font-bold text-xl outline-none flex justify-between items-center text-dark">
-                        <span>Comment obtenir un code e-photo ANTS pour permis à Paris ?</span>
-                        <span class="bg-orange-50 text-brand p-2 rounded-full group-open:rotate-180 transition-transform">▼</span>
-                    </summary>
-                    <p class="text-gray-600 mt-6 leading-relaxed border-t border-gray-50 pt-6">Lors de sa venue à domicile à Paris, le photographe réalise votre cliché numérique agréé et vous remet instantanément votre code e-photo valide pour l'ANTS.</p>
-                </details>
-                <details class="group bg-white rounded-2xl p-6 cursor-pointer shadow-sm border border-gray-100 transition-all hover:shadow-md">
-                    <summary class="font-bold text-xl outline-none flex justify-between items-center text-dark">
-                        <span>Le photographe à domicile à Paris intervient-il auprès des personnes âgées et PMR ?</span>
-                        <span class="bg-orange-50 text-brand p-2 rounded-full group-open:rotate-180 transition-transform">▼</span>
-                    </summary>
-                    <p class="text-gray-600 mt-6 leading-relaxed border-t border-gray-50 pt-6">Oui, Grégory est spécialisé dans les prises de vue à domicile ou en EHPAD pour les personnes âgées, alitées ou à mobilité réduite (PMR) à Paris.</p>
-                </details>
-                <details class="group bg-white rounded-2xl p-6 cursor-pointer shadow-sm border border-gray-100 transition-all hover:shadow-md">
-                    <summary class="font-bold text-xl outline-none flex justify-between items-center text-dark">
-                        <span>Comment réserver un rendez-vous photo d'identité à domicile à Paris ?</span>
-                        <span class="bg-orange-50 text-brand p-2 rounded-full group-open:rotate-180 transition-transform">▼</span>
-                    </summary>
-                    <p class="text-gray-600 mt-6 leading-relaxed border-t border-gray-50 pt-6">Vous pouvez réserver directement via le formulaire en ligne sur ce site ou en contactant Grégory par téléphone au 07 81 75 77 54.</p>
+                    <p class="text-gray-600 mt-6 leading-relaxed border-t border-gray-50 pt-6">Oui, en tant que photographe agréé par l'ANTS, le code e-photo remis est immédiatement valable pour votre demande de permis en ligne.</p>
                 </details>
             </div>
         </div>
     </section>
 
     <!-- FOOTER AMÉLIORÉ -->
+        <!-- FOOTER AMÉLIORÉ -->
     <footer id="zones" class="bg-dark text-gray-300 py-16 border-t-4 border-brand">
         <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12">
             <!-- Colonne 1: Identité -->
@@ -579,7 +484,7 @@
                     <img src="../Images/logo.png" alt="Grégory Photo Identité ANTS - Photographe agréé à Domicile" class="logo-img h-10 w-auto" width="200" height="135" loading="lazy">
                     <span>Photo-identite-bebe-domicile.fr</span>
                 </a>
-                <p class="text-sm font-bold text-white">Grégory - EURL (SIREN: 984 595 538)</p>
+                <p class="text-sm font-bold text-white">EURL (SIREN: 984 595 538)</p>
                 <p class="text-sm mt-2">16 bd Carnot, 93330 Neuilly-sur-Marne</p>
                 <div class="mt-6 text-sm">
                     <p class="font-bold text-white mb-2 underline decoration-brand">Horaires du Studio :</p>
@@ -620,7 +525,11 @@
                 <ul class="space-y-3 text-sm">
                     <li><a href="./chelles.html" class="hover:text-brand transition">Chelles (77)</a></li>
                     <li><a href="./bussy-saint-georges.html" class="hover:text-brand transition">Bussy-Saint-Georges (77)</a></li>
-                    <li class="pt-4 border-t border-gray-800">
+                    <li class="pt-3 border-t border-gray-850"><a href="../photo-identite-bebe-ile-de-france.html" class="hover:text-brand transition text-xs font-semibold text-gray-400">Photo Identité Bébé</a></li>
+                    <li><a href="../photographe-agree-ants-ile-de-france.html" class="hover:text-brand transition text-xs font-semibold text-gray-400">Photographe ANTS Agréé</a></li>
+                    <li><a href="../photo-identite-a-domicile-ile-de-france.html" class="hover:text-brand transition text-xs font-semibold text-gray-400">Photo Identité à Domicile</a></li>
+                    <li><a href="../prix-photo-identite.html" class="hover:text-brand transition text-xs font-semibold text-gray-400">Tarifs Prestations</a></li>
+                    <li class="pt-3 border-t border-gray-800">
                         <a href="../mentions-legales.html" class="hover:text-brand transition flex items-center gap-2">
                             <span>⚖</span> Mentions Légales
                         </a>

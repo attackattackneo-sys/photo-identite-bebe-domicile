@@ -1,29 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">
 <head>
-<script>
-  (function() {
-    const allowedHosts = [
-      'photo-identite-bebe-domicile.fr',
-      'www.photo-identite-bebe-domicile.fr',
-      'gregphotographe.github.io'
-    ];
-    const canonicalHost = 'www.photo-identite-bebe-domicile.fr';
-    const currentProtocol = window.location.protocol;
-    const currentHost = window.location.hostname;
-
-    // Si on est déjà sur un hôte autorisé en HTTPS, on ne redirige pas
-    if (currentProtocol === 'https:' && allowedHosts.includes(currentHost)) {
-      return;
-    }
-
-    // Redirection unique vers le domaine canonical
-    const targetUrl = 'https://' + canonicalHost + window.location.pathname + window.location.search;
-    if (window.location.href !== targetUrl) {
-      window.location.replace(targetUrl);
-    }
-  })();
-</script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQZSLDSMLZ"></script>
     <script>
@@ -70,8 +47,8 @@
           },
           "geo": {
             "@type": "GeoCoordinates",
-            "latitude": 48.8397,
-            "longitude": 2.2399
+            "latitude": 48.8352,
+            "longitude": 2.2409
           },
           "openingHoursSpecification": [
             {
@@ -172,58 +149,18 @@
           "mainEntity": [
             {
               "@type": "Question",
-              "name": "Où réaliser des photos d'identité pour bébé à Boulogne-Billancourt ?",
+              "name": "Quels sont les délais d'intervention à Boulogne-Billancourt ?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Grégory se déplace directement à votre domicile à Boulogne-Billancourt pour réaliser les photos d'identité conformes de votre bébé dès sa naissance."
+                "text": "J'interviens sous 24h à 48h à Boulogne-Billancourt (92100) et dans les Hauts-de-Seine."
               }
             },
             {
               "@type": "Question",
-              "name": "Les photos d'identité à domicile à Boulogne-Billancourt sont-elles garanties conformes ?",
+              "name": "Le code e-photo est-il valable pour le permis à Boulogne-Billancourt ?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Oui, toutes les photos d'identité réalisées respectent rigoureusement les 22 critères obligatoires de la norme internationale ISO/IEC 19794-5:2005 pour passeport et CNI."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Combien de temps faut-il pour obtenir les photos à Boulogne-Billancourt ?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Les planches de photos imprimées et le code e-photo ANTS numérique vous sont remis immédiatement à la fin de la séance à domicile."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Quels sont les tarifs d'un photographe d'identité à domicile à Boulogne-Billancourt ?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Les tarifs incluent le déplacement et la séance de prise de vue à Boulogne-Billancourt. Vous pouvez estimer le coût exact via notre outil en ligne."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Comment fonctionne le code e-photo ANTS pour le permis à Boulogne-Billancourt ?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Le photographe agréé génère un code unique et une signature numérique. Ils sont directement utilisables sur le site de l'ANTS pour votre demande de permis."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Le service à domicile à Boulogne-Billancourt est-il adapté aux personnes alitées ou handicapées ?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Tout à fait. Le studio photo mobile est conçu pour intervenir auprès des personnes âgées, alitées, dépendantes ou à mobilité réduite (PMR)."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Comment prendre rendez-vous avec le photographe à Boulogne-Billancourt ?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Remplissez simplement notre formulaire de contact sur ce site ou téléphonez à Grégory au 07 81 75 77 54 pour fixer un rendez-vous rapide."
+                "text": "Oui, je suis agréé ANTS. Le code e-photo est immédiatement utilisable pour votre demande de permis en ligne."
               }
             }
           ]
@@ -259,6 +196,10 @@
                     if (logoImg) {
                         logoImg.classList.remove('brightness-0', 'invert');
                     }
+                    if (mobileMenuBtn) {
+                        mobileMenuBtn.classList.add('text-gray-800');
+                        mobileMenuBtn.classList.remove('text-white');
+                    }
                 } else {
                     nav.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-lg', 'py-2');
                     nav.classList.add('bg-transparent', 'py-6', 'shadow-none');
@@ -273,6 +214,10 @@
                     }
                     if (logoImg) {
                         logoImg.classList.add('brightness-0', 'invert');
+                    }
+                    if (mobileMenuBtn) {
+                        mobileMenuBtn.classList.remove('text-gray-800');
+                        mobileMenuBtn.classList.add('text-white');
                     }
                 }
             });
@@ -333,28 +278,51 @@
 </head>
 <body class="antialiased font-sans">
     <!-- NAVIGATION -->
-    <nav class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent py-6 shadow-none" aria-label="Menu principal">
+        <nav class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent py-6 shadow-none" aria-label="Menu principal">
         <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
             <a href="../index.html" class="logo-text text-xl md:text-2xl font-serif font-bold flex items-center gap-2 text-white transition-colors">
                 <img src="../Images/logo.png" alt="Logo Grégory - Photo Identité ANTS à Domicile" class="logo-img h-8 md:h-10 w-auto brightness-0 invert" width="200" height="135">
-                <span class="hidden sm:inline">Photo-identite-bebe-domicile.fr</span>
+                <span class="hidden sm:inline text-lg md:text-xl font-serif">Photo-identite-bebe-domicile.fr</span>
             </a>
             
-            <div class="nav-links-container hidden lg:flex gap-8 items-center text-white/90 transition-colors">
-                <a href="../index.html#booking-funnel" class="nav-link font-medium hover:text-brand transition">Réservation</a>
-                <a href="../studio-photo.html" class="nav-link font-medium hover:text-brand transition">Studio Photo</a>
-                <a href="../index.html#faq" class="nav-link font-medium hover:text-brand transition">FAQ</a>
-                <a href="tel:+33781757754" class="bg-brand text-white px-6 py-2.5 rounded-full font-bold shadow-lg text-sm">📞 07 81 75 77 54</a>
+            <div class="nav-links-container hidden lg:flex gap-6 lg:gap-8 items-center text-white/90 transition-colors font-medium">
+                <a href="../index.html" class="hover:text-brand transition">Accueil</a>
+                <a href="../photo-identite-bebe-ile-de-france.html" class="hover:text-brand transition">Photo Bébé</a>
+                <a href="../photographe-agree-ants-ile-de-france.html" class="hover:text-brand transition">Agréé ANTS</a>
+                <a href="../photo-identite-a-domicile-ile-de-france.html" class="hover:text-brand transition">À Domicile</a>
+                <a href="../prix-photo-identite.html" class="hover:text-brand transition">Tarifs</a>
+                <a href="../studio-photo.html" class="hover:text-brand transition">Studio</a>
+                <a href="tel:+33781757754" class="bg-brand text-white px-5 py-2 rounded-full font-bold hover:bg-orange-600 transition-all shadow-lg text-sm whitespace-nowrap">📞 07 81 75 77 54</a>
             </div>
 
             <button id="mobile-menu-btn" class="lg:hidden text-white focus:outline-none transition-colors" aria-label="Menu mobile">
                 <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
             </button>
         </div>
-        <div id="mobile-menu" class="hidden lg:hidden bg-white px-4 py-8 space-y-6 shadow-2xl border-t border-gray-100">
-            <a href="../index.html#booking-funnel" class="block text-xl font-medium text-gray-700">Réservation</a>
-            <a href="../studio-photo.html" class="block text-xl font-medium text-gray-700">Studio Photo</a>
-            <a href="tel:+33781757754" class="block w-full text-center bg-brand text-white py-4 rounded-xl font-bold">07 81 75 77 54</a>
+                <div id="mobile-menu" class="hidden lg:hidden bg-white/95 backdrop-blur-md border-t border-gray-100 absolute top-full left-0 right-0 p-8 shadow-2xl space-y-6 transition-all duration-300">
+            <div class="flex flex-col space-y-4">
+                <a href="../index.html" class="flex items-center gap-3 text-lg font-medium text-gray-800 hover:text-brand transition-colors py-2 border-b border-gray-50">
+                    🏠 Accueil
+                </a>
+                <a href="../photo-identite-bebe-ile-de-france.html" class="flex items-center gap-3 text-lg font-medium text-gray-800 hover:text-brand transition-colors py-2 border-b border-gray-50">
+                    👶 Photo Bébé & Nouveau-né
+                </a>
+                <a href="../photographe-agree-ants-ile-de-france.html" class="flex items-center gap-3 text-lg font-medium text-gray-800 hover:text-brand transition-colors py-2 border-b border-gray-50">
+                    ✅ Agréé ANTS (e-Photo)
+                </a>
+                <a href="../photo-identite-a-domicile-ile-de-france.html" class="flex items-center gap-3 text-lg font-medium text-gray-800 hover:text-brand transition-colors py-2 border-b border-gray-50">
+                    🚗 Photo d'Identité à Domicile
+                </a>
+                <a href="../prix-photo-identite.html" class="flex items-center gap-3 text-lg font-medium text-gray-800 hover:text-brand transition-colors py-2 border-b border-gray-50">
+                    💰 Tarifs Prestations
+                </a>
+                <a href="../studio-photo.html" class="flex items-center gap-3 text-lg font-medium text-gray-800 hover:text-brand transition-colors py-2 border-b border-gray-50">
+                    📸 Studio Photo
+                </a>
+            </div>
+            <a href="tel:+33781757754" class="block w-full text-center bg-brand hover:bg-orange-600 text-white py-4 rounded-full font-bold shadow-lg transition-all transform hover:scale-[1.01] active:scale-[0.99]">
+                📞 07 81 75 77 54
+            </a>
         </div>
     </nav>
 
@@ -484,34 +452,6 @@
         </div>
     </main>
 
-    <!-- PRÉSENTATION SÉMANTIQUE & AEO -->
-    <section class="bg-white py-20 border-t border-gray-100 animate-on-scroll">
-        <div class="max-w-4xl mx-auto px-4">
-            <h2 class="text-3xl font-serif font-bold mb-8 text-dark text-center">Votre Photographe Professionnel d'Identité à Domicile à Boulogne-Billancourt</h2>
-            <div class="prose prose-lg text-gray-600 space-y-6 leading-relaxed mb-12">
-                <p>Cherchez-vous un photographe agréé ANTS à Boulogne-Billancourt ? Grégory propose un service professionnel de prise de vue à domicile. Ce studio mobile s'adapte parfaitement aux nouveau-nés et bébés. Il dessert également les personnes âgées et à mobilité réduite. Chaque cliché respecte scrupuleusement les exigences de la norme ISO/IEC 19794-5:2005. Vos photos de passeport et carte d'identité seront acceptées sans difficulté. Notre équipement de pointe garantit un éclairage doux et sans ombre. Plus besoin d'affronter le stress des transports avec votre nourrisson. Le photographe se déplace avec patience et professionnalisme chez vous. Vos tirages sur papier thermique certifié sont livrés immédiatement. Les codes e-photo pour le permis de conduire sont générés instantanément. Ce service haut de gamme simplifie toutes vos démarches administratives. Il couvre tous les quartiers de Boulogne-Billancourt et des Hauts-de-Seine. Profitez d'une prestation sereine dans le confort rassurant de votre foyer. Planifiez dès aujourd'hui votre séance photo d'identité à domicile.</p>
-            </div>
-            
-            <!-- BLOC RÉPONSE COURTE AEO -->
-            <div class="bg-orange-50/50 border border-brand/20 p-8 rounded-3xl mb-12">
-                <h3 class="font-serif font-bold text-xl text-dark mb-4">🔍 Synthèse Vocale & AEO : Photo d'Identité Bébé & PMR Boulogne-Billancourt</h3>
-                <p class="text-gray-700 leading-relaxed">Pour vos photos d'identité certifiées à Boulogne-Billancourt, faites appel à un photographe agréé ANTS à domicile. Grégory se déplace sous 24h à 48h dans les Hauts-de-Seine pour réaliser des portraits conformes ISO/IEC 19794-5:2005. Vos clichés imprimés et codes numériques e-photo sont remis directement en fin de séance.</p>
-            </div>
-            
-            <!-- MAILLAGE INTERNE CONTEXTUALISÉ -->
-            <div class="pt-8 border-t border-gray-100 text-sm text-gray-500">
-                <p class="font-bold text-gray-700 mb-3">📍 Secteurs d'intervention limitrophes en Île-de-France :</p>
-                <div class="flex flex-wrap gap-x-4 gap-y-2">
-                    <a href="paris.html" class="text-brand hover:underline font-medium">Paris (75)</a>
-                    <a href="neuilly-sur-seine.html" class="text-brand hover:underline font-medium">Neuilly-sur-Seine (92)</a>
-                    <a href="vincennes.html" class="text-brand hover:underline font-medium">Vincennes (94)</a>
-                    <a href="creteil.html" class="text-brand hover:underline font-medium">Créteil (94)</a>
-                    <a href="../index.html" class="text-gray-600 hover:text-brand font-medium">← Accueil Principal</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- FAQ VILLE -->
     <section class="bg-light py-24 animate-on-scroll">
         <div class="max-w-4xl mx-auto px-4">
@@ -519,58 +459,24 @@
             <div class="space-y-6">
                 <details class="group bg-white rounded-2xl p-6 cursor-pointer shadow-sm border border-gray-100 transition-all hover:shadow-md">
                     <summary class="font-bold text-xl outline-none flex justify-between items-center text-dark">
-                        <span>Où réaliser des photos d'identité pour bébé à Boulogne-Billancourt ?</span>
+                        <span>Quels sont les délais d'intervention à Boulogne-Billancourt ?</span>
                         <span class="bg-orange-50 text-brand p-2 rounded-full group-open:rotate-180 transition-transform">▼</span>
                     </summary>
-                    <p class="text-gray-600 mt-6 leading-relaxed border-t border-gray-50 pt-6">Grégory se déplace directement à votre domicile à Boulogne-Billancourt pour réaliser les photos d'identité conformes de votre bébé dès sa naissance.</p>
+                    <p class="text-gray-600 mt-6 leading-relaxed border-t border-gray-50 pt-6">J'interviens sous 24h à 48h à Boulogne-Billancourt (92100) et dans les Hauts-de-Seine. La prise de rendez-vous s'effectue en ligne ou par téléphone.</p>
                 </details>
                 <details class="group bg-white rounded-2xl p-6 cursor-pointer shadow-sm border border-gray-100 transition-all hover:shadow-md">
                     <summary class="font-bold text-xl outline-none flex justify-between items-center text-dark">
-                        <span>Les photos d'identité à domicile à Boulogne-Billancourt sont-elles garanties conformes ?</span>
+                        <span>Le code e-photo ANTS est-il valable à Boulogne-Billancourt ?</span>
                         <span class="bg-orange-50 text-brand p-2 rounded-full group-open:rotate-180 transition-transform">▼</span>
                     </summary>
-                    <p class="text-gray-600 mt-6 leading-relaxed border-t border-gray-50 pt-6">Oui, toutes les photos d'identité réalisées respectent rigoureusement les 22 critères obligatoires de la norme internationale ISO/IEC 19794-5:2005 pour passeport et CNI.</p>
-                </details>
-                <details class="group bg-white rounded-2xl p-6 cursor-pointer shadow-sm border border-gray-100 transition-all hover:shadow-md">
-                    <summary class="font-bold text-xl outline-none flex justify-between items-center text-dark">
-                        <span>Combien de temps faut-il pour obtenir les photos à Boulogne-Billancourt ?</span>
-                        <span class="bg-orange-50 text-brand p-2 rounded-full group-open:rotate-180 transition-transform">▼</span>
-                    </summary>
-                    <p class="text-gray-600 mt-6 leading-relaxed border-t border-gray-50 pt-6">Les planches de photos imprimées et le code e-photo ANTS numérique vous sont remis immédiatement à la fin de la séance à domicile.</p>
-                </details>
-                <details class="group bg-white rounded-2xl p-6 cursor-pointer shadow-sm border border-gray-100 transition-all hover:shadow-md">
-                    <summary class="font-bold text-xl outline-none flex justify-between items-center text-dark">
-                        <span>Quels sont les tarifs d'un photographe d'identité à domicile à Boulogne-Billancourt ?</span>
-                        <span class="bg-orange-50 text-brand p-2 rounded-full group-open:rotate-180 transition-transform">▼</span>
-                    </summary>
-                    <p class="text-gray-600 mt-6 leading-relaxed border-t border-gray-50 pt-6">Les tarifs incluent le déplacement et la séance de prise de vue à Boulogne-Billancourt. Vous pouvez estimer le coût exact via notre outil en ligne.</p>
-                </details>
-                <details class="group bg-white rounded-2xl p-6 cursor-pointer shadow-sm border border-gray-100 transition-all hover:shadow-md">
-                    <summary class="font-bold text-xl outline-none flex justify-between items-center text-dark">
-                        <span>Comment fonctionne le code e-photo ANTS pour le permis à Boulogne-Billancourt ?</span>
-                        <span class="bg-orange-50 text-brand p-2 rounded-full group-open:rotate-180 transition-transform">▼</span>
-                    </summary>
-                    <p class="text-gray-600 mt-6 leading-relaxed border-t border-gray-50 pt-6">Le photographe agréé génère un code unique et une signature numérique. Ils sont directement utilisables sur le site de l'ANTS pour votre demande de permis.</p>
-                </details>
-                <details class="group bg-white rounded-2xl p-6 cursor-pointer shadow-sm border border-gray-100 transition-all hover:shadow-md">
-                    <summary class="font-bold text-xl outline-none flex justify-between items-center text-dark">
-                        <span>Le service à domicile à Boulogne-Billancourt est-il adapté aux personnes alitées ou handicapées ?</span>
-                        <span class="bg-orange-50 text-brand p-2 rounded-full group-open:rotate-180 transition-transform">▼</span>
-                    </summary>
-                    <p class="text-gray-600 mt-6 leading-relaxed border-t border-gray-50 pt-6">Tout à fait. Le studio photo mobile est conçu pour intervenir auprès des personnes âgées, alitées, dépendantes ou à mobilité réduite (PMR).</p>
-                </details>
-                <details class="group bg-white rounded-2xl p-6 cursor-pointer shadow-sm border border-gray-100 transition-all hover:shadow-md">
-                    <summary class="font-bold text-xl outline-none flex justify-between items-center text-dark">
-                        <span>Comment prendre rendez-vous avec le photographe à Boulogne-Billancourt ?</span>
-                        <span class="bg-orange-50 text-brand p-2 rounded-full group-open:rotate-180 transition-transform">▼</span>
-                    </summary>
-                    <p class="text-gray-600 mt-6 leading-relaxed border-t border-gray-50 pt-6">Remplissez simplement notre formulaire de contact sur ce site ou téléphonez à Grégory au 07 81 75 77 54 pour fixer un rendez-vous rapide.</p>
+                    <p class="text-gray-600 mt-6 leading-relaxed border-t border-gray-50 pt-6">Oui, en tant que photographe agréé par l'ANTS, le code e-photo remis est immédiatement valable pour votre demande de permis en ligne.</p>
                 </details>
             </div>
         </div>
     </section>
 
     <!-- FOOTER AMÉLIORÉ -->
+        <!-- FOOTER AMÉLIORÉ -->
     <footer id="zones" class="bg-dark text-gray-300 py-16 border-t-4 border-brand">
         <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12">
             <!-- Colonne 1: Identité -->
@@ -579,7 +485,7 @@
                     <img src="../Images/logo.png" alt="Grégory Photo Identité ANTS - Photographe agréé à Domicile" class="logo-img h-10 w-auto" width="200" height="135" loading="lazy">
                     <span>Photo-identite-bebe-domicile.fr</span>
                 </a>
-                <p class="text-sm font-bold text-white">Grégory - EURL (SIREN: 984 595 538)</p>
+                <p class="text-sm font-bold text-white">EURL (SIREN: 984 595 538)</p>
                 <p class="text-sm mt-2">16 bd Carnot, 93330 Neuilly-sur-Marne</p>
                 <div class="mt-6 text-sm">
                     <p class="font-bold text-white mb-2 underline decoration-brand">Horaires du Studio :</p>
@@ -620,7 +526,11 @@
                 <ul class="space-y-3 text-sm">
                     <li><a href="./chelles.html" class="hover:text-brand transition">Chelles (77)</a></li>
                     <li><a href="./bussy-saint-georges.html" class="hover:text-brand transition">Bussy-Saint-Georges (77)</a></li>
-                    <li class="pt-4 border-t border-gray-800">
+                    <li class="pt-3 border-t border-gray-850"><a href="../photo-identite-bebe-ile-de-france.html" class="hover:text-brand transition text-xs font-semibold text-gray-400">Photo Identité Bébé</a></li>
+                    <li><a href="../photographe-agree-ants-ile-de-france.html" class="hover:text-brand transition text-xs font-semibold text-gray-400">Photographe ANTS Agréé</a></li>
+                    <li><a href="../photo-identite-a-domicile-ile-de-france.html" class="hover:text-brand transition text-xs font-semibold text-gray-400">Photo Identité à Domicile</a></li>
+                    <li><a href="../prix-photo-identite.html" class="hover:text-brand transition text-xs font-semibold text-gray-400">Tarifs Prestations</a></li>
+                    <li class="pt-3 border-t border-gray-800">
                         <a href="../mentions-legales.html" class="hover:text-brand transition flex items-center gap-2">
                             <span>⚖</span> Mentions Légales
                         </a>
