@@ -1,29 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">
 <head>
-<script>
-  (function() {
-    const allowedHosts = [
-      'photo-identite-bebe-domicile.fr',
-      'www.photo-identite-bebe-domicile.fr',
-      'gregphotographe.github.io'
-    ];
-    const canonicalHost = 'www.photo-identite-bebe-domicile.fr';
-    const currentProtocol = window.location.protocol;
-    const currentHost = window.location.hostname;
-
-    // Si on est déjà sur un hôte autorisé en HTTPS, on ne redirige pas
-    if (currentProtocol === 'https:' && allowedHosts.includes(currentHost)) {
-      return;
-    }
-
-    // Redirection unique vers le domaine canonical
-    const targetUrl = 'https://' + canonicalHost + window.location.pathname + window.location.search;
-    if (window.location.href !== targetUrl) {
-      window.location.replace(targetUrl);
-    }
-  })();
-</script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQZSLDSMLZ"></script>
     <script>
@@ -37,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Politique de Confidentialité | Photo d'Identité ANTS à Domicile</title>
     <meta name="description" content="Découvrez comment nous protégeons vos données. Grégory, photographe agréé ANTS, s'engage pour votre confidentialité en Île-de-France.">
-    <link rel="canonical" href="https://www.photo-identite-bebe-domicile.fr/confidentialite.html" />
+    <meta name="robots" content="noindex, nofollow">
     <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <link rel="shortcut icon" href="favicon.ico" />
