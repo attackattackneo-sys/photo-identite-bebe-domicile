@@ -7,4 +7,4 @@ Sitemap: https://www.photo-identite-bebe-domicile.fr/sitemap.xml
 # Prevent indexing of backup files
 Disallow: *.bak
 Disallow: *.tmp
-Disallow: .DS_Store
+Disallow: /.DS_Store

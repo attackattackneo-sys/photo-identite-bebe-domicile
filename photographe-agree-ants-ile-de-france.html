@@ -255,7 +255,7 @@
         <nav id="main-nav" class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent py-6 shadow-none" aria-label="Menu principal">
         <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
             <a href="index.html" class="logo-text text-xl md:text-2xl font-serif font-bold flex items-center gap-2 text-white transition-colors">
-                <img src="Images/logo.png" alt="Grégory photographe identité bébé à domicile Neuilly-sur-Marne" class="logo-img h-8 md:h-10 w-auto brightness-0 invert" width="200" height="135">
+                <img src="Images/logo.png" alt="Grégory photographe identité bébé à domicile Neuilly-sur-Marne" class="logo-img h-8 md:h-10 w-auto brightness-0 invert" width="200" height="135" fetchpriority="high">
                 <span class="hidden sm:inline text-lg md:text-xl font-serif">Photo-identite-bebe-domicile.fr</span>
             </a>
             
@@ -670,57 +670,67 @@
                 <form action="https://www.fotostudio.io/f/f69154aabb2ef71649b1d57fde2b3c14" method="POST" class="space-y-4">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Votre nom *</label>
-                            <input type="text" name="lead_form[lastname]" required class="w-full p-3 border rounded-xl focus:ring-brand focus:border-brand">
+                            <label class="block text-sm font-medium text-gray-700 mb-1" aria-hidden="true">Votre nom *</label>
+                            <label for="lastname" class="sr-only">Votre nom *</label>
+                            <input type="text" name="lead_form[lastname]" id="lastname" required class="w-full p-3 border rounded-xl focus:ring-brand focus:border-brand">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Votre prénom *</label>
-                            <input type="text" name="lead_form[firstname]" required class="w-full p-3 border rounded-xl focus:ring-brand focus:border-brand">
+                            <label class="block text-sm font-medium text-gray-700 mb-1" aria-hidden="true">Votre prénom *</label>
+                            <label for="firstname" class="sr-only">Votre prénom *</label>
+                            <input type="text" name="lead_form[firstname]" id="firstname" required class="w-full p-3 border rounded-xl focus:ring-brand focus:border-brand">
                         </div>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Votre Date de naissance *</label>
-                            <input type="text" name="lead_form[birthdate]" required class="w-full p-3 border rounded-xl focus:ring-brand focus:border-brand" placeholder="JJ/MM/AAAA">
+                            <label class="block text-sm font-medium text-gray-700 mb-1" aria-hidden="true">Votre Date de naissance *</label>
+                            <label for="birthdate" class="sr-only">Votre Date de naissance *</label>
+                            <input type="text" name="lead_form[birthdate]" id="birthdate" required class="w-full p-3 border rounded-xl focus:ring-brand focus:border-brand" placeholder="JJ/MM/AAAA">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Téléphone *</label>
-                            <input type="tel" name="lead_form[phone]" required class="w-full p-3 border rounded-xl focus:ring-brand focus:border-brand">
+                            <label class="block text-sm font-medium text-gray-700 mb-1" aria-hidden="true">Téléphone *</label>
+                            <label for="phone" class="sr-only">Téléphone *</label>
+                            <input type="tel" name="lead_form[phone]" id="phone" required class="w-full p-3 border rounded-xl focus:ring-brand focus:border-brand">
                         </div>
                     </div>
 
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Votre adresse email *</label>
-                        <input type="email" name="lead_form[email]" required class="w-full p-3 border rounded-xl focus:ring-brand focus:border-brand">
+                        <label class="block text-sm font-medium text-gray-700 mb-1" aria-hidden="true">Votre adresse email *</label>
+                        <label for="email" class="sr-only">Votre adresse email *</label>
+                        <input type="email" name="lead_form[email]" id="email" required class="w-full p-3 border rounded-xl focus:ring-brand focus:border-brand">
                     </div>
 
                     <div class="bg-white/50 p-6 rounded-2xl border border-gray-100 space-y-4 shadow-inner">
                         <p class="text-sm font-bold text-gray-800">Votre Adresse</p>
                         <div>
-                            <label class="block text-xs text-gray-500 mb-1">Rue *</label>
-                            <input type="text" name="lead_form[address][street]" required class="w-full p-3 border rounded-xl focus:ring-brand focus:border-brand">
+                            <label class="block text-xs text-gray-500 mb-1" aria-hidden="true">Rue *</label>
+                            <label for="street" class="sr-only">Rue *</label>
+                            <input type="text" name="lead_form[address][street]" id="street" required class="w-full p-3 border rounded-xl focus:ring-brand focus:border-brand">
                         </div>
                         <div class="grid grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-xs text-gray-500 mb-1">Code postal *</label>
-                                <input type="text" name="lead_form[address][zipcode]" required class="w-full p-3 border rounded-xl focus:ring-brand focus:border-brand">
+                                <label class="block text-xs text-gray-500 mb-1" aria-hidden="true">Code postal *</label>
+                                <label for="zipcode" class="sr-only">Code postal *</label>
+                                <input type="text" name="lead_form[address][zipcode]" id="zipcode" required class="w-full p-3 border rounded-xl focus:ring-brand focus:border-brand">
                             </div>
                             <div>
-                                <label class="block text-xs text-gray-500 mb-1">Ville *</label>
-                                <input type="text" name="lead_form[address][city]" required class="w-full p-3 border rounded-xl focus:ring-brand focus:border-brand">
+                                <label class="block text-xs text-gray-500 mb-1" aria-hidden="true">Ville *</label>
+                                <label for="city" class="sr-only">Ville *</label>
+                                <input type="text" name="lead_form[address][city]" id="city" required class="w-full p-3 border rounded-xl focus:ring-brand focus:border-brand">
                             </div>
                         </div>
                     </div>
 
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Date de séance souhaitée *</label>
-                        <input type="text" name="lead_form[start_date]" required class="w-full p-3 border rounded-xl focus:ring-brand focus:border-brand" placeholder="JJ/MM/AAAA">
+                        <label class="block text-sm font-medium text-gray-700 mb-1" aria-hidden="true">Date de séance souhaitée *</label>
+                        <label for="start_date" class="sr-only">Date de séance souhaitée *</label>
+                        <input type="text" name="lead_form[start_date]" id="start_date" required class="w-full p-3 border rounded-xl focus:ring-brand focus:border-brand" placeholder="JJ/MM/AAAA">
                     </div>
 
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Type de séance *</label>
-                        <select name="lead_form[project_type]" required class="w-full p-3 border rounded-xl focus:ring-brand focus:border-brand">
+                        <label class="block text-sm font-medium text-gray-700 mb-1" aria-hidden="true">Type de séance *</label>
+                        <label for="project_type" class="sr-only">Type de séance *</label>
+                        <select name="lead_form[project_type]" id="project_type" required class="w-full p-3 border rounded-xl focus:ring-brand focus:border-brand">
                             <option value="">-- Choisir --</option>
                             <option value="34544">Photos Identités Au STUDIO ⚠️</option>
                             <option value="241706">Photo Identite à domicile</option>
@@ -728,18 +738,21 @@
                     </div>
 
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Pourriez-vous me donner le prénom et la date de naissance de l'enfant ?</label>
-                        <input type="text" name="lead_form[notes_104917]" class="w-full p-3 border rounded-xl focus:ring-brand focus:border-brand">
+                        <label class="block text-sm font-medium text-gray-700 mb-1" aria-hidden="true">Pourriez-vous me donner le prénom et la date de naissance de l'enfant ?</label>
+                        <label for="notes_104917" class="sr-only">Pourriez-vous me donner le prénom et la date de naissance de l'enfant ?</label>
+                        <input type="text" name="lead_form[notes_104917]" id="notes_104917" class="w-full p-3 border rounded-xl focus:ring-brand focus:border-brand">
                     </div>
 
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Votre message *</label>
-                        <textarea name="lead_form[message]" required class="w-full p-3 border rounded-xl focus:ring-brand focus:border-brand" rows="3"></textarea>
+                        <label class="block text-sm font-medium text-gray-700 mb-1" aria-hidden="true">Votre message *</label>
+                        <label for="message" class="sr-only">Votre message *</label>
+                        <textarea name="lead_form[message]" id="message" required class="w-full p-3 border rounded-xl focus:ring-brand focus:border-brand" rows="3"></textarea>
                     </div>
 
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Comment avez-vous entendu parler de moi ? *</label>
-                        <select name="lead_form[prospect_origin_id]" required class="w-full p-3 border rounded-xl focus:ring-brand focus:border-brand">
+                        <label class="block text-sm font-medium text-gray-700 mb-1" aria-hidden="true">Comment avez-vous entendu parler de moi ? *</label>
+                        <label for="prospect_origin_id" class="sr-only">Comment avez-vous entendu parler de moi ? *</label>
+                        <select name="lead_form[prospect_origin_id]" id="prospect_origin_id" required class="w-full p-3 border rounded-xl focus:ring-brand focus:border-brand">
                             <option value="">-- Choisir --</option>
                             <option value="20697">Bouche à oreille</option>
                             <option value="20698">Google</option>
