@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQZSLDSMLZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-ZQZSLDSMLZ');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentions Légales | Photo d'Identité ANTS à Domicile</title>
+    <meta name="description" content="Consultez les mentions légales de Photo-identite-bebe-domicile.fr. Grégory, photographe agréé ANTS pour vos photos d'identité à domicile.">
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+
+    <!-- Script d'Interactivité Légère (Performance) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const nav = document.querySelector('nav');
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            window.addEventListener('scroll', () => {
+                const navLinksContainer = document.querySelector('.nav-links-container');
+                const logoText = document.querySelector('.logo-text');
+                const logoImg = document.querySelector('.logo-img');
+
+                if (window.scrollY > 20) {
+                    nav.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-lg', 'py-2');
+                    nav.classList.remove('bg-transparent', 'py-6', 'shadow-none');
+                    
+                    if (navLinksContainer) {
+                        navLinksContainer.classList.add('text-gray-800');
+                        navLinksContainer.classList.remove('text-white/90');
+                    }
+                    if (logoText) {
+                        logoText.classList.add('text-dark');
+                        logoText.classList.remove('text-white');
+                    }
+                    if (logoImg) {
+                        logoImg.classList.remove('brightness-0', 'invert');
+                    }
+                } else {
+                    nav.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-lg', 'py-2');
+                    nav.classList.add('bg-transparent', 'py-6', 'shadow-none');
+                    
+                    if (navLinksContainer) {
+                        navLinksContainer.classList.remove('text-gray-800');
+                        navLinksContainer.classList.add('text-white/90');
+                    }
+                    if (logoText) {
+                        logoText.classList.remove('text-dark');
+                        logoText.classList.add('text-white');
+                    }
+                    if (logoImg) {
+                        logoImg.classList.add('brightness-0', 'invert');
+                    }
+                }
+            });
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+    </script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { brand: '#e67000', dark: '#1a1a1a', light: '#faf8f5' },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] },
+                    animation: {
+                        'ken-burns': 'kenburns 20s ease-in-out infinite alternate',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        kenburns: { '0%': { transform: 'scale(1)' }, '100%': { transform: 'scale(1.1)' } },
+                        fadeInUp: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #faf8f5; color: #1a1a1a; overflow-x: hidden; }
+        .bg-hero { position: relative; overflow: hidden; }
+        .bg-hero::before {
+            content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(rgba(26, 26, 26, 0.75), rgba(26, 26, 26, 0.6)), url('https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            z-index: -1; animation: kenburns 20s ease-in-out infinite alternate;
+        }
+        .logo-img { height: 40px; width: auto; max-width: 100%; transition: all 0.3s ease; }
+        @media (min-width: 768px) { .logo-img { height: 50px; } }
+        .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+    </style>
+</head>
+
+<body class="antialiased font-sans">
+    <!-- NAVIGATION -->
+    <nav class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent py-6 shadow-none" aria-label="Menu principal">
+        <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="logo-text text-xl md:text-2xl font-serif font-bold flex items-center gap-2 text-white transition-colors">
+                <img src="Images/logo.png" alt="Grégory photographe identité bébé à domicile Neuilly-sur-Marne" class="logo-img h-8 md:h-10 w-auto brightness-0 invert" width="200" height="135" fetchpriority="high">
+                <span class="hidden sm:inline">Photo-identite-bebe-domicile.fr</span>
+            </a>
+            
+            <div class="nav-links-container hidden lg:flex gap-8 items-center text-white/90 transition-colors">
+                <a href="index.html" class="nav-link font-medium hover:text-brand transition">Accueil</a>
+                <a href="index.html#booking-funnel" class="nav-link font-medium hover:text-brand transition">Réservation</a>
+                <a href="tel:+33781757754" class="bg-brand text-white px-6 py-2.5 rounded-full font-bold shadow-lg text-sm">📞 07 81 75 77 54</a>
+            </div>
+
+            <button id="mobile-menu-btn" class="lg:hidden text-white focus:outline-none transition-colors" aria-label="Menu mobile">
+                <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden bg-white px-4 py-8 space-y-6 shadow-2xl border-t border-gray-100">
+            <a href="index.html" class="block text-xl font-medium text-gray-700">Accueil</a>
+            <a href="index.html#booking-funnel" class="block text-xl font-medium text-gray-700">Réservation</a>
+            <a href="tel:+33781757754" class="block w-full text-center bg-brand text-white py-4 rounded-xl font-bold">07 81 75 77 54</a>
+            <a href="https://wa.me/33781757754" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-green-600 hover:bg-green-700 text-white py-4 rounded-xl font-bold mt-3">
+                💬 Écrire sur WhatsApp
+            </a>
+        </div>
+    </nav>
+
+    <!-- HEADER LEGAL -->
+    <header class="bg-hero text-white pt-40 pb-32 px-4 text-center border-b-4 border-brand">
+        <div class="max-w-4xl mx-auto animate-fade-in-up">
+            <h1 class="text-4xl md:text-6xl font-serif font-bold mb-4">Mentions Légales</h1>
+            <p class="text-gray-300 text-lg"><a href="index.html" class="hover:text-brand transition">← Retour à l'accueil</a></p>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-24 prose prose-lg text-gray-700">
+        <h2 class="text-2xl font-serif font-bold text-dark mt-8 mb-4 border-b border-orange-100 pb-2">Éditeur du site</h2>
+        <p><strong>Photo-identite-bebe-domicile.fr</strong><br>
+        Exploité par : Grégory<br>
+        Statut : EURL<br>
+        SIREN : 984 595 538<br>
+        Siège social : 16 Boulevard Carnot, 93330 Neuilly-sur-Marne<br>
+        Téléphone : 07 81 75 77 54</p>
+
+        <h2 class="text-2xl font-serif font-bold text-dark mt-12 mb-4 border-b border-orange-100 pb-2">Agrément ANTS</h2>
+        <p>Ce service est habilité par l'Agence Nationale des Titres Sécurisés (ANTS) pour la transmission de clichés et signatures numériques dans le cadre des demandes de titres d'identité et de permis de conduire.</p>
+
+        <h2 class="text-2xl font-serif font-bold text-dark mt-12 mb-4 border-b border-orange-100 pb-2">Hébergement</h2>
+        <p>Le site est hébergé par GitHub Inc.<br>
+        Adresse : 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA.</p>
+    </main>
+
+    <!-- FOOTER AMÉLIORÉ -->
+    <footer id="zones" class="bg-dark text-gray-300 py-16 border-t-4 border-brand">
+        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12">
+            <!-- Colonne 1: Identité -->
+            <div>
+                <a href="index.html" class="font-serif text-2xl font-bold text-white mb-4 flex items-center gap-2 transition-colors">
+                    <img src="Images/logo.png" alt="Grégory photographe identité bébé à domicile Neuilly-sur-Marne" class="logo-img h-10 w-auto" width="200" height="135" loading="lazy">
+                    <span>Photo-identite-bebe-domicile.fr</span>
+                </a>
+                <p class="text-sm font-bold text-white">Grégory - EURL (SIREN: 984 595 538)</p>
+                <p class="text-sm mt-2">16 bd Carnot, 93330 Neuilly-sur-Marne</p>
+                <div class="mt-6 text-sm">
+                    <p class="font-bold text-white mb-2 underline decoration-brand">Horaires du Studio :</p>
+                    <ul class="space-y-1 text-gray-400">
+                        <li>Lundi : 09:30-19:00</li>
+                        <li>Mar, Mer, Ven : 09:30-13:00 / 14:30-19:00</li>
+                        <li>Jeudi : 09:30-13:00</li>
+                        <li>Samedi : 10:00-18:00</li>
+                        <li>Dimanche : Fermé</li>
+                        <li class="text-xs italic mt-2">(Service en ligne 24h/24, 7j/7)</li>
+                    </ul>
+                </div>
+                <div class="flex items-center gap-1 mt-4">
+                    <span class="text-brand">★★★★★</span>
+                    <span class="text-xs">4.9/5 (156 avis certifiés)</span>
+                </div>
+                <a href="tel:+33781757754" class="block text-white font-bold text-lg mt-6 hover:text-brand transition">📞 07 81 75 77 54</a>
+                <a href="https://wa.me/33781757754" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-white bg-green-600 hover:bg-green-700 px-4 py-2 rounded-full font-bold text-sm mt-3 transition shadow-md">
+                    <span>💬</span> Écrire sur WhatsApp
+                </a>
+            </div>
+
+            <!-- Colonne 2: Villes Prioritaires -->
+            <div>
+                <h3 class="font-bold text-white mb-6 uppercase tracking-wider text-sm border-b border-gray-700 pb-2">Villes prioritaires (93, 94, 75)</h3>
+                <ul class="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
+                    <li><a href="villes/paris.html" class="hover:text-brand transition">Photo identité bébé Paris</a></li>
+                    <li><a href="villes/boulogne-billancourt.html" class="hover:text-brand transition">Photo identité bébé Boulogne-Billancourt</a></li>
+                    <li><a href="villes/neuilly-sur-seine.html" class="hover:text-brand transition">Photo identité bébé Neuilly-sur-Seine</a></li>
+                    <li><a href="villes/vincennes.html" class="hover:text-brand transition">Photo identité bébé Vincennes</a></li>
+                    <li><a href="villes/montreuil.html" class="hover:text-brand transition">Photo identité bébé Montreuil</a></li>
+                    <li><a href="villes/creteil.html" class="hover:text-brand transition">Photo identité bébé Créteil</a></li>
+                    <li><a href="villes/noisy-le-grand.html" class="hover:text-brand transition">Photo identité bébé Noisy-le-Grand</a></li>
+                    <li><a href="villes/saint-denis.html" class="hover:text-brand transition">Photo identité bébé Saint-Denis</a></li>
+                </ul>
+            </div>
+
+            <!-- Colonne 3: Autres Villes & Infos -->
+            <div>
+                <h3 class="font-bold text-white mb-6 uppercase tracking-wider text-sm border-b border-gray-100 pb-2">Autres villes & Infos</h3>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="villes/chelles.html" class="hover:text-brand transition">Photo identité bébé Chelles</a></li>
+                    <li><a href="villes/bussy-saint-georges.html" class="hover:text-brand transition">Photo identité bébé Bussy-Saint-Georges</a></li>
+                    <li class="pt-4 border-t border-gray-800">
+                        <a href="mentions-legales.html" class="hover:text-brand transition flex items-center gap-2">
+                            <span>⚖</span> Mentions Légales
+                        </a>
+                    </li>
+                    <li>
+                        <a href="confidentialite.html" class="hover:text-brand transition flex items-center gap-2">
+                            <span>🔒</span> Politique de Confidentialité
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

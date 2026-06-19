@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQZSLDSMLZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-ZQZSLDSMLZ');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Photo à Neuilly-sur-Marne : Identité ANTS, Tirages & Numérisation</title>
+    <meta name="description" content="Studio photo professionnel à Neuilly-sur-Marne. Photos d'identité agréées ANTS, tirages d'art, numérisation de souvenirs et photocopies. Service rapide et qualité pro.">
+    <link rel="canonical" href="https://www.photo-identite-bebe-domicile.fr/studio-photo.html" />
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+
+    <!-- Polices & Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Script d'Interactivité -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const nav = document.querySelector('nav');
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            window.addEventListener('scroll', () => {
+                const navLinksContainer = document.querySelector('.nav-links-container');
+                const logoText = document.querySelector('.logo-text');
+                const logoImg = document.querySelector('.logo-img');
+
+                if (window.scrollY > 20) {
+                    nav.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-lg', 'py-2');
+                    nav.classList.remove('bg-transparent', 'py-6', 'shadow-none');
+                    if (navLinksContainer) { navLinksContainer.classList.add('text-gray-800'); navLinksContainer.classList.remove('text-white/90'); }
+                    if (logoText) { logoText.classList.add('text-dark'); logoText.classList.remove('text-white'); }
+                    if (logoImg) { logoImg.classList.remove('brightness-0', 'invert'); }
+                } else {
+                    nav.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-lg', 'py-2');
+                    nav.classList.add('bg-transparent', 'py-6', 'shadow-none');
+                    if (navLinksContainer) { navLinksContainer.classList.remove('text-gray-800'); navLinksContainer.classList.add('text-white/90'); }
+                    if (logoText) { logoText.classList.remove('text-dark'); logoText.classList.add('text-white'); }
+                    if (logoImg) { logoImg.classList.add('brightness-0', 'invert'); }
+                }
+            });
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-in-up');
+                        entry.target.style.opacity = 1;
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+        });
+    </script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { brand: '#e67000', dark: '#1a1a1a', light: '#faf8f5' },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] },
+                    animation: {
+                        'ken-burns': 'kenburns 20s ease-in-out infinite alternate',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'float': 'float 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        kenburns: { '0%': { transform: 'scale(1)' }, '100%': { transform: 'scale(1.1)' } },
+                        fadeInUp: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+                        float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #faf8f5; color: #1a1a1a; overflow-x: hidden; }
+        .bg-hero { position: relative; overflow: hidden; }
+        .bg-hero::before {
+            content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(rgba(26, 26, 26, 0.75), rgba(26, 26, 26, 0.6)), url('https://images.unsplash.com/photo-1544396821-4dd40b938ad3?q=80&w=2070') center/cover no-repeat;
+            z-index: -1; animation: kenburns 20s ease-in-out infinite alternate;
+        }
+        .logo-img { height: 40px; width: auto; max-width: 100%; transition: all 0.3s ease; }
+        @media (min-width: 768px) { .logo-img { height: 50px; } }
+        .animate-on-scroll { opacity: 0; transition: all 0.8s ease-out; }
+        .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+    </style>
+</head>
+
+<body class="antialiased font-sans">
+    <!-- NAVIGATION -->
+        <nav class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent py-6 shadow-none" aria-label="Menu principal">
+        <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="logo-text text-xl md:text-2xl font-serif font-bold flex items-center gap-2 text-white transition-colors">
+                <img src="Images/logo.png" alt="Grégory photographe identité bébé à domicile Neuilly-sur-Marne" class="logo-img h-8 md:h-10 w-auto brightness-0 invert" width="200" height="135" fetchpriority="high">
+                <span class="hidden sm:inline text-lg md:text-xl font-serif">Photo-identite-bebe-domicile.fr</span>
+            </a>
+            
+            <div class="nav-links-container hidden lg:flex gap-6 lg:gap-8 items-center text-white/90 transition-colors font-medium">
+                <a href="index.html" class="hover:text-brand transition">Accueil</a>
+                <a href="photo-identite-bebe-ile-de-france.html" class="hover:text-brand transition">Photo Bébé</a>
+                <a href="photographe-agree-ants-ile-de-france.html" class="hover:text-brand transition">Agréé ANTS</a>
+                <a href="photo-identite-a-domicile-ile-de-france.html" class="hover:text-brand transition">À Domicile</a>
+                <a href="prix-photo-identite.html" class="hover:text-brand transition">Tarifs</a>
+                <a href="studio-photo.html" class="hover:text-brand transition">Studio</a>
+                <a href="tel:+33781757754" class="bg-brand text-white px-5 py-2 rounded-full font-bold hover:bg-orange-600 transition-all shadow-lg text-sm whitespace-nowrap">📞 07 81 75 77 54</a>
+            </div>
+
+            <button id="mobile-menu-btn" class="lg:hidden text-white focus:outline-none transition-colors" aria-label="Menu mobile">
+                <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+            </button>
+        </div>
+
+                <div id="mobile-menu" class="hidden lg:hidden bg-white/95 backdrop-blur-md border-t border-gray-100 absolute top-full left-0 right-0 p-8 shadow-2xl space-y-6 transition-all duration-300">
+            <div class="flex flex-col space-y-4">
+                <a href="index.html" class="flex items-center gap-3 text-lg font-medium text-gray-800 hover:text-brand transition-colors py-2 border-b border-gray-50">
+                    🏠 Accueil
+                </a>
+                <a href="photo-identite-bebe-ile-de-france.html" class="flex items-center gap-3 text-lg font-medium text-gray-800 hover:text-brand transition-colors py-2 border-b border-gray-50">
+                    👶 Photo Bébé & Nouveau-né
+                </a>
+                <a href="photographe-agree-ants-ile-de-france.html" class="flex items-center gap-3 text-lg font-medium text-gray-800 hover:text-brand transition-colors py-2 border-b border-gray-50">
+                    ✅ Agréé ANTS (e-Photo)
+                </a>
+                <a href="photo-identite-a-domicile-ile-de-france.html" class="flex items-center gap-3 text-lg font-medium text-gray-800 hover:text-brand transition-colors py-2 border-b border-gray-50">
+                    🚗 Photo d'Identité à Domicile
+                </a>
+                <a href="prix-photo-identite.html" class="flex items-center gap-3 text-lg font-medium text-gray-800 hover:text-brand transition-colors py-2 border-b border-gray-50">
+                    💰 Tarifs Prestations
+                </a>
+                <a href="studio-photo.html" class="flex items-center gap-3 text-lg font-medium text-gray-800 hover:text-brand transition-colors py-2 border-b border-gray-50">
+                    📸 Studio Photo
+                </a>
+            </div>
+            <a href="tel:+33781757754" class="block w-full text-center bg-brand hover:bg-orange-600 text-white py-4 rounded-full font-bold shadow-lg transition-all transform hover:scale-[1.01] active:scale-[0.99]">
+                📞 07 81 75 77 54
+            </a>
+            <a href="https://wa.me/33781757754" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-green-600 hover:bg-green-700 text-white py-4 rounded-full font-bold shadow-lg transition-all transform hover:scale-[1.01] active:scale-[0.99] mt-3">
+                💬 Écrire sur WhatsApp
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO STUDIO -->
+    <header class="bg-hero text-white min-h-[60vh] flex flex-col justify-center px-4 py-20 relative">
+        <div class="max-w-4xl mx-auto text-center relative z-10 animate-fade-in-up">
+            <div class="inline-block bg-white/10 backdrop-blur-md text-white border border-white/20 font-bold text-xs uppercase tracking-widest py-2 px-4 rounded-full mb-8 animate-float">
+                ✨ Services & Tarifs au Studio
+            </div>
+            <h1 class="text-4xl md:text-7xl font-serif font-bold mb-8 leading-tight">
+                Le Studio Photo : <br><span class="text-brand">Identité, Tirages & Mémoire</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-gray-100 text-lg md:text-xl mb-10">
+                Tirages immédiats, photos d'identité officielles et numérisation de vos souvenirs à Neuilly-sur-Marne.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#identite" class="bg-white text-dark font-bold px-8 py-3 rounded-full hover:bg-brand hover:text-white transition-all shadow-lg">Photos d'Identité au Studio</a>
+                <a href="#impression" class="bg-brand text-white font-bold px-8 py-3 rounded-full hover:bg-orange-600 transition-all shadow-lg">Tirages & Scans au Studio</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 1. PHOTOS D'IDENTITÉ -->
+    <section id="identite" class="py-24 bg-white animate-on-scroll">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-serif font-bold text-dark mb-4">1. Vos Photos d'Identité au Studio</h2>
+                <p class="text-lg text-gray-600 italic">Prestation réalisée exclusivement à notre adresse de Neuilly-sur-Marne.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <!-- Nourrisson -->
+                <div class="bg-light p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition-all text-center">
+                    <div class="text-4xl mb-4">👶</div>
+                    <h3 class="text-xl font-bold mb-2">Nourrisson</h3>
+                    <p class="text-gray-500 text-sm mb-4">(3 jours à 1 mois)</p>
+                    <p class="text-3xl font-bold text-brand mb-2">30 €</p>
+                    <p class="text-xs text-gray-400">Durée : 30 min environ</p>
+                </div>
+                <!-- Bébé -->
+                <div class="bg-light p-8 rounded-3xl border border-orange-100 shadow-md hover:shadow-lg transition-all text-center relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-brand text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg uppercase">Populaire</div>
+                    <div class="text-4xl mb-4">🍼</div>
+                    <h3 class="text-xl font-bold mb-2">Bébé 1-3 mois</h3>
+                    <p class="text-gray-500 text-sm mb-4">Séance adaptée au rythme</p>
+                    <p class="text-3xl font-bold text-brand mb-2">25 €</p>
+                    <p class="text-xs text-gray-400">Durée : 10-20 min</p>
+                </div>
+                <!-- Adulte -->
+                <div class="bg-light p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition-all text-center">
+                    <div class="text-4xl mb-4">👤</div>
+                    <h3 class="text-xl font-bold mb-2">Enfant & Adulte</h3>
+                    <p class="text-gray-500 text-sm mb-4">+3 ans</p>
+                    <p class="text-3xl font-bold text-brand mb-2">10 € / 15 € <span class="text-sm font-normal text-gray-600">(ANTS)</span></p>
+                    <p class="text-xs text-gray-400">Durée : 5 min</p>
+                </div>
+            </div>
+
+            <div class="max-w-2xl mx-auto overflow-hidden rounded-2xl border border-gray-100 shadow-sm">
+                <table class="w-full text-left border-collapse">
+                    <thead class="bg-dark text-white text-sm uppercase">
+                        <tr>
+                            <th class="p-4">Autres Documents Officiels</th>
+                            <th class="p-4">Tarif</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-100 bg-white">
+                        <tr>
+                            <td class="p-4 text-gray-700">Carte Vitale / Pass Navigo / VTC</td>
+                            <td class="p-4 font-bold text-brand">10 €</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 text-gray-700">Photo scolaire (8 photos 10x15)</td>
+                            <td class="p-4 font-bold text-brand">10 €</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. IMPRESSION & TIRAGES -->
+    <section id="impression" class="py-24 bg-light animate-on-scroll">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-serif font-bold text-dark mb-4">2. Impression & Tirages au Studio</h2>
+                <p class="text-lg text-gray-600">Qualité professionnelle pour vos plus beaux souvenirs.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Tirages 10x15 -->
+                <div class="bg-white p-8 rounded-3xl shadow-xl border border-gray-100">
+                    <h3 class="text-2xl font-serif font-bold text-brand mb-6 border-b pb-4">Tirages 10x15 <span class="text-sm font-sans font-normal text-gray-400 ml-2">(Qualité Pro)</span></h3>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between items-center">
+                            <span class="text-gray-700">1 à 4 photos</span>
+                            <span class="font-bold">2,50 € / photo</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span class="text-gray-700">5 à 9 photos</span>
+                            <span class="font-bold">2,00 € / photo</span>
+                        </li>
+                        <li class="flex justify-between items-center p-3 bg-orange-50 rounded-xl">
+                            <span class="font-semibold text-gray-800">Pack 10 tirages</span>
+                            <span class="font-bold text-brand text-lg">15,00 €</span>
+                        </li>
+                        <li class="flex justify-between items-center p-3 bg-brand text-white rounded-xl shadow-lg transform scale-[1.02]">
+                            <div>
+                                <span class="font-bold">Pack 25 tirages</span>
+                                <span class="block text-[10px] uppercase opacity-80">Meilleur rapport qualité/prix</span>
+                            </div>
+                            <span class="font-bold text-xl">30,00 €</span>
+                        </li>
+                        <li class="flex justify-between items-center p-3 bg-orange-50 rounded-xl">
+                            <span class="font-semibold text-gray-800">Pack 50 tirages</span>
+                            <span class="font-bold text-brand text-lg">50,00 €</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Grands Formats -->
+                <div class="bg-white p-8 rounded-3xl shadow-xl border border-gray-100">
+                    <h3 class="text-2xl font-serif font-bold text-brand mb-6 border-b pb-4">Grands Formats</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-sm">
+                            <thead>
+                                <tr class="text-gray-400 uppercase text-[10px] tracking-wider">
+                                    <th class="pb-4">Format</th>
+                                    <th class="pb-4">Express</th>
+                                    <th class="pb-4">Studio (+Retouche)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-50">
+                                <tr><td class="py-3 font-medium">15x20 (A5)</td><td class="py-3">4,50 €</td><td class="py-3 text-brand font-bold">8,50 €</td></tr>
+                                <tr><td class="py-3 font-medium">20x30 (A4)</td><td class="py-3">7,50 €</td><td class="py-3 text-brand font-bold">15,00 €</td></tr>
+                                <tr><td class="py-3 font-medium">A3 (30x42)</td><td class="py-3">18,00 €</td><td class="py-3 text-brand font-bold">30,00 €</td></tr>
+                                <tr><td class="py-3 font-medium">A2 (42x60)</td><td class="py-3">30,00 €</td><td class="py-3 text-brand font-bold">45,00 €</td></tr>
+                                <tr><td class="py-3 font-medium">A1 (60x84)</td><td class="py-3">35,00 €</td><td class="py-3 text-brand font-bold">55,00 €</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. NUMÉRISATION -->
+    <section id="souvenirs" class="py-24 bg-white animate-on-scroll">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/2">
+                    <h2 class="text-4xl font-serif font-bold text-dark mb-6">3. Numérisation au Studio</h2>
+                    <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                        Redonnez vie à vos souvenirs avec une numérisation haute définition réalisée sur place.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 p-4 bg-light rounded-2xl border border-gray-100">
+                            <span class="text-2xl">📸</span>
+                            <div>
+                                <p class="font-bold">Diapositives & Négatifs</p>
+                                <p class="text-sm text-gray-500">24x36, Couleur, N&B - JPEG/TIFF 300 dpi</p>
+                            </div>
+                            <div class="ml-auto font-bold text-brand text-lg">1,50 € <span class="text-xs text-gray-400">/ vue</span></div>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 bg-light rounded-2xl border border-gray-100">
+                            <span class="text-2xl">💾</span>
+                            <div>
+                                <p class="font-bold">Forfait Transfert</p>
+                                <p class="text-sm text-gray-500">Livraison sur clé USB sécurisée</p>
+                            </div>
+                            <div class="ml-auto font-bold text-brand text-lg">10,00 €</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80" alt="Numérisation photo" class="rounded-[2rem] shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. PHOTOCOPIES & SCANS -->
+    <section id="services-proximite" class="py-24 bg-dark text-white animate-on-scroll rounded-[3rem] mx-4 mb-24">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-serif font-bold mb-4">4. Services de Proximité au Studio</h2>
+                <p class="text-gray-400">Photocopies et scans immédiats à Neuilly-sur-Marne.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/10 flex items-center gap-6">
+                    <div class="bg-brand/20 p-4 rounded-full">📄</div>
+                    <div>
+                        <h3 class="text-xl font-bold">Photocopie / Scan N&B</h3>
+                        <p class="text-sm text-gray-400">Format A4</p>
+                        <p class="text-2xl font-bold text-brand mt-2">0,50 € <span class="text-xs font-normal">/ page</span></p>
+                    </div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/10 flex items-center gap-6">
+                    <div class="bg-brand/20 p-4 rounded-full">🌈</div>
+                    <div>
+                        <h3 class="text-xl font-bold">Photocopie / Scan Couleur</h3>
+                        <p class="text-sm text-gray-400">Format A4</p>
+                        <p class="text-2xl font-bold text-brand mt-2">1,00 € <span class="text-xs font-normal">/ page</span></p>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center mt-12 text-xs uppercase tracking-widest text-brand font-bold animate-pulse">✨ Service Immédiat</p>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="py-24 bg-white animate-on-scroll">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl font-serif font-bold text-center text-dark mb-16">Ce que nos clients disent</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 bg-light rounded-3xl border border-gray-100 italic text-gray-600 relative">
+                    <span class="text-6xl text-brand/20 absolute top-4 left-4 font-serif">"</span>
+                    <p class="relative z-10 mb-6">Super accueil pour des photos d'identité de mon bébé. Patient et professionnel, le résultat est parfait pour le passeport !</p>
+                    <p class="text-dark font-bold not-italic">— Marie L.</p>
+                </div>
+                <div class="p-8 bg-light rounded-3xl border border-gray-100 italic text-gray-600 relative">
+                    <span class="text-6xl text-brand/20 absolute top-4 left-4 font-serif">"</span>
+                    <p class="relative z-10 mb-6">J'ai fait numériser de vieux négatifs de famille, un travail soigné et rapide. Une vraie pépite à Neuilly-sur-Marne.</p>
+                    <p class="text-dark font-bold not-italic">— Jean-Pierre D.</p>
+                </div>
+                <div class="p-8 bg-light rounded-3xl border border-gray-100 italic text-gray-600 relative">
+                    <span class="text-6xl text-brand/20 absolute top-4 left-4 font-serif">"</span>
+                    <p class="relative z-10 mb-6">Tirages de grande qualité réalisés en quelques minutes. Le conseil en plus fait toute la différence. Je recommande !</p>
+                    <p class="text-dark font-bold not-italic">— Sophie M.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="py-24 bg-brand text-white text-center rounded-[4rem] mx-4 mb-24 shadow-2xl">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-serif font-bold mb-6">Un projet à réaliser au Studio ?</h2>
+            <p class="text-xl opacity-90 mb-10 text-white">Réservez votre séance d'identité ou votre shooting directement en ligne.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="https://www.fotostudio.io/client/res/gregphotographe-fr" target="_blank" rel="noopener" class="bg-white text-brand font-bold px-10 py-5 rounded-full hover:bg-gray-100 transition-all shadow-xl text-xl">Réserver ma séance au Studio</a>
+                <a href="tel:+33781757754" class="bg-dark text-white font-bold px-10 py-5 rounded-full hover:bg-black transition-all shadow-xl text-xl">📞 07 81 75 77 54</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+        <!-- FOOTER AMÉLIORÉ -->
+    <footer id="zones" class="bg-dark text-gray-300 py-16 border-t-4 border-brand">
+        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12">
+            <!-- Colonne 1: Identité -->
+            <div>
+                <a href="index.html" class="font-serif text-2xl font-bold text-white mb-4 flex items-center gap-2 transition-colors">
+                    <img src="Images/logo.png" alt="Grégory photographe identité bébé à domicile Neuilly-sur-Marne" class="logo-img h-10 w-auto" width="200" height="135" loading="lazy">
+                    <span>Photo-identite-bebe-domicile.fr</span>
+                </a>
+                <p class="text-sm font-bold text-white">EURL (SIREN: 984 595 538)</p>
+                <p class="text-sm mt-2">16 bd Carnot, 93330 Neuilly-sur-Marne</p>
+                <div class="mt-6 text-sm">
+                    <p class="font-bold text-white mb-2 underline decoration-brand">Horaires du Studio :</p>
+                    <ul class="space-y-1 text-gray-400">
+                        <li>Lundi : 09:30-19:00</li>
+                        <li>Mar, Mer, Ven : 09:30-13:00 / 14:30-19:00</li>
+                        <li>Jeudi : 09:30-13:00</li>
+                        <li>Samedi : 10:00-18:00</li>
+                        <li>Dimanche : Fermé</li>
+                        <li class="text-xs italic mt-2">(Service en ligne 24h/24, 7j/7)</li>
+                    </ul>
+                </div>
+                <div class="flex items-center gap-1 mt-4">
+                    <span class="text-brand">★★★★★</span>
+                    <span class="text-xs">4.9/5 (156 avis certifiés)</span>
+                </div>
+                <a href="tel:+33781757754" class="block text-white font-bold text-lg mt-6 hover:text-brand transition">📞 07 81 75 77 54</a>
+                <a href="https://wa.me/33781757754" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-white bg-green-600 hover:bg-green-700 px-4 py-2 rounded-full font-bold text-sm mt-3 transition shadow-md">
+                    <span>💬</span> Écrire sur WhatsApp
+                </a>
+            </div>
+
+            <!-- Colonne 2: Villes Prioritaires -->
+            <div>
+                <h3 class="font-bold text-white mb-6 uppercase tracking-wider text-sm border-b border-gray-700 pb-2">Villes prioritaires (93, 94, 75)</h3>
+                <ul class="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
+                    <li><a href="villes/paris.html" class="hover:text-brand transition">Photo identité bébé Paris</a></li>
+                    <li><a href="villes/boulogne-billancourt.html" class="hover:text-brand transition">Photo identité bébé Boulogne-Billancourt</a></li>
+                    <li><a href="villes/neuilly-sur-seine.html" class="hover:text-brand transition">Photo identité bébé Neuilly-sur-Seine</a></li>
+                    <li><a href="villes/vincennes.html" class="hover:text-brand transition">Photo identité bébé Vincennes</a></li>
+                    <li><a href="villes/montreuil.html" class="hover:text-brand transition">Photo identité bébé Montreuil</a></li>
+                    <li><a href="villes/creteil.html" class="hover:text-brand transition">Photo identité bébé Créteil</a></li>
+                    <li><a href="villes/noisy-le-grand.html" class="hover:text-brand transition">Photo identité bébé Noisy-le-Grand</a></li>
+                    <li><a href="villes/saint-denis.html" class="hover:text-brand transition">Photo identité bébé Saint-Denis</a></li>
+                </ul>
+            </div>
+
+            <!-- Colonne 3: Autres Villes & Infos -->
+            <div>
+                <h3 class="font-bold text-white mb-6 uppercase tracking-wider text-sm border-b border-gray-700 pb-2">Autres villes & Infos</h3>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="villes/chelles.html" class="hover:text-brand transition">Photo identité bébé Chelles</a></li>
+                    <li><a href="villes/bussy-saint-georges.html" class="hover:text-brand transition">Photo identité bébé Bussy-Saint-Georges</a></li>
+                    <li class="pt-3 border-t border-gray-850"><a href="photo-identite-bebe-ile-de-france.html" class="hover:text-brand transition text-xs font-semibold text-gray-400">Photo Identité Bébé</a></li>
+                    <li><a href="photographe-agree-ants-ile-de-france.html" class="hover:text-brand transition text-xs font-semibold text-gray-400">Photographe ANTS Agréé</a></li>
+                    <li><a href="photo-identite-a-domicile-ile-de-france.html" class="hover:text-brand transition text-xs font-semibold text-gray-400">Photo Identité à Domicile</a></li>
+                    <li><a href="prix-photo-identite.html" class="hover:text-brand transition text-xs font-semibold text-gray-400">Tarifs Prestations</a></li>
+                    <li class="pt-3 border-t border-gray-800">
+                        <a href="mentions-legales.html" class="hover:text-brand transition flex items-center gap-2">
+                            <span>⚖</span> Mentions Légales
+                        </a>
+                    </li>
+                    <li>
+                        <a href="confidentialite.html" class="hover:text-brand transition flex items-center gap-2">
+                            <span>🔒</span> Politique de Confidentialité
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

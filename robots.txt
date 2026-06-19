@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Sitemap link
+Sitemap: https://www.photo-identite-bebe-domicile.fr/sitemap.xml
+
+# Prevent indexing of backup files
+Disallow: *.bak
+Disallow: *.tmp
+Disallow: /.DS_Store
