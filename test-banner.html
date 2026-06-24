@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEST Bandeau</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background: #faf8f5; }
+    </style>
+    <!-- Config FORCEE pour le test -->
+    <script>
+        window.siteConfig = {
+            announcement: {
+                active: true,
+                message: "📸 TEST: Bandeau visible!\nCeci est un test.",
+                startDate: "2020-01-01",
+                endDate: "2030-01-01",
+                backgroundColor: "#e60000",
+                textColor: "#ffffff",
+                icon: "📸"
+            },
+            infoPageUrl: "informations.html",
+            infoLinkText: "En savoir plus"
+        };
+    </script>
+</head>
+<body>
+    <nav class="fixed top-0 w-full z-50 bg-blue-500 py-4">
+        <div class="text-center text-white">HEADER DE VOTRE SITE</div>
+    </nav>
+    
+    <h1 class="pt-20 text-center text-2xl">Page de test</h1>
+    
+    <!-- Script du bandeau -->
+    <script src="js/announcement-banner.js"></script>
+    
+    <script>
+        // Vider le localStorage pour forcer l'affichage
+        localStorage.removeItem('announcement-banner-hidden');
+    </script>
+</body>
+</html>
