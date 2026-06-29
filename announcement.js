@@ -29,6 +29,9 @@
     if (bookingFunnel) {
       createInfoBox(announcement, bookingFunnel);
     }
+
+    // 5. Anti-spam Honeypot Protection
+    initHoneypotProtection();
   });
 
   function createBanner(announcement, infoPageUrl, storageKey) {
@@ -128,6 +131,56 @@
       titleBlock.parentNode.insertBefore(infoBox, titleBlock.nextSibling);
     } else {
       bookingFunnel.insertBefore(infoBox, bookingFunnel.firstChild);
+    }
+  }
+
+  function initHoneypotProtection() {
+    const forms = document.querySelectorAll('form[data-action]');
+    forms.forEach(form => {
+      const getRealActionUrl = () => {
+        const token = form.getAttribute('data-action');
+        return token ? `https://www.fotostudio.io/f/${token}` : '#';
+      };
+
+      const handleFormInteraction = () => {
+        if (form.getAttribute('action') === '#') {
+          form.setAttribute('action', getRealActionUrl());
+        }
+      };
+
+      // Restore action dynamically when user interacts
+      form.addEventListener('focusin', handleFormInteraction, { once: true });
+      form.addEventListener('mouseenter', handleFormInteraction, { once: true });
+      form.addEventListener('touchstart', handleFormInteraction, { once: true });
+
+      // Handle submit event
+      form.addEventListener('submit', (e) => {
+        const gotcha = form.querySelector('input[name="_gotcha"]');
+        if (gotcha && gotcha.value.trim() !== '') {
+          console.warn('Spam submission blocked.');
+          e.preventDefault();
+          return false;
+        }
+        form.setAttribute('action', getRealActionUrl());
+      });
+    });
+
+    // Handle HTMLFormElement.prototype.submit overrides to prevent direct bypass
+    if (!window._honeypotInitialized) {
+      window._honeypotInitialized = true;
+      const originalSubmit = HTMLFormElement.prototype.submit;
+      HTMLFormElement.prototype.submit = function() {
+        const gotcha = this.querySelector('input[name="_gotcha"]');
+        if (gotcha && gotcha.value.trim() !== '') {
+          console.warn('Spam submission blocked (proto).');
+          return;
+        }
+        const actionToken = this.getAttribute('data-action');
+        if (actionToken && this.getAttribute('action') === '#') {
+          this.setAttribute('action', `https://www.fotostudio.io/f/${actionToken}`);
+        }
+        originalSubmit.apply(this);
+      };
     }
   }
 })();
