@@ -874,7 +874,7 @@
             </div>
 
             <!-- Modal Content (Scrollable Form) -->
-            <form action="#" data-action="f69154aabb2ef71649b1d57fde2b3c14" method="POST" class="p-6 overflow-y-auto space-y-4 text-left">
+            <form action="#" data-action="NDFjM2IyZWRmNzVkMWI5NDYxN2ZlMmJiYWE0NTE5NmYvZi9vaS5vaWR1dHNvdG9mLnd3dy8vOnNwdHRo" method="POST" class="p-6 overflow-y-auto space-y-4 text-left">
                 
                 <!-- Double column name -->
                 <div class="grid grid-cols-2 gap-4">
@@ -904,7 +904,7 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-[10px] font-bold uppercase tracking-wider text-gray-500 mb-1.5">Téléphone *</label>
-                        <input type="tel" name="lead_form[phone]" required class="w-full bg-gray-50 border border-gray-200 rounded-xl p-3 text-xs text-dark focus:border-brand focus:ring-1 focus:ring-brand outline-none">
+                        <input type="tel" name="lead_form[phone]" pattern="^(?:0|\+33|0033)\s*[1-9](?:[ .-]?\d{2}){4}$" required class="w-full bg-gray-50 border border-gray-200 rounded-xl p-3 text-xs text-dark focus:border-brand focus:ring-1 focus:ring-brand outline-none">
                     </div>
                     <div>
                         <label class="block text-[10px] font-bold uppercase tracking-wider text-gray-500 mb-1.5">Date de séance souhaitée *</label>
@@ -922,7 +922,7 @@
                     <div class="grid grid-cols-2 gap-3">
                         <div>
                             <label class="block text-[9px] font-bold uppercase tracking-wider text-gray-500 mb-1">Code Postal *</label>
-                            <input type="text" id="form-zipcode" name="lead_form[address][zipcode]" required class="w-full bg-white border border-gray-250 rounded-lg p-2.5 text-xs text-dark focus:border-brand outline-none">
+                            <input type="text" id="form-zipcode" name="lead_form[address][zipcode]" pattern="[0-9]{5}" required class="w-full bg-white border border-gray-250 rounded-lg p-2.5 text-xs text-dark focus:border-brand outline-none">
                         </div>
                         <div>
                             <label class="block text-[9px] font-bold uppercase tracking-wider text-gray-500 mb-1">Ville *</label>

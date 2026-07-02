@@ -31,7 +31,7 @@
     }
 
     // 5. Anti-spam Honeypot Protection
-    initHoneypotProtection();
+    initFormSpamProtection();
   });
 
   function createBanner(announcement, infoPageUrl, storageKey) {
@@ -134,34 +134,108 @@
     }
   }
 
-  function initHoneypotProtection() {
+  function initFormSpamProtection() {
+    const pageLoadTime = Date.now();
     const forms = document.querySelectorAll('form[data-action]');
-    forms.forEach(form => {
-      const getRealActionUrl = () => {
-        const token = form.getAttribute('data-action');
-        return token ? `https://www.fotostudio.io/f/${token}` : '#';
-      };
 
-      const handleFormInteraction = () => {
-        if (form.getAttribute('action') === '#') {
-          form.setAttribute('action', getRealActionUrl());
+    function isGibberish(value) {
+      if (typeof value !== 'string') return false;
+      const words = value.match(/[a-zA-Z]+/g);
+      if (!words) return false;
+      for (const word of words) {
+        if (word.length > 12) {
+          const hasUpper = /[A-Z]/.test(word);
+          const hasLower = /[a-z]/.test(word);
+          // Mixture of uppercase and lowercase, and not just title case
+          if (hasUpper && hasLower && !/^[A-Z][a-z]+$/.test(word)) {
+            return true;
+          }
         }
-      };
+      }
+      return false;
+    }
 
-      // Restore action dynamically when user interacts
-      form.addEventListener('focusin', handleFormInteraction, { once: true });
-      form.addEventListener('mouseenter', handleFormInteraction, { once: true });
-      form.addEventListener('touchstart', handleFormInteraction, { once: true });
+    function decodeAction(token) {
+      if (!token) return '#';
+      try {
+        // Obfuscation: reversed string encoded in Base64
+        const decoded = atob(token);
+        const reversed = decoded.split('').reverse().join('');
+        return reversed;
+      } catch (err) {
+        console.error('Error decoding action:', err);
+        return '#';
+      }
+    }
+
+    forms.forEach(form => {
+      // Clear action initially to ensure it is not in the DOM
+      form.setAttribute('action', '#');
 
       // Handle submit event
       form.addEventListener('submit', (e) => {
+        // Reset custom validations before checks
+        const zipcodeField = form.querySelector('input[name="lead_form[address][zipcode]"]');
+        const phoneField = form.querySelector('input[name="lead_form[phone]"]');
+        if (zipcodeField) zipcodeField.setCustomValidity('');
+        if (phoneField) phoneField.setCustomValidity('');
+
+        // 1. Honeypot check
         const gotcha = form.querySelector('input[name="_gotcha"]');
         if (gotcha && gotcha.value.trim() !== '') {
-          console.warn('Spam submission blocked.');
+          console.warn('Spam submission blocked (honeypot).');
           e.preventDefault();
           return false;
         }
-        form.setAttribute('action', getRealActionUrl());
+
+        // 2. Time check: block if submitted in less than 4 seconds
+        const timeElapsed = (Date.now() - pageLoadTime) / 1000;
+        if (timeElapsed < 4) {
+          console.warn('Spam submission blocked (too fast).');
+          e.preventDefault();
+          return false;
+        }
+
+        // 3. Zipcode validation (5 digits)
+        if (zipcodeField) {
+          if (!/^[0-9]{5}$/.test(zipcodeField.value.trim())) {
+            zipcodeField.setCustomValidity('Le code postal doit comporter exactement 5 chiffres.');
+            zipcodeField.reportValidity();
+            e.preventDefault();
+            return false;
+          }
+        }
+
+        // 4. Phone validation (French format)
+        if (phoneField) {
+          const phoneRegex = /^(?:0|\+33|0033)\s*[1-9](?:[ .-]?\d{2}){4}$/;
+          if (!phoneRegex.test(phoneField.value.trim())) {
+            phoneField.setCustomValidity('Veuillez saisir un numéro de téléphone valide (format français).');
+            phoneField.reportValidity();
+            e.preventDefault();
+            return false;
+          }
+        }
+
+        // 5. Gibberish detection
+        let hasGibberish = false;
+        const textInputs = form.querySelectorAll('input[type="text"], input[type="email"], textarea');
+        textInputs.forEach(input => {
+          if (input.name === '_gotcha') return;
+          if (isGibberish(input.value)) {
+            hasGibberish = true;
+          }
+        });
+
+        if (hasGibberish) {
+          console.warn('Spam submission blocked (gibberish detected).');
+          e.preventDefault();
+          return false;
+        }
+
+        // 6. Restore real action URL just at the moment of submission
+        const token = form.getAttribute('data-action');
+        form.setAttribute('action', decodeAction(token));
       });
     });
 
@@ -170,14 +244,64 @@
       window._honeypotInitialized = true;
       const originalSubmit = HTMLFormElement.prototype.submit;
       HTMLFormElement.prototype.submit = function() {
+        // Reset validity
+        const zipcodeField = this.querySelector('input[name="lead_form[address][zipcode]"]');
+        const phoneField = this.querySelector('input[name="lead_form[phone]"]');
+        if (zipcodeField) zipcodeField.setCustomValidity('');
+        if (phoneField) phoneField.setCustomValidity('');
+
+        // Honeypot check
         const gotcha = this.querySelector('input[name="_gotcha"]');
         if (gotcha && gotcha.value.trim() !== '') {
-          console.warn('Spam submission blocked (proto).');
+          console.warn('Spam submission blocked (proto, honeypot).');
           return;
         }
+
+        // Time check
+        const timeElapsed = (Date.now() - pageLoadTime) / 1000;
+        if (timeElapsed < 4) {
+          console.warn('Spam submission blocked (proto, too fast).');
+          return;
+        }
+
+        // Zipcode validation
+        if (zipcodeField) {
+          if (!/^[0-9]{5}$/.test(zipcodeField.value.trim())) {
+            zipcodeField.setCustomValidity('Le code postal doit comporter exactement 5 chiffres.');
+            zipcodeField.reportValidity();
+            return;
+          }
+        }
+
+        // Phone validation
+        if (phoneField) {
+          const phoneRegex = /^(?:0|\+33|0033)\s*[1-9](?:[ .-]?\d{2}){4}$/;
+          if (!phoneRegex.test(phoneField.value.trim())) {
+            phoneField.setCustomValidity('Veuillez saisir un numéro de téléphone valide (format français).');
+            phoneField.reportValidity();
+            return;
+          }
+        }
+
+        // Gibberish detection
+        let hasGibberish = false;
+        const textInputs = this.querySelectorAll('input[type="text"], input[type="email"], textarea');
+        textInputs.forEach(input => {
+          if (input.name === '_gotcha') return;
+          if (isGibberish(input.value)) {
+            hasGibberish = true;
+          }
+        });
+
+        if (hasGibberish) {
+          console.warn('Spam submission blocked (proto, gibberish).');
+          return;
+        }
+
+        // Decode token and set action
         const actionToken = this.getAttribute('data-action');
-        if (actionToken && this.getAttribute('action') === '#') {
-          this.setAttribute('action', `https://www.fotostudio.io/f/${actionToken}`);
+        if (actionToken) {
+          this.setAttribute('action', decodeAction(actionToken));
         }
         originalSubmit.apply(this);
       };
