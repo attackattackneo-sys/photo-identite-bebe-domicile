@@ -1,4 +1,17 @@
 {
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/aide/pourquoi-pas-de-fond-blanc-sur-les-photos-didentit%C3%A9-en-france",
+      "destination": "/aide/pourquoi-pas-de-fond-blanc-sur-les-photos-didentite-en-france",
+      "permanent": true
+    },
+    {
+      "source": "/aide/pourquoi-pas-de-fond-blanc-sur-les-photos-didentité-en-france",
+      "destination": "/aide/pourquoi-pas-de-fond-blanc-sur-les-photos-didentite-en-france",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
