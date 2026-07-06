@@ -1,20 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">
 <head>
-    <script>
-      // Redirection client-side pour les anciennes URLs et accents sur GitHub Pages
-      try {
-        var pathname = window.location.pathname;
-        var decodedPath = decodeURIComponent(pathname).toLowerCase();
-        if (decodedPath.indexOf('pourquoi-pas-de-fond-blanc-sur-les-photos-dident') !== -1) {
-          window.location.replace('/aide/pourquoi-pas-de-fond-blanc-sur-les-photos-didentite-en-france/');
-        } else if (decodedPath.indexOf('photomaton-vs-photographe') !== -1) {
-          window.location.replace('/aide/photomaton-vs-photographe/');
-        }
-      } catch (e) {
-        console.error(e);
-      }
-    </script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQZSLDSMLZ"></script>
     <script>
@@ -24,15 +10,23 @@
 
       gtag('config', 'G-ZQZSLDSMLZ');
     </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page non trouvée | Photo-identite-bebe-domicile.fr</title>
-    <meta name="description" content="Oups, cette page n'existe pas. Retournez sur l'accueil de Photo-identite-bebe-domicile.fr pour vos photos d'identité ANTS à domicile avec Grégory.">
+    <title>Centre d'Aide & Conseils Photos d'Identité Officielle | ANTS</title>
+    <meta name="description" content="Découvrez nos guides d'experts et conseils pratiques pour réussir vos photos d'identité biométriques (bébé, enfant, adulte, senior, PMR) conformes aux normes ANTS.">
+    <link rel="canonical" href="https://www.photo-identite-bebe-domicile.fr/aide/" />
+    
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
+    <!-- Polices & Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    
     <!-- Script d'Interactivité Légère (Performance) -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -40,68 +34,70 @@
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
             
-            window.addEventListener('scroll', () => {
-                const navLinksContainer = document.querySelector('.nav-links-container');
-                const logoText = document.querySelector('.logo-text');
-                const logoImg = document.querySelector('.logo-img');
+            if (nav) {
+                const navLinksContainer = nav.querySelector('.nav-links-container');
+                const logoText = nav.querySelector('.logo-text');
+                const logoImg = nav.querySelector('.logo-img');
 
-                if (window.scrollY > 20) {
-                    nav.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-lg', 'py-2');
-                    nav.classList.remove('bg-transparent', 'py-6', 'shadow-none');
-                    
-                    if (navLinksContainer) {
-                        navLinksContainer.classList.add('text-gray-800');
-                        navLinksContainer.classList.remove('text-white/90');
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 20) {
+                        nav.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-lg', 'py-2');
+                        nav.classList.remove('bg-transparent', 'py-6', 'shadow-none');
+                        
+                        if (navLinksContainer) {
+                            navLinksContainer.classList.add('text-gray-800');
+                            navLinksContainer.classList.remove('text-white/90');
+                        }
+                        if (logoText) {
+                            logoText.classList.add('text-dark');
+                            logoText.classList.remove('text-white');
+                        }
+                        if (logoImg) {
+                            logoImg.classList.remove('brightness-0', 'invert');
+                        }
+                        if (mobileMenuBtn) {
+                            mobileMenuBtn.classList.add('text-gray-800');
+                            mobileMenuBtn.classList.remove('text-white');
+                        }
+                    } else {
+                        nav.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-lg', 'py-2');
+                        nav.classList.add('bg-transparent', 'py-6', 'shadow-none');
+                        
+                        if (navLinksContainer) {
+                            navLinksContainer.classList.remove('text-gray-800');
+                            navLinksContainer.classList.add('text-white/90');
+                        }
+                        if (logoText) {
+                            logoText.classList.remove('text-dark');
+                            logoText.classList.add('text-white');
+                        }
+                        if (logoImg) {
+                            logoImg.classList.add('brightness-0', 'invert');
+                        }
+                        if (mobileMenuBtn) {
+                            mobileMenuBtn.classList.remove('text-gray-800');
+                            mobileMenuBtn.classList.add('text-white');
+                        }
                     }
-                    if (logoText) {
-                        logoText.classList.add('text-dark');
-                        logoText.classList.remove('text-white');
-                    }
-                    if (logoImg) {
-                        logoImg.classList.remove('brightness-0', 'invert');
-                    }
-                } else {
-                    nav.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-lg', 'py-2');
-                    nav.classList.add('bg-transparent', 'py-6', 'shadow-none');
-                    
-                    if (navLinksContainer) {
-                        navLinksContainer.classList.remove('text-gray-800');
-                        navLinksContainer.classList.add('text-white/90');
-                    }
-                    if (logoText) {
-                        logoText.classList.remove('text-dark');
-                        logoText.classList.add('text-white');
-                    }
-                    if (logoImg) {
-                        logoImg.classList.add('brightness-0', 'invert');
-                    }
-                }
-            });
+                });
+            }
 
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
         });
     </script>
 
-    <!-- Tailwind CSS Enhanced Config -->
+    <!-- Tailwind CSS Config -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: { brand: '#e67000', dark: '#1a1a1a', light: '#faf8f5' },
-                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] },
-                    animation: {
-                        'ken-burns': 'kenburns 20s ease-in-out infinite alternate',
-                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
-                        'float': 'float 3s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        kenburns: { '0%': { transform: 'scale(1)' }, '100%': { transform: 'scale(1.1)' } },
-                        fadeInUp: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
-                        float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } }
-                    }
+                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] }
                 }
             }
         }
@@ -112,17 +108,23 @@
         .bg-hero { position: relative; overflow: hidden; }
         .bg-hero::before {
             content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(rgba(26, 26, 26, 0.75), rgba(26, 26, 26, 0.6)), url('https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-            z-index: -1; animation: kenburns 20s ease-in-out infinite alternate;
+            background: linear-gradient(rgba(26, 26, 26, 0.78), rgba(26, 26, 26, 0.65)), url('https://images.unsplash.com/photo-1452780212940-6f5c0d14d83a?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            z-index: -1;
         }
         .logo-img { height: 40px; width: auto; max-width: 100%; transition: all 0.3s ease; }
         @media (min-width: 768px) { .logo-img { height: 50px; } }
+        .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
     </style>
 
     <!-- Système de bandeau d'annonce global -->
     <script src="/config/site.js"></script>
     <script src="/announcement.js"></script>
 </head>
+
 <body class="antialiased font-sans">
     <!-- NAVIGATION -->
     <nav class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent py-6 shadow-none" aria-label="Menu principal">
@@ -152,27 +154,79 @@
         </div>
     </nav>
 
-    <!-- CONTENT 404 -->
-    <header class="bg-hero text-white min-h-screen flex flex-col justify-center px-4 py-20 relative">
-        <div class="max-w-2xl mx-auto text-center relative z-10 animate-fade-in-up">
-            <div class="text-brand text-9xl font-serif font-bold mb-8 animate-float">404</div>
-            <h1 class="text-4xl md:text-6xl font-serif font-bold mb-6">Page introuvable</h1>
-            <p class="text-lg text-gray-300 mb-12 leading-relaxed">
-                Désolé, la page que vous recherchez semble avoir pris la fuite. 
-                Ne vous inquiétez pas, Grégory est toujours là pour vous aider !
+    <!-- HEADER DE LA PAGE -->
+    <header class="bg-hero text-white pt-44 pb-32 px-4 text-center border-b-4 border-brand">
+        <div class="max-w-4xl mx-auto animate-fade-in-up">
+            <span class="bg-brand text-white text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">Guides & Conseils</span>
+            <h1 class="text-3xl md:text-5xl lg:text-6xl font-serif font-bold mt-6 mb-6 leading-tight">
+                Centre d'Aide & Réglementations
+            </h1>
+            <p class="text-gray-300 text-lg max-w-2xl mx-auto font-sans leading-relaxed">
+                Retrouvez nos dossiers complets pour réussir vos démarches administratives de carte d'identité, passeport, visa et permis de conduire.
             </p>
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="/index.html" class="w-full sm:w-auto bg-brand hover:bg-orange-600 text-white font-bold text-lg px-10 py-4 rounded-full shadow-lg transition-all transform hover:scale-105">
-                    Retour à l'accueil
-                </a>
-                <a href="tel:+33781757754" class="w-full sm:w-auto border-2 border-brand text-white font-bold text-lg px-10 py-4 rounded-full hover:bg-brand transition-all">
-                    M'appeler directement
-                </a>
-            </div>
         </div>
     </header>
 
-    <!-- FOOTER AMÉLIORÉ -->
+    <!-- CORPS DU HUBAIDE -->
+    <main class="max-w-6xl mx-auto px-4 py-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+            
+            <!-- Article 1: Photomaton vs Photographe -->
+            <article class="bg-white border border-gray-150 rounded-3xl p-8 shadow-sm hover:shadow-xl transition duration-305 flex flex-col justify-between group">
+                <div>
+                    <span class="bg-orange-50 text-brand text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">Comparatif & Choix</span>
+                    <h2 class="text-2xl font-serif font-bold text-dark mt-4 mb-4 group-hover:text-brand transition">
+                        Photomaton vs Photographe d'Identité : Lequel Choisir ?
+                    </h2>
+                    <p class="text-gray-600 text-sm md:text-base leading-relaxed mb-6">
+                        Cabines automatiques ou photographe professionnel à domicile ? Retrouvez notre comparatif détaillé sur les prix, la conformité aux normes biométriques et les solutions pour les cas complexes (bébés, seniors, personnes handicapées).
+                    </p>
+                </div>
+                <div>
+                    <a href="/aide/photomaton-vs-photographe/" class="inline-flex items-center font-bold text-brand hover:underline">
+                        Lire le dossier comparatif <span class="ml-2 group-hover:translate-x-1.5 transition-transform duration-300">→</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Article 2: Interdiction Fond Blanc -->
+            <article class="bg-white border border-gray-150 rounded-3xl p-8 shadow-sm hover:shadow-xl transition duration-305 flex flex-col justify-between group">
+                <div>
+                    <span class="bg-orange-50 text-brand text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">Réglementation Officielle</span>
+                    <h2 class="text-2xl font-serif font-bold text-dark mt-4 mb-4 group-hover:text-brand transition">
+                        Pourquoi le fond blanc est-il interdit pour les photos d'identité ?
+                    </h2>
+                    <p class="text-gray-600 text-sm md:text-base leading-relaxed mb-6">
+                        Saviez-vous que les mairies rejettent systématiquement les photos d'identité sur fond blanc uni ? Découvrez les explications techniques derrière la norme ISO/IEC 19794-5 et les consignes officielles de l'ANTS.
+                    </p>
+                </div>
+                <div>
+                    <a href="/aide/pourquoi-pas-de-fond-blanc-sur-les-photos-didentite-en-france/" class="inline-flex items-center font-bold text-brand hover:underline">
+                        Lire l'article réglementaire <span class="ml-2 group-hover:translate-x-1.5 transition-transform duration-300">→</span>
+                    </a>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- Section de réassurance / Call to action -->
+        <div class="mt-20 bg-dark text-white rounded-3xl p-8 lg:p-12 text-center shadow-xl border-t-4 border-brand">
+            <h3 class="font-serif text-2xl md:text-3xl font-bold mb-4">Besoin de photos d'identité conformes chez vous ?</h3>
+            <p class="text-gray-300 text-sm md:text-base max-w-xl mx-auto mb-8 leading-relaxed">
+                Évitez l'attente et le stress des cabines publiques. Grégory se déplace à votre domicile (75, 93, 94, 77) avec son studio professionnel portatif.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="/index.html#booking-funnel" class="bg-brand hover:bg-orange-600 active:scale-95 text-white font-bold px-8 py-3.5 rounded-full transition shadow-lg shadow-brand/10 text-sm">
+                    📅 Réserver ma séance à domicile
+                </a>
+                <a href="tel:+33781757754" class="bg-white/10 hover:bg-white/20 text-white font-bold px-8 py-3.5 rounded-full transition text-sm">
+                    📞 07 81 75 77 54
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
     <footer id="zones" class="bg-dark text-gray-300 py-16 border-t-4 border-brand">
         <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12">
             <!-- Colonne 1: Identité -->

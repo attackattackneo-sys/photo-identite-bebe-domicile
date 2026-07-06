@@ -140,7 +140,21 @@
   
   <!-- Guides & Conseils -->
   <url>
-    <loc>https://www.photo-identite-bebe-domicile.fr/aide/pourquoi-pas-de-fond-blanc-sur-les-photos-didentite-en-france.html</loc>
+    <loc>https://www.photo-identite-bebe-domicile.fr/aide/</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.photo-identite-bebe-domicile.fr/aide/photomaton-vs-photographe/</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.photo-identite-bebe-domicile.fr/aide/pourquoi-pas-de-fond-blanc-sur-les-photos-didentite-en-france/</loc>
     <lastmod>2026-07-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
