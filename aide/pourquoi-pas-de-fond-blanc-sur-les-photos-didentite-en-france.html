@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQZSLDSMLZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-ZQZSLDSMLZ');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pourquoi le fond blanc est-il interdit pour les photos d'identité ? | Normes ANTS</title>
+    <meta name="description" content="Découvrez pourquoi l'ANTS interdit strictement le fond blanc pour les photos d'identité en France (passeport, CNI, permis). Les explications techniques d'un photographe agréé.">
+    <link rel="canonical" href="https://www.photo-identite-bebe-domicile.fr/aide/pourquoi-pas-de-fond-blanc-sur-les-photos-didentite-en-france.html" />
+    
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <!-- Polices & Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Script d'Interactivité Légère (Performance) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const nav = document.querySelector('nav');
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (nav) {
+                const navLinksContainer = nav.querySelector('.nav-links-container');
+                const logoText = nav.querySelector('.logo-text');
+                const logoImg = nav.querySelector('.logo-img');
+
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 20) {
+                        nav.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-lg', 'py-2');
+                        nav.classList.remove('bg-transparent', 'py-6', 'shadow-none');
+                        
+                        if (navLinksContainer) {
+                            navLinksContainer.classList.add('text-gray-800');
+                            navLinksContainer.classList.remove('text-white/90');
+                        }
+                        if (logoText) {
+                            logoText.classList.add('text-dark');
+                            logoText.classList.remove('text-white');
+                        }
+                        if (logoImg) {
+                            logoImg.classList.remove('brightness-0', 'invert');
+                        }
+                        if (mobileMenuBtn) {
+                            mobileMenuBtn.classList.add('text-gray-800');
+                            mobileMenuBtn.classList.remove('text-white');
+                        }
+                    } else {
+                        nav.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-lg', 'py-2');
+                        nav.classList.add('bg-transparent', 'py-6', 'shadow-none');
+                        
+                        if (navLinksContainer) {
+                            navLinksContainer.classList.remove('text-gray-800');
+                            navLinksContainer.classList.add('text-white/90');
+                        }
+                        if (logoText) {
+                            logoText.classList.remove('text-dark');
+                            logoText.classList.add('text-white');
+                        }
+                        if (logoImg) {
+                            logoImg.classList.add('brightness-0', 'invert');
+                        }
+                        if (mobileMenuBtn) {
+                            mobileMenuBtn.classList.remove('text-gray-800');
+                            mobileMenuBtn.classList.add('text-white');
+                        }
+                    }
+                });
+            }
+
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+
+    <!-- Tailwind CSS Config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { brand: '#e67000', dark: '#1a1a1a', light: '#faf8f5' },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #faf8f5; color: #1a1a1a; overflow-x: hidden; }
+        .bg-hero { position: relative; overflow: hidden; }
+        .bg-hero::before {
+            content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(rgba(26, 26, 26, 0.78), rgba(26, 26, 26, 0.65)), url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            z-index: -1;
+        }
+        .logo-img { height: 40px; width: auto; max-width: 100%; transition: all 0.3s ease; }
+        @media (min-width: 768px) { .logo-img { height: 50px; } }
+        .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+
+    <!-- Données structurées Schema.org (Article & FAQ) pour le SEO IA / GEO / AEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://www.photo-identite-bebe-domicile.fr/aide/pourquoi-pas-de-fond-blanc-sur-les-photos-didentite-en-france.html#article",
+          "isPartOf": {
+            "@type": "WebSite",
+            "@id": "https://www.photo-identite-bebe-domicile.fr/#website",
+            "name": "Photo Identité Bébé Domicile",
+            "url": "https://www.photo-identite-bebe-domicile.fr/"
+          },
+          "headline": "Pourquoi le fond blanc est-il interdit pour les photos d'identité en France ?",
+          "description": "Explications techniques et officielles de l'interdiction du fond blanc sur les photos d'identité ANTS (CNI, passeport, permis) en France.",
+          "inLanguage": "fr",
+          "mainEntityOfPage": "https://www.photo-identite-bebe-domicile.fr/aide/pourquoi-pas-de-fond-blanc-sur-les-photos-didentite-en-france.html",
+          "datePublished": "2026-07-06T18:48:00+02:00",
+          "dateModified": "2026-07-06T18:48:00+02:00",
+          "author": {
+            "@type": "Person",
+            "name": "Grégory",
+            "jobTitle": "Photographe Professionnel Agréé ANTS",
+            "url": "https://www.photo-identite-bebe-domicile.fr/"
+          },
+          "publisher": {
+            "@type": "LocalBusiness",
+            "@id": "https://www.photo-identite-bebe-domicile.fr/#business",
+            "name": "Grégory – Photo identité bébé à domicile",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.photo-identite-bebe-domicile.fr/Images/logo.png"
+            }
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://www.photo-identite-bebe-domicile.fr/aide/pourquoi-pas-de-fond-blanc-sur-les-photos-didentite-en-france.html#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Pourquoi le fond blanc est-il interdit pour les photos d'identité ?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Le fond blanc est interdit car il ne crée pas assez de contraste avec le visage, les cheveux ou les vêtements clairs. De plus, il perturbe les systèmes automatisés de reconnaissance faciale biométrique aux frontières."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Quelle est la couleur de fond officielle pour une photo d'identité en France ?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Le fond doit être de couleur unie et claire. Les deux seules couleurs officiellement acceptées et recommandées par l'ANTS sont le gris clair et le bleu clair. Les fonds de couleur vive ou foncée sont proscrits."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Une photo d'identité sur fond blanc sera-t-elle rejetée en mairie ?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Oui, toute photo d'identité avec un fond blanc uni sera systématiquement rejetée par les agents de mairie lors de l'instruction de votre demande de passeport ou de carte d'identité (CNI)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Puis-je porter des vêtements blancs pour ma photo d'identité ?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Il est fortement déconseillé de porter des vêtements blancs ou très clairs, car ils risquent de se confondre avec le fond gris clair ou bleu clair. Privilégiez des couleurs sombres (noir, bleu marine, rouge foncé) pour optimiser le contraste."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- Système de bandeau d'annonce global -->
+    <script src="/config/site.js"></script>
+    <script src="/announcement.js"></script>
+</head>
+
+<body class="antialiased font-sans">
+    <!-- NAVIGATION -->
+    <nav class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent py-6 shadow-none" aria-label="Menu principal">
+        <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
+            <a href="/index.html" class="logo-text text-xl md:text-2xl font-serif font-bold flex items-center gap-2 text-white transition-colors">
+                <img src="/Images/logo.png" alt="Grégory photographe identité bébé à domicile Neuilly-sur-Marne" class="logo-img h-8 md:h-10 w-auto brightness-0 invert" width="200" height="135" fetchpriority="high">
+                <span class="hidden sm:inline">Photo-identite-bebe-domicile.fr</span>
+            </a>
+            
+            <div class="nav-links-container hidden lg:flex gap-8 items-center text-white/90 transition-colors">
+                <a href="/index.html" class="nav-link font-medium hover:text-brand transition">Accueil</a>
+                <a href="/index.html#booking-funnel" class="nav-link font-medium hover:text-brand transition">Réservation</a>
+                <a href="tel:+33781757754" class="bg-brand text-white px-6 py-2.5 rounded-full font-bold shadow-lg text-sm">📞 07 81 75 77 54</a>
+            </div>
+
+            <button id="mobile-menu-btn" class="lg:hidden text-white focus:outline-none transition-colors" aria-label="Menu mobile">
+                <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden bg-white px-4 py-8 space-y-6 shadow-2xl border-t border-gray-100">
+            <a href="/index.html" class="block text-xl font-medium text-gray-700">Accueil</a>
+            <a href="/index.html#booking-funnel" class="block text-xl font-medium text-gray-700">Réservation</a>
+            <a href="tel:+33781757754" class="block w-full text-center bg-brand text-white py-4 rounded-xl font-bold">07 81 75 77 54</a>
+            <a href="https://wa.me/33781757754" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-green-600 hover:bg-green-700 text-white py-4 rounded-xl font-bold mt-3">
+                💬 Écrire sur WhatsApp
+            </a>
+        </div>
+    </nav>
+
+    <!-- HEADER DE LA PAGE -->
+    <header class="bg-hero text-white pt-44 pb-32 px-4 text-center border-b-4 border-brand">
+        <div class="max-w-4xl mx-auto animate-fade-in-up">
+            <span class="bg-brand text-white text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">Guide Officiel & Réglementation</span>
+            <h1 class="text-3xl md:text-5xl lg:text-6xl font-serif font-bold mt-6 mb-6 leading-tight">
+                Pourquoi le fond blanc est-il interdit pour les photos d'identité en France ?
+            </h1>
+            <p class="text-gray-300 text-lg max-w-2xl mx-auto font-sans leading-relaxed">
+                Passeport, carte d'identité (CNI), permis de conduire : tout ce qu'il faut savoir sur les normes de fond de l'ANTS pour éviter un rejet en mairie.
+            </p>
+            <p class="text-gray-400 text-sm mt-6">
+                Rédigé par <span class="text-white font-semibold">Grégory</span>, Photographe Professionnel Agréé ANTS
+            </p>
+        </div>
+    </header>
+
+    <!-- ARTICLE DE FOND (SEO SENIOR) -->
+    <main class="max-w-4xl mx-auto px-4 py-20 text-gray-700">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <!-- Contenu de l'article (8 col) -->
+            <div class="lg:col-span-8 space-y-12">
+                
+                <!-- Résumé Rapide (AEO / GEO / Featured Snippet Box) -->
+                <div class="bg-orange-50/65 border-l-4 border-brand p-6 rounded-r-2xl shadow-sm">
+                    <h2 class="text-lg font-serif font-bold text-dark mb-2">L'essentiel en 30 secondes</h2>
+                    <p class="text-sm md:text-base text-gray-700 leading-relaxed">
+                        En France, la réglementation de l'<strong>ANTS</strong> et la norme internationale <strong>ISO/IEC 19794-5</strong> interdisent formellement le fond blanc uni sur les photos officielles. Le fond doit obligatoirement être <strong>uni, de couleur claire (gris clair ou bleu clair)</strong>. Les photos sur fond blanc sont <strong>systématiquement rejetées</strong> en mairie car elles ne garantissent pas un contraste suffisant pour les algorithmes biométriques de reconnaissance faciale.
+                    </p>
+                </div>
+
+                <!-- Section 1 : La norme officielle -->
+                <section class="space-y-4">
+                    <h2 class="text-2xl font-serif font-bold text-dark">La règle officielle de l'ANTS pour les photos officielles</h2>
+                    <p class="leading-relaxed">
+                        Contrairement aux idées reçues et à ce qui se pratique dans d'autres pays (comme les États-Unis ou l'Asie), les documents officiels français sont régis par des critères stricts fixés par le Ministère de l’Intérieur et l'ANTS (Agence Nationale des Titres Sécurisés), transposant la norme européenne et internationale <strong>ISO/IEC 19794-5 : 2005</strong>.
+                    </p>
+                    <p class="leading-relaxed">
+                        Le texte réglementaire officiel stipule précisément :
+                    </p>
+                    <blockquote class="border-l-2 border-gray-300 pl-4 italic text-gray-600 bg-gray-50/50 py-3 pr-2">
+                        « Le fond doit être uni, de couleur claire (bleu clair, gris clair). Le fond blanc est interdit. »
+                    </blockquote>
+                    <p class="leading-relaxed">
+                        Cette règle s'applique à tous les titres sécurisés en France :
+                    </p>
+                    <ul class="list-disc pl-5 space-y-1.5">
+                        <li>Carte Nationale d'Identité (CNI)</li>
+                        <li>Passeport biométrique français</li>
+                        <li>Permis de conduire (E-photo ANTS)</li>
+                        <li>Titre de séjour / Carte de résident</li>
+                    </ul>
+                </section>
+
+                <!-- Section 2 : Les raisons techniques du rejet -->
+                <section class="space-y-6">
+                    <h2 class="text-2xl font-serif font-bold text-dark">Les 3 explications techniques du rejet sur fond blanc</h2>
+                    <p class="leading-relaxed">
+                        Ce choix de l'administration n'est pas esthétique, il est purement <strong>technique et sécuritaire</strong>.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-serif font-bold text-dark">1. Le manque de contraste (visage, cheveux et vêtements)</h3>
+                        <p class="leading-relaxed">
+                            Pour qu'une photo soit validée, la délimitation de la silhouette du sujet doit être parfaite. Un fond blanc pose deux problèmes majeurs :
+                        </p>
+                        <ul class="list-disc pl-5 space-y-1 text-sm md:text-base">
+                            <li>Les personnes aux cheveux blancs, blonds très clairs ou chauves « se fondent » visuellement dans le fond, ce qui empêche d'analyser précisément les contours de la tête.</li>
+                            <li>Si le sujet porte un haut blanc ou clair (chemise, t-shirt), les épaules disparaissent visuellement, donnant un effet de « tête flottante » non conforme.</li>
+                        </ul>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-serif font-bold text-dark">2. Le risque de surexposition et d'éblouissement</h3>
+                        <p class="leading-relaxed">
+                            En photographie de studio, un fond blanc nécessite un éclairage puissant en arrière-plan pour être parfaitement blanc. Cette lumière intense a tendance à créer des reflets (« éblouissement » ou <i>halo light</i>) sur les contours des cheveux et des joues du sujet. Cela altère la netteté et la couleur naturelle de la peau, enfreignant la règle de fidélité de l'image.
+                        </p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-serif font-bold text-dark">3. La compatibilité avec les sas de contrôle biométrique (reconnaissance faciale)</h3>
+                        <p class="leading-relaxed">
+                            Lors du passage des frontières (notamment via les sas de contrôle automatique <strong>PARAFE</strong> dans les aéroports), des caméras scannent le visage du voyageur et le comparent avec la photo stockée dans la puce du passeport biométrique.
+                        </p>
+                        <p class="leading-relaxed">
+                            Les algorithmes de reconnaissance faciale mesurent les distances entre les points clés du visage (yeux, nez, menton, oreilles) et nécessitent un détourage très contrasté et net. Le gris clair ou le bleu clair fournissent le contraste optimal exigé par ces machines de sécurité internationale.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Section 3 : Les couleurs autorisées -->
+                <section class="space-y-4">
+                    <h2 class="text-2xl font-serif font-bold text-dark">Quelles sont les couleurs de fond autorisées en France ?</h2>
+                    <p class="leading-relaxed">
+                        Le fond doit impérativement être <strong>uni et sans ombre</strong>. Les deux seules teintes tolérées par l'ANTS sont :
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                        <div class="border border-gray-200 p-4 rounded-2xl flex items-center gap-4 bg-white shadow-sm">
+                            <div class="w-12 h-12 bg-gray-200 rounded-full border border-gray-300"></div>
+                            <div>
+                                <h4 class="font-bold text-dark text-sm">Gris Clair (Recommandé)</h4>
+                                <p class="text-xs text-gray-500">Offre le meilleur contraste universel pour tout type de peau/cheveux.</p>
+                            </div>
+                        </div>
+                        <div class="border border-gray-200 p-4 rounded-2xl flex items-center gap-4 bg-white shadow-sm">
+                            <div class="w-12 h-12 bg-sky-100 rounded-full border border-sky-200"></div>
+                            <div>
+                                <h4 class="font-bold text-dark text-sm">Bleu Clair</h4>
+                                <p class="text-xs text-gray-500">Autorisé, apporte une douceur de couleur tout en respectant la norme.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-sm italic text-gray-500 mt-2">
+                        ⚠️ Attention aux informations erronées trouvées sur Internet : les fonds de couleurs vives (rouge, vert, jaune) ou de couleurs foncées (bleu marine, noir) sont interdits. Le beige chaud est parfois toléré mais présente un risque élevé de rejet en mairie si sa couleur est jugée trop proche de celle de la peau.
+                    </p>
+                </section>
+
+                <!-- Section 4 : Solution à domicile -->
+                <section class="space-y-4">
+                    <h2 class="text-2xl font-serif font-bold text-dark">Comment obtenir une photo d'identité conforme à domicile ?</h2>
+                    <p class="leading-relaxed">
+                        Prendre soi-même ses photos d'identité est extrêmement difficile (les selfies sont interdits, l'exposition et l'arrière-plan doivent être parfaits). C'est encore plus complexe pour un <strong>bébé ou un nourrisson</strong> qui ne tient pas sa tête droite et ne doit pas avoir d'ombres en arrière-plan.
+                    </p>
+                    <p class="leading-relaxed">
+                        En faisant appel à un <strong>photographe professionnel à domicile</strong> (comme Grégory), vous vous assurez :
+                    </p>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li>De l'utilisation d'un fond professionnel portatif gris clair conforme.</li>
+                        <li>D'un système d'éclairage doux pour supprimer les ombres sur le fond.</li>
+                        <li>D'une validation par l'application professionnelle ANTS (code e-photo fourni pour le permis ou signature en direct).</li>
+                        <li>D'une garantie de conformité complète : si la photo est refusée par la mairie (ce qui n'arrive jamais avec un pro), elle est refaite gratuitement.</li>
+                    </ul>
+                    <div class="pt-6">
+                        <a href="/index.html#booking-funnel" class="inline-block bg-brand hover:bg-orange-600 active:scale-95 text-white font-bold px-8 py-3.5 rounded-full transition shadow-lg shadow-brand/10">
+                            Prendre RDV pour des photos à domicile
+                        </a>
+                    </div>
+                </section>
+
+                <!-- FAQ Section -->
+                <section class="space-y-6 pt-6 border-t border-gray-200">
+                    <h2 class="text-2xl font-serif font-bold text-dark">Questions fréquentes sur le fond des photos d'identité</h2>
+                    
+                    <div class="space-y-4">
+                        <div class="border border-gray-150 rounded-2xl p-6 bg-white shadow-sm">
+                            <h4 class="font-serif font-bold text-dark text-lg mb-2">Les photos en cabine automatique (Photomaton) ont-elles toujours un fond conforme ?</h4>
+                            <p class="text-sm md:text-base text-gray-600 leading-relaxed">
+                                Les cabines modernes disposent de fonds gris clair conformes. Cependant, un mauvais positionnement, un rideau arrière mal tiré, ou des ombres portées si l'utilisateur est mal assis peuvent entraîner un rejet de la photo. Pour les bébés de moins de 3 ans, les cabines automatiques sont inadaptées et presque systématiquement rejetées.
+                            </p>
+                        </div>
+                        
+                        <div class="border border-gray-150 rounded-2xl p-6 bg-white shadow-sm">
+                            <h4 class="font-serif font-bold text-dark text-lg mb-2">Puis-je utiliser un logiciel pour modifier le fond en gris ?</h4>
+                            <p class="text-sm md:text-base text-gray-600 leading-relaxed">
+                                <strong>Non.</strong> La retouche numérique des photos d'identité est formellement interdite par la réglementation de l'ANTS. Supprimer ou coloriser artificiellement un arrière-plan à l'aide de Photoshop ou d'outils d'IA est détecté par les logiciels de validation de la mairie et entraînera le rejet du dossier pour altération de l'image.
+                            </p>
+                        </div>
+
+                        <div class="border border-gray-150 rounded-2xl p-6 bg-white shadow-sm">
+                            <h4 class="font-serif font-bold text-dark text-lg mb-2">Quelle tenue porter pour éviter d'être confondu avec le fond ?</h4>
+                            <p class="text-sm md:text-base text-gray-600 leading-relaxed">
+                                Privilégiez des vêtements de couleur sombre ou contrastée (noir, bleu marine, vert bouteille, rouge brique). Évitez le blanc, le gris clair et le bleu ciel qui peuvent s'apparenter aux nuances officielles du fond. Les cols hauts ou écharpes qui masquent le cou doivent être retirés.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Barre latérale (4 col) -->
+            <div class="lg:col-span-4 space-y-8">
+                <!-- Box Contact / Réservation -->
+                <div class="bg-dark text-white rounded-3xl p-6 shadow-xl relative overflow-hidden border-t-4 border-brand">
+                    <h3 class="font-serif text-xl font-bold mb-4">Besoin de photos conformes ?</h3>
+                    <p class="text-sm text-gray-300 mb-6 leading-relaxed">
+                        Évitez les longues files d'attente en mairie et les rejets de dossiers. Grégory se déplace chez vous en Île-de-France avec tout le matériel pour des photos d'identité parfaites dès la naissance.
+                    </p>
+                    <ul class="space-y-3 text-xs mb-6">
+                        <li class="flex items-center gap-2">
+                            <span class="text-brand">✔</span> Agréé ANTS (Signature & Code)
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-brand">✔</span> Spécialiste Bébé, PMR et Seniors
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-brand">✔</span> Matériel de studio à domicile
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-brand">✔</span> Conformité garantie à 100%
+                        </li>
+                    </ul>
+                    <a href="/index.html#booking-funnel" class="block w-full text-center bg-brand hover:bg-orange-600 active:scale-95 text-white font-bold py-3 rounded-xl transition text-sm mb-3">
+                        📅 Réserver en ligne
+                    </a>
+                    <a href="tel:+33781757754" class="block w-full text-center bg-white/10 hover:bg-white/20 text-white font-bold py-3 rounded-xl transition text-sm">
+                        📞 Appeler : 07 81 75 77 54
+                    </a>
+                </div>
+
+                <!-- Box Mentions EEAT -->
+                <div class="bg-white border border-gray-150 rounded-3xl p-6 shadow-sm">
+                    <h3 class="font-serif text-lg font-bold text-dark mb-4">Auteur expert</h3>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center text-xl font-bold text-brand">
+                            G
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-dark text-sm">Grégory</h4>
+                            <p class="text-xs text-gray-500">Photographe Professionnel</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        Spécialisé depuis plusieurs années dans la photographie à domicile en Île-de-France, Grégory réalise des photos d'identité aux normes ANTS pour les bébés, enfants et adultes. Son équipement et ses connaissances des normes ISO/IEC garantissent une conformité sans faille de vos documents biométriques.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER AMÉLIORÉ -->
+    <footer id="zones" class="bg-dark text-gray-300 py-16 border-t-4 border-brand">
+        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12">
+            <!-- Colonne 1: Identité -->
+            <div>
+                <a href="/index.html" class="font-serif text-2xl font-bold text-white mb-4 flex items-center gap-2 transition-colors">
+                    <img src="/Images/logo.png" alt="Grégory photographe identité bébé à domicile Neuilly-sur-Marne" class="logo-img h-10 w-auto" width="200" height="135" loading="lazy">
+                    <span>Photo-identite-bebe-domicile.fr</span>
+                </a>
+                <p class="text-sm font-bold text-white">Grégory - EURL (SIREN: 984 595 538)</p>
+                <p class="text-sm mt-2">16 bd Carnot, 93330 Neuilly-sur-Marne</p>
+                <div class="mt-6 text-sm">
+                    <p class="font-bold text-white mb-2 underline decoration-brand">Horaires du Studio :</p>
+                    <ul class="space-y-1 text-gray-400">
+                        <li>Lundi : 09:30-19:00</li>
+                        <li>Mar, Mer, Ven : 09:30-13:00 / 14:30-19:00</li>
+                        <li>Jeudi : 09:30-13:00</li>
+                        <li>Samedi : 10:00-18:00</li>
+                        <li>Dimanche : Fermé</li>
+                        <li class="text-xs italic mt-2">(Service en ligne 24h/24, 7j/7)</li>
+                    </ul>
+                </div>
+                <div class="flex items-center gap-1 mt-4">
+                    <span class="text-brand">★★★★★</span>
+                    <span class="text-xs">4.9/5 (156 avis certifiés)</span>
+                </div>
+                <a href="tel:+33781757754" class="block text-white font-bold text-lg mt-6 hover:text-brand transition">📞 07 81 75 77 54</a>
+                <a href="https://wa.me/33781757754" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-white bg-green-600 hover:bg-green-700 px-4 py-2 rounded-full font-bold text-sm mt-3 transition shadow-md">
+                    <span>💬</span> Écrire sur WhatsApp
+                </a>
+            </div>
+
+            <!-- Colonne 2: Villes Prioritaires -->
+            <div>
+                <h3 class="font-bold text-white mb-6 uppercase tracking-wider text-sm border-b border-gray-700 pb-2">Villes prioritaires (93, 94, 75)</h3>
+                <ul class="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
+                    <li><a href="/villes/paris.html" class="hover:text-brand transition">Photo identité bébé Paris</a></li>
+                    <li><a href="/villes/boulogne-billancourt.html" class="hover:text-brand transition">Photo identité bébé Boulogne-Billancourt</a></li>
+                    <li><a href="/villes/neuilly-sur-seine.html" class="hover:text-brand transition">Photo identité bébé Neuilly-sur-Seine</a></li>
+                    <li><a href="/villes/vincennes.html" class="hover:text-brand transition">Photo identité bébé Vincennes</a></li>
+                    <li><a href="/villes/montreuil.html" class="hover:text-brand transition">Photo identité bébé Montreuil</a></li>
+                    <li><a href="/villes/creteil.html" class="hover:text-brand transition">Photo identité bébé Créteil</a></li>
+                    <li><a href="/villes/noisy-le-grand.html" class="hover:text-brand transition">Photo identité bébé Noisy-le-Grand</a></li>
+                    <li><a href="/villes/saint-denis.html" class="hover:text-brand transition">Photo identité bébé Saint-Denis</a></li>
+                </ul>
+            </div>
+
+            <!-- Colonne 3: Autres Villes & Infos -->
+            <div>
+                <h3 class="font-bold text-white mb-6 uppercase tracking-wider text-sm border-b border-gray-100 pb-2">Autres villes & Infos</h3>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="/villes/chelles.html" class="hover:text-brand transition">Photo identité bébé Chelles</a></li>
+                    <li><a href="/villes/bussy-saint-georges.html" class="hover:text-brand transition">Photo identité bébé Bussy-Saint-Georges</a></li>
+                    <li class="pt-4 border-t border-gray-800">
+                        <a href="/mentions-legales.html" class="hover:text-brand transition flex items-center gap-2">
+                            <span>⚖</span> Mentions Légales
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/confidentialite.html" class="hover:text-brand transition flex items-center gap-2">
+                            <span>🔒</span> Politique de Confidentialité
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

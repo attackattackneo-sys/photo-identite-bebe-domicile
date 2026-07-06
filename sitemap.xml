@@ -138,6 +138,14 @@
     <priority>0.6</priority>
   </url>
   
+  <!-- Guides & Conseils -->
+  <url>
+    <loc>https://www.photo-identite-bebe-domicile.fr/aide/pourquoi-pas-de-fond-blanc-sur-les-photos-didentite-en-france.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Pages Légales -->
   <url>
     <loc>https://www.photo-identite-bebe-domicile.fr/mentions-legales.html</loc>
