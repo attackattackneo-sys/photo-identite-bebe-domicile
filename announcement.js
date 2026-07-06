@@ -8,9 +8,13 @@
     if (!announcement.active) return;
 
     // Determine paths for links (root vs subdirectory)
-    const isSubdir = window.location.pathname.includes('/villes/');
-    const rootPrefix = isSubdir ? '../' : './';
-    const infoPageUrl = rootPrefix + 'informations.html';
+    const isFileProtocol = window.location.protocol === 'file:';
+    let infoPageUrl = '/informations.html';
+    if (isFileProtocol) {
+      const isSubdir = window.location.pathname.includes('/villes/');
+      const rootPrefix = isSubdir ? '../' : './';
+      infoPageUrl = rootPrefix + 'informations.html';
+    }
 
     // 2. LocalStorage Key for Session Dismissal
     // We append the start and end dates to the key. If dates change, the banner reappears automatically.
