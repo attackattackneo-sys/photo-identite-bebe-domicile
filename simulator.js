@@ -411,17 +411,17 @@ function runIDCalculation() {
             if (state.detectedDistance <= config.localMaxKm && state.detectedDuration <= config.localMaxMin) {
                 calculatedBase = config.priceLocal;
                 let extraKm = Math.max(0, state.detectedDistance - config.localMaxKm);
-                let extraMin = Math.max(0, state.detectedDuration - config.localMaxMin);
+                let extraMin = Math.max(0, (state.detectedDuration * 2) - config.localMaxMin);
                 calculatedBase += (extraKm * config.localExtraKmPrice) + (extraMin * config.localExtraMinPrice);
             } else if (state.detectedDistance <= config.metroMaxKm && state.detectedDuration <= config.metroMaxMin) {
                 calculatedBase = config.priceMetro;
                 let extraKm = Math.max(0, state.detectedDistance - config.metroMaxKm);
-                let extraMin = Math.max(0, state.detectedDuration - config.metroMaxMin);
+                let extraMin = Math.max(0, (state.detectedDuration * 2) - config.metroMaxMin);
                 calculatedBase += (extraKm * config.metroExtraKmPrice) + (extraMin * config.metroExtraMinPrice);
             } else {
                 calculatedBase = config.priceExtended;
                 let extraKm = Math.max(0, state.detectedDistance - config.extendedMaxKm);
-                let extraMin = Math.max(0, state.detectedDuration - config.extendedMaxMin);
+                let extraMin = Math.max(0, (state.detectedDuration * 2) - config.extendedMaxMin);
                 calculatedBase += (extraKm * config.extendedExtraKmPrice) + (extraMin * config.extendedExtraMinPrice);
             }
 
@@ -430,7 +430,7 @@ function runIDCalculation() {
             }
 
             travelCost = calculatedBase - config.priceStudio;
-            travelZoneName = `${state.detectedCity} (${state.detectedDistance.toFixed(1)} km / ${state.detectedDuration} min)`;
+            travelZoneName = `${state.detectedCity} (${state.detectedDistance.toFixed(1)} km / ${state.detectedDuration} min aller, ${state.detectedDuration * 2} min A/R)`;
         }
 
         finalPrice += travelCost;
