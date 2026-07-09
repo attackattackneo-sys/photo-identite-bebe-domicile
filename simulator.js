@@ -11,12 +11,12 @@ const config = {
     "localExtraMinPrice": 1,
     "metroMaxKm": 10,
     "metroMaxMin": 15,
-    "priceMetro": 95,
+    "priceMetro": 85,
     "metroExtraKmPrice": 2,
     "metroExtraMinPrice": 1,
     "extendedMaxKm": 13,
     "extendedMaxMin": 30,
-    "priceExtended": 129,
+    "priceExtended": 110,
     "parisSupplement": 35,
     "extendedExtraKmPrice": 1.5,
     "extendedExtraMinPrice": 0.5,
@@ -24,8 +24,8 @@ const config = {
     "priceExtraPers": 15,
     "priceAnts": 5,
     "postalPrices": {
-        "77500": 95,
-        "93160": 95
+        "77500": 79,
+        "93160": 85
     }
 };
 
