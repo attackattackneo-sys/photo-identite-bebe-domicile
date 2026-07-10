@@ -6,17 +6,17 @@ const config = {
     "priceStudio": 59, // Tarif de base inchangé pour la prestation sur place
     "localMaxKm": 5,
     "localMaxMin": 25,
-    "priceLocal": 75, // Aligné sur votre objectif pour Noisy et Chelles
+    "priceLocal": 65, // Aligné sur votre objectif pour Noisy et Chelles
     "localExtraKmPrice": 1.5,
     "localExtraMinPrice": 0.75,
     "metroMaxKm": 10,
     "metroMaxMin": 50,
-    "priceMetro": 89, // Aligné sur votre objectif pour Montreuil et Aulnay
+    "priceMetro": 79, // Aligné sur votre objectif pour Montreuil et Aulnay
     "metroExtraKmPrice": 1.5,
     "metroExtraMinPrice": 0.75,
     "extendedMaxKm": 15,
     "extendedMaxMin": 75,
-    "priceExtended": 129, // 129€ de base pour la zone Paris
+    "priceExtended": 99, // 129€ de base pour la zone Paris
     "parisSupplement": 30, // +30€ de forfait Paris = 159€ au total pour l'intra-muros
     "extendedExtraKmPrice": 1.5,
     "extendedExtraMinPrice": 0.75,
