@@ -3,29 +3,31 @@ const STUDIO_COORDS = { lat: 48.8569, lon: 2.5317 };
 
 // Original financial config structure
 const config = {
-    "priceStudio": 59, // Baseline price for at-home setups
+    "priceStudio": 59, // Tarif de base inchangé pour la prestation sur place
     "localMaxKm": 5,
-    "localMaxMin": 10,
-    "priceLocal": 79,
-    "localExtraKmPrice": 2,
-    "localExtraMinPrice": 1,
+    "localMaxMin": 25,
+    "priceLocal": 75, // Aligné sur votre objectif pour Noisy et Chelles
+    "localExtraKmPrice": 1.5,
+    "localExtraMinPrice": 0.75,
     "metroMaxKm": 10,
-    "metroMaxMin": 15,
-    "priceMetro": 85,
-    "metroExtraKmPrice": 2,
-    "metroExtraMinPrice": 1,
-    "extendedMaxKm": 13,
-    "extendedMaxMin": 30,
-    "priceExtended": 110,
-    "parisSupplement": 35,
+    "metroMaxMin": 50,
+    "priceMetro": 89, // Aligné sur votre objectif pour Montreuil et Aulnay
+    "metroExtraKmPrice": 1.5,
+    "metroExtraMinPrice": 0.75,
+    "extendedMaxKm": 15,
+    "extendedMaxMin": 75,
+    "priceExtended": 129, // 129€ de base pour la zone Paris
+    "parisSupplement": 30, // +30€ de forfait Paris = 159€ au total pour l'intra-muros
     "extendedExtraKmPrice": 1.5,
-    "extendedExtraMinPrice": 0.5,
+    "extendedExtraMinPrice": 0.75,
     "priceBaby": 15,
     "priceExtraPers": 15,
     "priceAnts": 5,
     "postalPrices": {
-        "77500": 79,
-        "93160": 85
+        "77500": 75, // Chelles (Forfait Direct à 75€)
+        "93160": 75, // Noisy-le-Grand (Forfait Direct à 75€)
+        "93100": 89, // Montreuil (Forfait Direct à 89€)
+        "93600": 89  // Aulnay-sous-Bois (Forfait Direct à 89€)
     }
 };
 
