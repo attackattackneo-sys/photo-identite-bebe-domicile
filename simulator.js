@@ -41,7 +41,7 @@ let state = {
     detectedPostal: "93330",
     detectedCity: "Neuilly-sur-Marne",
     participants: [
-        { id: 1, type: 'classic' } // profiles: 'classic', 'ants', 'visa', 'baby', 'newborn'
+        { id: 1, type: 'classic' } // profiles: 'classic', 'ants', 'visa', 'toddler', 'baby', 'newborn'
     ]
 };
 
@@ -53,6 +53,7 @@ const profiles = {
     classic: { label: "Adulte/Enfant +3 ans (Classique)", price: 10, optionCost: 0, desc: "Planche de 6 photos" },
     ants: { label: "Adulte/Enfant +3 ans (ANTS)", price: 15, optionCost: 5, desc: "Planche + Code e-photo" },
     visa: { label: "Visas Internationaux (USA, etc.)", price: 15, optionCost: 5, desc: "Format 5x5 cm / Spécifique" },
+    toddler: { label: "Bébé (3 mois à 3 ans)", price: 20, optionCost: 10, desc: "Séance adaptée de 10 à 20 minutes" },
     baby: { label: "Bébé (1 à 3 mois)", price: 25, optionCost: 15, desc: "Séance adaptée de 10-20 min" },
     newborn: { label: "Nourrisson (3 jours à 1 mois)", price: 30, optionCost: 20, desc: "Séance ultra-douce de 30 min" }
 };
