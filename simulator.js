@@ -382,7 +382,7 @@ function runIDCalculation() {
             
             const pLine = document.createElement('div');
             pLine.className = "flex justify-between items-baseline text-gray-600";
-            pLine.innerHTML = `<span>👤 ${profile.label} :</span> <strong class="text-dark">${profile.price.toFixed(2).replace('.', ',')} €</strong>`;
+            pLine.innerHTML = `<span>👤 ${profile.label} :</span> <strong class="text-dark">${profile.price} €</strong>`;
             recapPeopleList.appendChild(pLine);
         });
 
@@ -398,10 +398,10 @@ function runIDCalculation() {
         const firstLine = document.createElement('div');
         firstLine.className = "flex justify-between items-baseline text-gray-600";
         if (firstProfile.optionCost > 0) {
-            firstLine.innerHTML = `<span>👤 Prise de vue principale (${firstProfile.label}) :</span> <strong class="text-dark">59,00 € <span class="text-brand">+${firstProfile.optionCost.toFixed(2).replace('.', ',')} €</span></strong>`;
+            firstLine.innerHTML = `<span>👤 Prise de vue principale (${firstProfile.label}) :</span> <strong class="text-dark">59 € <span class="text-brand">+${firstProfile.optionCost} €</span></strong>`;
             finalPrice += firstProfile.optionCost;
         } else {
-            firstLine.innerHTML = `<span>👤 Prise de vue principale (${firstProfile.label}) :</span> <strong class="text-dark">59,00 €</strong>`;
+            firstLine.innerHTML = `<span>👤 Prise de vue principale (${firstProfile.label}) :</span> <strong class="text-dark">59 €</strong>`;
         }
         recapPeopleList.appendChild(firstLine);
 
@@ -416,7 +416,7 @@ function runIDCalculation() {
 
                 const line = document.createElement('div');
                 line.className = "flex justify-between items-baseline text-gray-600";
-                line.innerHTML = `<span>👤 Personne sup. (${nextProfile.label}) :</span> <strong class="text-dark">${personCost.toFixed(2).replace('.', ',')} €</strong>`;
+                line.innerHTML = `<span>👤 Personne sup. (${nextProfile.label}) :</span> <strong class="text-dark">${personCost} €</strong>`;
                 recapPeopleList.appendChild(line);
             }
         }
@@ -430,14 +430,14 @@ function runIDCalculation() {
             travelCost = 0;
             travelZoneName = "Neuilly-sur-Marne (93330)";
         } else if (normalizedPostal === "77500") {
-            travelCost = config.postalPrices["77500"] - config.priceStudio; // 95 - 59 = 36€
+            travelCost = config.postalPrices["77500"] - config.priceStudio; // 75 - 59 = 16€
             travelZoneName = "Chelles (77500) - Forfait Direct";
         } else if (normalizedPostal === "93160") {
-            travelCost = config.postalPrices["93160"] - config.priceStudio; // 95 - 59 = 36€
+            travelCost = config.postalPrices["93160"] - config.priceStudio; // 75 - 59 = 16€
             travelZoneName = "Noisy-le-Grand (93160) - Forfait Direct";
         } else {
             // General algorithm matching Greg's original vercel app config rules
-            let calculatedBase = config.priceLocal; // default 79€ starting local
+            let calculatedBase = config.priceLocal; // default 65€ starting local
             let currentIsParis = normalizedPostal.startsWith("75") || normalizedCity.includes("paris");
 
             if (state.detectedDistance <= config.localMaxKm && state.detectedDuration <= config.localMaxMin) {
@@ -461,6 +461,9 @@ function runIDCalculation() {
                 calculatedBase += config.parisSupplement;
             }
 
+            // Arrondi aux 5 € supérieurs pour simplifier le tarif client
+            calculatedBase = Math.ceil(calculatedBase / 5) * 5;
+
             travelCost = calculatedBase - config.priceStudio;
             travelZoneName = `${state.detectedCity} (${state.detectedDistance.toFixed(1)} km / ${state.detectedDuration} min aller, ${state.detectedDuration * 2} min A/R)`;
         }
@@ -468,12 +471,13 @@ function runIDCalculation() {
         finalPrice += travelCost;
 
         document.getElementById('recap-travel-zone').innerText = travelZoneName;
-        document.getElementById('recap-travel-price').innerText = travelCost === 0 ? "Offert" : `+${travelCost.toFixed(2).replace('.', ',')} €`;
+        document.getElementById('recap-travel-price').innerText = travelCost === 0 ? "Offert" : `+${travelCost} €`;
     }
 
-    const formattedTotal = `${finalPrice.toFixed(2).replace('.', ',')} €`;
+    const formattedTotal = `${finalPrice} €`;
     document.getElementById('total-price').innerText = formattedTotal;
-    document.getElementById('sticky-price').innerText = formattedTotal;
+    const stickyPrice = document.getElementById('sticky-price');
+    if (stickyPrice) stickyPrice.innerText = formattedTotal;
 
     // Render buttons layout dynamically based on state
     renderCheckoutButtons();
@@ -517,7 +521,7 @@ function getSummaryText() {
         text += `- Nombre de sujets : ${state.participants.length}\n`;
         state.participants.forEach((p, idx) => {
             const profile = profiles[p.type];
-            text += `  • Sujet ${idx + 1} : ${profile.label} ➔ ${profile.price},00 €\n`;
+            text += `  • Sujet ${idx + 1} : ${profile.label} ➔ ${profile.price} €\n`;
         });
     } else {
         let zone = document.getElementById('recap-travel-zone').innerText;
@@ -531,14 +535,14 @@ function getSummaryText() {
         
         // First participant
         const firstProfile = profiles[state.participants[0].type];
-        text += `  • Sujet 1 (Principal) : ${firstProfile.label} ➔ 59,00 €${firstProfile.optionCost > 0 ? ` (+ option ${firstProfile.optionCost},00 €)` : ''}\n`;
+        text += `  • Sujet 1 (Principal) : ${firstProfile.label} ➔ 59 €${firstProfile.optionCost > 0 ? ` (+ option ${firstProfile.optionCost} €)` : ''}\n`;
         
         // Extra participants
         if (state.participants.length > 1) {
             for (let i = 1; i < state.participants.length; i++) {
                 const nextProfile = profiles[state.participants[i].type];
                 let personCost = config.priceExtraPers + nextProfile.optionCost;
-                text += `  • Sujet ${i + 1} (Supplémentaire) : ${nextProfile.label} ➔ ${personCost},00 €\n`;
+                text += `  • Sujet ${i + 1} (Supplémentaire) : ${nextProfile.label} ➔ ${personCost} €\n`;
             }
         }
     }
