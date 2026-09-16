@@ -362,7 +362,6 @@
                 <a href="../photographe-agree-ants-ile-de-france.html" class="hover:text-brand transition">Agréé ANTS</a>
                 <a href="../photo-identite-a-domicile-ile-de-france.html" class="hover:text-brand transition">À Domicile</a>
                 <a href="../prix-photo-identite.html" class="hover:text-brand transition">Tarifs</a>
-                <a href="../studio-photo.html" class="hover:text-brand transition">Studio</a>
                 <a href="tel:+33781757754" class="bg-brand text-white px-5 py-2 rounded-full font-bold hover:bg-orange-600 transition-all shadow-lg text-sm whitespace-nowrap">📞 07 81 75 77 54</a>
             </div>
 
@@ -378,7 +377,6 @@
                 <a onclick="toggleMobileMenu()" href="../photographe-agree-ants-ile-de-france.html" class="flex items-center gap-3 text-lg font-medium text-gray-800 hover:text-brand transition-colors py-2 border-b border-gray-50">✅ Agréé ANTS (e-Photo)</a>
                 <a onclick="toggleMobileMenu()" href="../photo-identite-a-domicile-ile-de-france.html" class="flex items-center gap-3 text-lg font-medium text-gray-800 hover:text-brand transition-colors py-2 border-b border-gray-50">🚗 Photo d'Identité à Domicile</a>
                 <a onclick="toggleMobileMenu()" href="../prix-photo-identite.html" class="flex items-center gap-3 text-lg font-medium text-gray-800 hover:text-brand transition-colors py-2 border-b border-gray-50">💰 Tarifs Prestations</a>
-                <a onclick="toggleMobileMenu()" href="../studio-photo.html" class="flex items-center gap-3 text-lg font-medium text-gray-800 hover:text-brand transition-colors py-2 border-b border-gray-50">📸 Studio Photo</a>
             </div>
             <a onclick="toggleMobileMenu()" href="tel:+33781757754" class="block w-full text-center bg-brand hover:bg-orange-600 text-white py-4 rounded-full font-bold shadow-lg transition-all">📞 07 81 75 77 54</a>
             <a onclick="toggleMobileMenu()" href="https://wa.me/33781757754" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-green-600 hover:bg-green-700 text-white py-4 rounded-full font-bold shadow-lg mt-3">💬 Écrire sur WhatsApp</a>
@@ -430,23 +428,90 @@
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch bg-white p-5 md:p-10 rounded-[2rem] shadow-2xl border border-gray-100">
+            
+            <!-- LEFT FORM INPUTS -->
             <div class="lg:col-span-7 space-y-6">
-                <div class="p-5 rounded-2xl bg-gray-50 border border-gray-150">
-                    <span class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-3">1. Lieu de la Prise de Vue</span>
-                    <div class="grid grid-cols-2 gap-4">
-                        <button type="button" onclick="selectLocationType('studio')" id="btn-loc-studio" class="py-4 px-3 rounded-2xl border transition text-center focus:outline-none flex flex-col items-center justify-center gap-1.5 active:scale-95">
-                            <i data-lucide="building" class="w-5 h-5"></i>
-                            <span class="text-sm font-bold block">Au Studio</span>
-                            <span class="text-[10px] text-gray-500">16 bd Carnot, Neuilly-sur-Marne • 10€</span>
-                        </button>
-                        <button type="button" onclick="selectLocationType('home')" id="btn-loc-home" class="py-4 px-3 rounded-2xl border transition text-center focus:outline-none flex flex-col items-center justify-center gap-1.5 active:scale-95">
-                            <i data-lucide="home" class="w-5 h-5"></i>
-                            <span class="text-sm font-bold block">À Domicile</span>
-                            <span class="text-[10px] text-gray-500">Chez vous • Tarif local sans attente</span>
-                        </button>
+                
+                <!-- PRESTATION À DOMICILE (CONFIRMATION VISUELLE RASSURANTE) -->
+                <div class="p-5 rounded-2xl bg-orange-50/70 border border-brand/20">
+                    <div class="flex items-center justify-between gap-3">
+                        <div class="flex items-center gap-3">
+                            <span class="w-10 h-10 rounded-xl bg-brand text-white flex items-center justify-center shrink-0 shadow-sm">
+                                <i data-lucide="home" class="w-5 h-5"></i>
+                            </span>
+                            <div>
+                                <span class="text-xs font-bold uppercase tracking-wider text-brand block">Séance chez vous</span>
+                                <h3 class="text-sm sm:text-base font-bold text-dark">Photos d'identité à domicile certifiées</h3>
+                            </div>
+                        </div>
+                        <span class="bg-white text-dark border border-brand/20 text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shrink-0 shadow-xs">
+                            Studio mobile IDF
+                        </span>
+                    </div>
+                    <p class="text-xs text-gray-600 mt-2.5 leading-relaxed">
+                        Le photographe se déplace directement chez vous avec son matériel professionnel certifié (éclairage studio doux, fond réglementaire, coussins ergonomiques nouveau-nés).
+                    </p>
+                    
+                    <!--
+                    =============================================================================
+                    COMPOSANT ARCHIVÉ : SÉLECTEUR DE LIEU STUDIO / DOMICILE
+                    =============================================================================
+                    Statut : Désactivé/masqué pour recentrer le simulateur à 100% sur le déplacement à domicile.
+                    Les boutons #btn-loc-studio et #btn-loc-home sont conservés ci-dessous pour assurer
+                    la compatibilité descendante avec simulator.js sans aucune régression technique.
+                    
+                    POUR RÉACTIVER LE CHOIX STUDIO DANS LE SIMULATEUR :
+                    1. Retirer la classe "hidden" du conteneur <div> ci-dessous.
+                    2. Retirer l'attribut data-default-location="home" sur la balise <main id="booking-funnel">.
+                    =============================================================================
+                    -->
+                    <div class="hidden">
+                        <button type="button" onclick="selectLocationType('studio')" id="btn-loc-studio" aria-hidden="true" tabindex="-1">Au Studio</button>
+                        <button type="button" onclick="selectLocationType('home')" id="btn-loc-home" aria-hidden="true" tabindex="-1">À Domicile</button>
                     </div>
                 </div>
 
+                <!-- 1. DEPLACEMENT DOMICILE (SAISIE DE VILLE / CODE POSTAL) -->
+                <div id="travel-panel" class="p-5 rounded-2xl bg-gray-50 border border-gray-150 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="block text-xs font-bold uppercase tracking-wider text-gray-700">1. Votre commune ou code postal (IDF)</span>
+                        <span class="text-[10px] bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded">Déplacement IDF</span>
+                    </div>
+                    
+                    <!-- Address Input Search Field -->
+                    <div class="relative">
+                        <label for="address-input" class="block text-xs text-gray-700 font-medium mb-1.5">Saisissez votre commune ou code postal pour calculer le déplacement :</label>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none text-gray-400">
+                                <i data-lucide="search" class="w-4 h-4"></i>
+                            </span>
+                            <input type="text" id="address-input" oninput="debounceSearch(this.value)" placeholder="Ex: Chelles, Noisy-le-Grand, Paris 12e, Montreuil..." class="w-full bg-white border border-gray-200 rounded-xl py-3.5 pl-10 pr-10 text-xs sm:text-sm text-dark focus:border-brand focus:ring-1 focus:ring-brand outline-none min-h-[44px]">
+                            <button type="button" onclick="clearAddressSearch()" id="clear-search-btn" aria-label="Effacer la saisie d'adresse" class="absolute inset-y-0 right-0 flex items-center pr-3.5 text-gray-400 hover:text-gray-600 hidden">
+                                <i data-lucide="x-circle" class="w-4.5 h-4.5"></i>
+                            </button>
+                        </div>
+
+                        <!-- Loading spinner -->
+                        <div id="address-loading" class="absolute right-12 top-9.5 hidden">
+                            <svg class="animate-spin h-4 w-4 text-brand" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                        </div>
+
+                        <!-- Autocomplete Dropdown list -->
+                        <div id="autocomplete-results" class="absolute left-0 right-0 z-50 bg-white border border-gray-200 rounded-xl shadow-lg max-h-56 overflow-y-auto mt-1 hidden text-xs">
+                            <!-- Injected suggestions -->
+                        </div>
+                    </div>
+
+                    <!-- Real-time Route Calc Status Badge -->
+                    <div id="route-calc-info" class="p-3.5 rounded-xl bg-white border border-gray-150 text-[11px] leading-relaxed hidden">
+                        <!-- Computed values (km / min) displayed dynamically -->
+                    </div>
+                </div>
+
+                <!-- 2. LISTE DES PERSONNES -->
                 <div class="p-5 rounded-2xl bg-gray-50 border border-gray-150 space-y-4">
                     <div class="flex justify-between items-center">
                         <span class="block text-xs font-bold uppercase tracking-wider text-gray-700">2. Personnes à photographier</span>
@@ -454,66 +519,102 @@
                             <i data-lucide="plus" class="w-3.5 h-3.5"></i> Ajouter une personne
                         </button>
                     </div>
-                    <div id="participants-list" class="space-y-3"></div>
+
+                    <!-- Dynamic List Container -->
+                    <div id="participants-list" class="space-y-3">
+                        <!-- Injected via JS -->
+                    </div>
                 </div>
 
-                <div id="travel-panel" class="p-5 rounded-2xl bg-gray-50 border border-gray-150 space-y-4 hidden">
-                    <span class="block text-[11px] font-bold uppercase tracking-wider text-gray-700">3. Localisation pour le déplacement</span>
-                    <div class="relative">
-                        <label for="address-input" class="block text-xs text-gray-600 mb-1.5">Votre adresse à Neuilly-sur-Marne ou en Île-de-France :</label>
-                        <div class="relative">
-                            <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none text-gray-400">
-                                <i data-lucide="search" class="w-4 h-4"></i>
-                            </span>
-                            <input type="text" id="address-input" oninput="debounceSearch(this.value)" value="Neuilly-sur-Marne, 93330" class="w-full bg-white border border-gray-200 rounded-xl py-3.5 pl-10 pr-10 text-xs sm:text-sm text-dark focus:border-brand outline-none min-h-[44px]">
-                            <button type="button" onclick="clearAddressSearch()" id="clear-search-btn" aria-label="Effacer la recherche d'adresse" class="absolute inset-y-0 right-0 flex items-center pr-3.5 text-gray-400 hover:text-gray-600 hidden">
-                                <i data-lucide="x-circle" class="w-4.5 h-4.5"></i>
-                            </button>
-                        </div>
-                        <div id="address-loading" class="absolute right-12 top-9.5 hidden">
-                            <svg class="animate-spin h-4 w-4 text-brand" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
-                        </div>
-                        <div id="autocomplete-results" class="absolute left-0 right-0 z-50 bg-white border border-gray-200 rounded-xl shadow-lg max-h-56 overflow-y-auto mt-1 hidden text-xs"></div>
-                    </div>
-                    <div id="route-calc-info" class="p-3 bg-white rounded-xl border border-gray-150 text-xs text-gray-600 hidden"></div>
-                </div>
             </div>
 
-            <div class="lg:col-span-5 flex flex-col justify-between bg-gray-50 p-6 rounded-2xl border border-gray-150 space-y-6">
-                <div class="space-y-4">
-                    <h3 class="font-bold text-sm uppercase tracking-wider text-dark border-b border-gray-200 pb-3 flex items-center justify-between">
-                        <span>Récapitulatif de votre devis</span>
-                        <span id="recap-mode-badge" class="text-[10px] bg-brand/10 text-brand font-bold px-2 py-0.5 rounded">À domicile</span>
-                    </h3>
-                    <div class="space-y-2.5 text-xs text-gray-600">
-                        <div class="flex justify-between" id="recap-base-row">
-                            <span id="recap-base-label">Forfait Prise de vue</span>
-                            <span id="recap-base-price" class="font-bold text-dark">59 €</span>
+            <!-- RIGHT RECEIPT SUMMARY -->
+            <div class="lg:col-span-5 bg-orange-50/40 border border-brand/10 rounded-2xl p-6 flex flex-col justify-between h-full min-h-[380px]">
+                <div>
+                    <div class="flex justify-between items-center mb-4 pb-2 border-b border-brand/20">
+                        <h3 class="text-xs font-bold uppercase tracking-widest text-gray-700">Détail de votre estimation</h3>
+                        <span class="bg-orange-100 text-brand border border-brand/20 px-2 py-0.5 rounded text-[9px] font-bold">CONFORME ÉTAT</span>
+                    </div>
+
+                    <!-- List description -->
+                    <div class="space-y-3.5 text-xs">
+                        <div class="flex justify-between items-start gap-2">
+                            <span class="text-gray-500">Formule choisie :</span>
+                            <span id="recap-location-type" class="font-bold text-dark text-right">À Domicile (Chez vous)</span>
                         </div>
-                        <div class="flex justify-between text-brand hidden" id="recap-travel-row">
-                            <span id="recap-travel-label">Frais de déplacement</span>
-                            <span id="recap-travel-price" class="font-bold">0 €</span>
+
+                        <div class="border-t border-brand/20 pt-3">
+                            <span class="text-gray-500 block mb-1.5">Sujets à photographier :</span>
+                            <div id="recap-people-list" class="space-y-1.5">
+                                <!-- Injected via JS -->
+                            </div>
                         </div>
-                        <div id="recap-participants-detail" class="space-y-1.5 pt-2 border-t border-gray-200/60"></div>
+
+                        <div id="recap-travel-row" class="flex justify-between items-start border-t border-brand/20 pt-3">
+                            <span class="text-gray-500">Frais de déplacement :</span>
+                            <div class="text-right shrink-0">
+                                <span id="recap-travel-zone" class="font-bold text-dark block text-xs">Neuilly-sur-Marne (93330)</span>
+                                <span id="recap-travel-price" class="text-brand text-xs font-bold">Offert</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="pt-4 border-t border-gray-200 space-y-4">
-                    <div class="flex justify-between items-baseline">
-                        <span class="text-xs font-bold text-gray-500 uppercase">Total Estimé</span>
-                        <span id="recap-total-price" class="text-3xl font-black text-brand">59 €</span>
+                <!-- CHEKOUT BOTTOM CTA (Dynamic layout for Studio/Home) -->
+                <div class="mt-8 pt-4 border-t border-brand/20">
+                    <div class="flex justify-between items-baseline mb-4">
+                        <div class="text-left">
+                            <span class="text-xs font-bold text-dark block">TOTAL NET ESTIMÉ</span>
+                            <span class="text-[9px] text-gray-500 italic">Régime Micro / Net à payer</span>
+                        </div>
+                        <div class="text-right">
+                            <span id="total-price" class="text-2xl font-black text-brand">59 €</span>
+                            <span class="text-[9px] text-gray-400 block">TVA non applicable</span>
+                        </div>
                     </div>
-                    <p class="text-[10px] text-gray-400 text-left">Photos conformes aux 22 critères ANTS ou nouvelle séance gratuite. Planches papier et code ePhoto remis sur place.</p>
-                    <div id="cta-container" class="space-y-2">
-                        <button type="button" onclick="openBookingModal()" id="btn-open-booking" class="w-full bg-brand hover:bg-orange-600 text-white font-bold py-4 rounded-xl transition shadow-lg shadow-brand/20 text-sm flex items-center justify-center gap-2">
-                            <i data-lucide="calendar" class="w-4 h-4"></i> Réserver cette séance
-                        </button>
-                        <a href="tel:+33781757754" class="w-full bg-dark hover:bg-black text-white font-bold py-3 rounded-xl transition text-xs flex items-center justify-center gap-2">
-                            📞 07 81 75 77 54 (Appel direct)
-                        </a>
+
+                    <!-- Action Button Container -->
+                    <div id="action-buttons-container" class="space-y-2">
+                        <!-- Injected via JS based on locationType -->
                     </div>
                 </div>
+
             </div>
+        </div>
+
+        <!-- REGULATORY RULES ADVICE -->
+        <section class="mt-8 bg-white rounded-3xl border border-gray-150 p-6 shadow-sm">
+            <h3 class="text-sm sm:text-base font-bold text-dark flex items-center gap-2 mb-4">
+                <i data-lucide="info" class="text-brand w-5 h-5"></i> Conseils indispensables pour une conformité officielle rigoureuse
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs text-gray-600 leading-relaxed">
+                <ul class="space-y-2.5">
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="x-circle" class="text-red-500 w-4 h-4 mt-0.5 shrink-0"></i>
+                        <span><strong>Pas de lunettes</strong> : Fortement recommandé de retirer les lunettes lors de la prise de vue pour éliminer tout risque d'ombres ou de reflets sur l'iris pouvant motiver un refus en mairie.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="x-circle" class="text-red-500 w-4 h-4 mt-0.5 shrink-0"></i>
+                        <span><strong>Expression faciale neutre</strong> : Bouche close sans dents visibles, regard droit face à la caméra sans rire ni sourire (obligatoire).</span>
+                    </li>
+                </ul>
+                <ul class="space-y-2.5">
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="check-circle" class="text-emerald-600 w-4 h-4 mt-0.5 shrink-0"></i>
+                        <span><strong>Dégager parfaitement le front</strong> : Les cheveux doivent être rangés derrière les oreilles. Les bandeaux épais, bonnets ou barrettes imposantes sont exclus.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="check-circle" class="text-emerald-600 w-4 h-4 mt-0.5 shrink-0"></i>
+                        <span><strong>Vêtements de couleur sombre</strong> : Privilégiez des hauts noirs, bleus ou sombres afin de maximiser le contraste avec le fond réglementaire gris clair.</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- PASSERELLE EXTERNE VERS LE STUDIO (CONFIGURABLE DANS config/site.js) -->
+        <div class="mt-8 p-4 rounded-2xl bg-white border border-gray-200 text-center max-w-xl mx-auto shadow-xs">
+            <p class="text-xs sm:text-sm text-gray-500 leading-relaxed">
+                Vous préférez venir en studio ? <a href="https://www.gregstudiophoto.fr/" data-studio-link target="_blank" rel="noopener noreferrer" aria-label="Voir les tarifs et prestations au studio sur le site externe de Greg Studio Photo" class="text-brand font-semibold hover:underline inline-flex items-center gap-1">Voir les tarifs sur <span data-studio-name>Greg Studio Photo</span> →</a>
+            </p>
         </div>
     </main>
 
@@ -614,14 +715,13 @@
                 <p class="text-sm font-bold text-white">EURL (SIREN: 984 595 538)</p>
                 <p class="text-sm mt-2">16 bd Carnot, 93330 Neuilly-sur-Marne</p>
                 <div class="mt-6 text-sm">
-                    <p class="font-bold text-white mb-2 underline decoration-brand">Horaires du Studio :</p>
-                    <ul class="space-y-1 text-gray-400">
-                        <li>Lundi : 09:30-19:00</li>
-                        <li>Mar, Mer, Ven : 09:30-13:00 / 14:30-19:00</li>
-                        <li>Jeudi : 09:30-13:00</li>
-                        <li>Samedi : 10:00-18:00</li>
-                        <li>Dimanche : Fermé</li>
-                    </ul>
+                    <p class="font-bold text-white mb-2 underline decoration-brand">Interventions à Domicile :</p>
+                    <p class="text-xs text-gray-400 leading-relaxed mb-2">
+                        Du lundi au samedi sur rendez-vous à Paris et dans toute l'Île-de-France (93, 94, 77, 92...).
+                    </p>
+                    <p class="text-xs text-gray-400">
+                        Studio fixe : 16 bd Carnot, 93330 Neuilly-sur-Marne — <a href="https://www.gregstudiophoto.fr/" data-studio-link target="_blank" rel="noopener noreferrer" aria-label="Voir les prestations au studio sur le site de Greg Studio Photo" class="text-brand hover:underline font-medium">Prestations au studio ↗</a>
+                    </p>
                 </div>
                 <div class="flex items-center gap-1 mt-4">
                     <span class="text-brand">★★★★★</span>
@@ -662,7 +762,13 @@
                         <a href="../confidentialite.html" class="hover:text-brand transition flex items-center gap-2"><span>🔒</span> Politique de Confidentialité</a>
                     </li>
                 </ul>
-            </div>
+
+        <!-- BARRE DISCRÈTE DE PIED DE PAGE : PASSERELLE STUDIO CONFIGURABLE -->
+        <div class="mt-12 pt-6 border-t border-gray-800 text-center text-xs text-gray-400">
+            <span>Vous préférez venir en studio ?</span>
+            <a href="https://www.gregstudiophoto.fr/" data-studio-link target="_blank" rel="noopener noreferrer" aria-label="Voir les tarifs sur le site du studio externe Greg Studio Photo" class="text-brand hover:underline font-semibold ml-1 inline-flex items-center gap-0.5">
+                Voir les tarifs sur <span data-studio-name>Greg Studio Photo</span> →
+            </a>
         </div>
     </footer>
 

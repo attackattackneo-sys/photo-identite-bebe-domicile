@@ -1,5 +1,11 @@
 // Configuration globale du site
 const siteConfig = {
+  // Configuration de la passerelle externe vers le Studio photo physique (Neuilly-sur-Marne)
+  studio: {
+    name: "Greg Studio Photo",
+    url: "https://www.gregstudiophoto.fr/", // <-- Modifiable ici pour changer l'URL du studio partout sur le site
+    address: "16 bd Carnot, 93330 Neuilly-sur-Marne"
+  },
   announcement: {
     active: false, // true = visible, false = invisible
     message: "📸 Fermeture estivale pour congés!\nJe serai en vacances du 16 juillet au 6 août 2026.\nAucune séance photo ne sera programmée pendant cette période.\nJe serai ravi de vous retrouver à partir du lundi 10 août 2026 pour de nouvelles aventures photographiques!\nPour toute demande, vous pouvez me contacter par email, je vous répondrai à mon retour.",
@@ -92,4 +98,31 @@ document.addEventListener('keydown', function(e) {
         }
     }
 });
+
+// Synchronisation automatique des liens studio externes configurables
+(function() {
+    function syncStudioLinks() {
+        if (!window.siteConfig || !window.siteConfig.studio) return;
+        var studio = window.siteConfig.studio;
+        if (studio.url) {
+            var links = document.querySelectorAll('[data-studio-link]');
+            for (var i = 0; i < links.length; i++) {
+                links[i].href = studio.url;
+            }
+        }
+        if (studio.name) {
+            var names = document.querySelectorAll('[data-studio-name]');
+            for (var j = 0; j < names.length; j++) {
+                names[j].textContent = studio.name;
+            }
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', syncStudioLinks);
+    } else {
+        syncStudioLinks();
+    }
+})();
+
 
