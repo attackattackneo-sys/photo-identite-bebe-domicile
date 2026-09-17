@@ -1,69 +1,82 @@
 
 // Global Mobile Menu Controller
-window.toggleMobileMenu = function() {
-    var menu = document.getElementById('mobile-menu');
-    var nav = document.getElementById('main-nav') || document.querySelector('nav');
-    var btn = document.getElementById('mobile-menu-btn');
-    if (!menu) return;
+if (typeof window.toggleMobileMenu !== 'function') {
+    window.toggleMobileMenu = function(e) {
+        if (e && e.stopPropagation) e.stopPropagation();
+        if (window.event && window.event.stopPropagation) window.event.stopPropagation();
+        var menu = document.getElementById('mobile-menu');
+        var nav = document.getElementById('main-nav') || document.querySelector('nav');
+        var btn = document.getElementById('mobile-menu-btn');
+        if (!menu) return;
 
-    var isHidden = menu.classList.contains('hidden');
-    if (isHidden) {
-        menu.classList.remove('hidden');
-        if (nav) {
-            nav.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-lg');
-            nav.classList.remove('bg-transparent', 'shadow-none');
-            var navLinks = nav.querySelector('.nav-links-container');
-            var logoText = nav.querySelector('.logo-text');
-            var logoImg = nav.querySelector('.logo-img');
-            if (navLinks) { navLinks.classList.add('text-gray-800'); navLinks.classList.remove('text-white/90'); }
-            if (logoText) { logoText.classList.add('text-dark'); logoText.classList.remove('text-white'); }
-            if (logoImg) { logoImg.classList.remove('brightness-0', 'invert'); }
-        }
-        if (btn) {
-            btn.classList.add('text-gray-800');
-            btn.classList.remove('text-white');
-            btn.setAttribute('aria-expanded', 'true');
-            btn.innerHTML = '<svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>';
-        }
-    } else {
-        menu.classList.add('hidden');
-        if (btn) {
-            btn.setAttribute('aria-expanded', 'false');
-            btn.innerHTML = '<svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>';
-        }
-        if (window.scrollY <= 20 && nav) {
-            nav.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-lg');
-            nav.classList.add('bg-transparent', 'shadow-none');
-            var navLinks = nav.querySelector('.nav-links-container');
-            var logoText = nav.querySelector('.logo-text');
-            var logoImg = nav.querySelector('.logo-img');
-            if (navLinks) { navLinks.classList.remove('text-gray-800'); navLinks.classList.add('text-white/90'); }
-            if (logoText) { logoText.classList.remove('text-dark'); logoText.classList.add('text-white'); }
-            if (logoImg) { logoImg.classList.add('brightness-0', 'invert'); }
+        var isHidden = menu.classList.contains('hidden');
+        if (isHidden) {
+            menu.classList.remove('hidden');
+            if (nav) {
+                nav.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-lg');
+                nav.classList.remove('bg-transparent', 'shadow-none');
+                var navLinks = nav.querySelector('.nav-links-container');
+                var logoText = nav.querySelector('.logo-text');
+                var logoImg = nav.querySelector('.logo-img');
+                if (navLinks) { navLinks.classList.add('text-gray-800'); navLinks.classList.remove('text-white/90'); }
+                if (logoText) { logoText.classList.add('text-dark'); logoText.classList.remove('text-white'); }
+                if (logoImg) { logoImg.classList.remove('brightness-0', 'invert'); }
+            }
             if (btn) {
-                btn.classList.remove('text-gray-800');
-                btn.classList.add('text-white');
+                btn.classList.add('text-gray-800');
+                btn.classList.remove('text-white');
+                btn.setAttribute('aria-expanded', 'true');
+                btn.innerHTML = '<svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>';
+            }
+        } else {
+            menu.classList.add('hidden');
+            if (btn) {
+                btn.setAttribute('aria-expanded', 'false');
+                btn.innerHTML = '<svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>';
+            }
+            if (window.scrollY <= 20 && nav) {
+                nav.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-lg');
+                nav.classList.add('bg-transparent', 'shadow-none');
+                var navLinks = nav.querySelector('.nav-links-container');
+                var logoText = nav.querySelector('.logo-text');
+                var logoImg = nav.querySelector('.logo-img');
+                if (navLinks) { navLinks.classList.remove('text-gray-800'); navLinks.classList.add('text-white/90'); }
+                if (logoText) { logoText.classList.remove('text-dark'); logoText.classList.add('text-white'); }
+                if (logoImg) { logoImg.classList.add('brightness-0', 'invert'); }
+                if (btn) {
+                    btn.classList.remove('text-gray-800');
+                    btn.classList.add('text-white');
+                }
             }
         }
-    }
-};
+    };
+}
 
-window.closeMobileMenu = function() {
-    var menu = document.getElementById('mobile-menu');
-    if (menu && !menu.classList.contains('hidden')) {
-        window.toggleMobileMenu();
-    }
-};
+if (typeof window.closeMobileMenu !== 'function') {
+    window.closeMobileMenu = function() {
+        var menu = document.getElementById('mobile-menu');
+        if (menu && !menu.classList.contains('hidden')) {
+            window.toggleMobileMenu();
+        }
+    };
+}
 
-document.addEventListener('click', function(e) {
-    var menu = document.getElementById('mobile-menu');
-    var btn = document.getElementById('mobile-menu-btn');
-    if (menu && !menu.classList.contains('hidden')) {
-        if (!menu.contains(e.target) && (!btn || !btn.contains(e.target))) {
+if (!window._mobileMenuListenerBound) {
+    window._mobileMenuListenerBound = true;
+    document.addEventListener('click', function(e) {
+        var menu = document.getElementById('mobile-menu');
+        var btn = document.getElementById('mobile-menu-btn');
+        if (!menu || menu.classList.contains('hidden')) return;
+        if (e.target && !e.target.isConnected) return;
+        if (btn && (btn === e.target || btn.contains(e.target))) return;
+        if (e.target && e.target.closest && e.target.closest('#mobile-menu-btn')) return;
+        if (menu && (menu === e.target || menu.contains(e.target))) return;
+        if (e.target && e.target.closest && e.target.closest('#mobile-menu')) return;
+        if (typeof window.closeMobileMenu === 'function') {
             window.closeMobileMenu();
         }
-    }
-});
+    });
+}
 
 // Coordinates of Greg Studio in Neuilly-sur-Marne
 const STUDIO_COORDS = { lat: 48.8569, lon: 2.5317 };
@@ -583,38 +596,53 @@ function renderCheckoutButtons() {
 // Summary builder text with exact breakdown details for both Studio & Home prices
 function getSummaryText() {
     let text = `Simulation Photo d'Identité :\n`;
+    if (!state) return text;
+
     if (state.locationType === 'studio') {
         text += `- Lieu : Au Studio (Neuilly-sur-Marne)\n`;
-        text += `- Nombre de sujets : ${state.participants.length}\n`;
-        state.participants.forEach((p, idx) => {
-            const profile = profiles[p.type];
-            text += `  • Sujet ${idx + 1} : ${profile.label} ➔ ${profile.price} €\n`;
-        });
+        text += `- Nombre de sujets : ${state.participants ? state.participants.length : 1}\n`;
+        if (state.participants) {
+            state.participants.forEach((p, idx) => {
+                const profile = profiles[p.type];
+                if (profile) {
+                    text += `  • Sujet ${idx + 1} : ${profile.label} ➔ ${profile.price} €\n`;
+                }
+            });
+        }
     } else {
-        let zone = document.getElementById('recap-travel-zone').innerText;
-        let zonePrice = document.getElementById('recap-travel-price').innerText;
+        let zoneEl = document.getElementById('recap-travel-zone');
+        let zonePriceEl = document.getElementById('recap-travel-price');
+        let zone = zoneEl ? zoneEl.innerText : (state.calculatedTravelZone || "Neuilly-sur-Marne");
+        let zonePrice = zonePriceEl ? zonePriceEl.innerText : "Inclus";
         text += `- Lieu : À Domicile (Chez vous)\n`;
         text += `- Déplacement : ${zone} (${zonePrice})\n`;
         if (state.detectedDistance > 0) {
             text += `- Itinéraire GPS : ${state.detectedDistance.toFixed(1)} km (~${state.detectedDuration} min)\n`;
         }
-        text += `- Nombre de sujets : ${state.participants.length}\n`;
+        text += `- Nombre de sujets : ${state.participants ? state.participants.length : 1}\n`;
         
         // First participant
-        const firstProfile = profiles[state.participants[0].type];
-        text += `  • Sujet 1 (Principal) : ${firstProfile.label} ➔ 59 €${firstProfile.optionCost > 0 ? ` (+ option ${firstProfile.optionCost} €)` : ''}\n`;
-        
-        // Extra participants
-        if (state.participants.length > 1) {
-            for (let i = 1; i < state.participants.length; i++) {
-                const nextProfile = profiles[state.participants[i].type];
-                let personCost = config.priceExtraPers + nextProfile.optionCost;
-                text += `  • Sujet ${i + 1} (Supplémentaire) : ${nextProfile.label} ➔ ${personCost} €\n`;
+        if (state.participants && state.participants.length > 0) {
+            const firstProfile = profiles[state.participants[0].type];
+            if (firstProfile) {
+                text += `  • Sujet 1 (Principal) : ${firstProfile.label} ➔ 59 €${firstProfile.optionCost > 0 ? ` (+ option ${firstProfile.optionCost} €)` : ''}\n`;
+            }
+            
+            // Extra participants
+            if (state.participants.length > 1) {
+                for (let i = 1; i < state.participants.length; i++) {
+                    const nextProfile = profiles[state.participants[i].type];
+                    if (nextProfile) {
+                        let personCost = (config.priceExtraPers || 15) + (nextProfile.optionCost || 0);
+                        text += `  • Sujet ${i + 1} (Supplémentaire) : ${nextProfile.label} ➔ ${personCost} €\n`;
+                    }
+                }
             }
         }
     }
 
-    const total = document.getElementById('total-price').innerText;
+    const totalEl = document.getElementById('total-price');
+    const total = totalEl ? totalEl.innerText : "Dès 59 €";
     text += `\n=== TOTAL NET ESTIMÉ : ${total} ===`;
     return text;
 }
@@ -622,38 +650,47 @@ function getSummaryText() {
 // Open Fotostudio Modal
 function openBookingModal() {
     const modal = document.getElementById('booking-modal');
-    const messageArea = document.getElementById('form-message');
-    const projectSelect = document.getElementById('form-project-type');
-
     if (!modal) return;
     
-    // Prefill message body with calculated quote details automatically
-    if (messageArea) {
-        messageArea.value = `Bonjour Greg,\nJe vous contacte suite à ma simulation sur votre outil d'estimation en ligne. Voici les détails de mes besoins :\n\n${getSummaryText()}\n\nMerci de me recontacter pour bloquer une date.`;
-    }
-    
-    // Map travel inputs to form address if possible
-    const formZip = document.getElementById('form-zipcode');
-    const formCity = document.getElementById('form-city');
+    try {
+        const messageArea = document.getElementById('form-message');
+        const projectSelect = document.getElementById('form-project-type');
 
-    if (formZip) formZip.value = state.detectedPostal || "";
-    if (formCity) formCity.value = state.detectedCity || "";
-
-    // Mapped CRM Session Type selection automatically
-    if (projectSelect) {
-        if (state.locationType === 'studio') {
-            projectSelect.value = "34544"; // Studio Id
-        } else {
-            projectSelect.value = "241706"; // Domicile Id
+        // Prefill message body with calculated quote details automatically
+        if (messageArea && typeof getSummaryText === 'function') {
+            messageArea.value = `Bonjour Greg,\nJe vous contacte suite à ma simulation sur votre outil d'estimation en ligne. Voici les détails de mes besoins :\n\n${getSummaryText()}\n\nMerci de me recontacter pour bloquer une date.`;
         }
+        
+        // Map travel inputs to form address if possible
+        const formZip = document.getElementById('form-zipcode');
+        const formCity = document.getElementById('form-city');
+
+        if (formZip && state) formZip.value = state.detectedPostal || "";
+        if (formCity && state) formCity.value = state.detectedCity || "";
+
+        // Mapped CRM Session Type selection automatically
+        if (projectSelect && state) {
+            if (state.locationType === 'studio') {
+                projectSelect.value = "34544"; // Studio Id
+            } else {
+                projectSelect.value = "241706"; // Domicile Id
+            }
+        }
+    } catch (err) {
+        console.error("Error setting booking modal form fields:", err);
     }
 
     modal.classList.remove('hidden');
+    modal.style.display = 'flex';
 }
+window.openBookingModal = openBookingModal;
 
 function closeBookingModal() {
     const modal = document.getElementById('booking-modal');
-    if (modal) modal.classList.add('hidden');
+    if (modal) {
+        modal.classList.add('hidden');
+        modal.style.display = 'none';
+    }
 }
 window.closeBookingModal = closeBookingModal;
 
@@ -733,9 +770,9 @@ function initSimulatorApp() {
         updateNavScroll();
     }
 
-    // Menu Mobile handled via onclick="toggleMobileMenu()"
+    // Menu Mobile handled via onclick="toggleMobileMenu(event)"
     if (mobileMenuBtn && !mobileMenuBtn.getAttribute("onclick")) {
-        mobileMenuBtn.setAttribute("onclick", "toggleMobileMenu()");
+        mobileMenuBtn.setAttribute("onclick", "toggleMobileMenu(event)");
     }
 
     // Bouton retour en haut (Back to Top)
@@ -744,11 +781,11 @@ function initSimulatorApp() {
         backToTopBtn.dataset.bound = "true";
         window.addEventListener('scroll', () => {
             if (window.scrollY > 300) {
-                backToTopBtn.classList.remove('opacity-0', 'invisible');
-                backToTopBtn.classList.add('opacity-100', 'visible');
-              } else {
-                backToTopBtn.classList.add('opacity-0', 'invisible');
-                backToTopBtn.classList.remove('opacity-100', 'visible');
+                backToTopBtn.classList.remove('opacity-0', 'invisible', 'pointer-events-none');
+                backToTopBtn.classList.add('opacity-100', 'visible', 'pointer-events-auto');
+            } else {
+                backToTopBtn.classList.add('opacity-0', 'invisible', 'pointer-events-none');
+                backToTopBtn.classList.remove('opacity-100', 'visible', 'pointer-events-auto');
             }
         });
         

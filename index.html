@@ -239,7 +239,9 @@
     
     <!-- Script d'Interactivité Légère (Performance Core Web Vitals) -->
     <script>
-        function toggleMobileMenu() {
+        function toggleMobileMenu(e) {
+            if (e && e.stopPropagation) e.stopPropagation();
+            if (window.event && window.event.stopPropagation) window.event.stopPropagation();
             var menu = document.getElementById('mobile-menu');
             var nav = document.getElementById('main-nav') || document.querySelector('nav');
             var btn = document.getElementById('mobile-menu-btn');
@@ -349,11 +351,11 @@
             if (backToTopBtn) {
                 window.addEventListener('scroll', () => {
                     if (window.scrollY > 300) {
-                        backToTopBtn.classList.remove('opacity-0', 'invisible');
-                        backToTopBtn.classList.add('opacity-100', 'visible');
+                        backToTopBtn.classList.remove('opacity-0', 'invisible', 'pointer-events-none');
+                        backToTopBtn.classList.add('opacity-100', 'visible', 'pointer-events-auto');
                     } else {
-                        backToTopBtn.classList.add('opacity-0', 'invisible');
-                        backToTopBtn.classList.remove('opacity-100', 'visible');
+                        backToTopBtn.classList.add('opacity-0', 'invisible', 'pointer-events-none');
+                        backToTopBtn.classList.remove('opacity-100', 'visible', 'pointer-events-auto');
                     }
                 });
                 
@@ -365,9 +367,12 @@
             // Fermeture du menu mobile au clic extérieur
             document.addEventListener('click', (e) => {
                 if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-                    if (!mobileMenu.contains(e.target) && (!mobileMenuBtn || !mobileMenuBtn.contains(e.target))) {
-                        toggleMobileMenu();
-                    }
+                    if (e.target && !e.target.isConnected) return;
+                    if (mobileMenuBtn && (mobileMenuBtn === e.target || mobileMenuBtn.contains(e.target))) return;
+                    if (e.target && e.target.closest && e.target.closest('#mobile-menu-btn')) return;
+                    if (mobileMenu && (mobileMenu === e.target || mobileMenu.contains(e.target))) return;
+                    if (e.target && e.target.closest && e.target.closest('#mobile-menu')) return;
+                    toggleMobileMenu();
                 }
             });
 
@@ -506,7 +511,7 @@
                 <a href="tel:+33781757754" class="bg-brand text-white px-5 py-2 rounded-full font-bold hover:bg-orange-600 transition-all shadow-lg text-sm whitespace-nowrap">📞 07 81 75 77 54</a>
             </div>
 
-            <button id="mobile-menu-btn" onclick="toggleMobileMenu()" aria-expanded="false" class="lg:hidden text-white focus:outline-none transition-colors" aria-label="Menu mobile">
+            <button id="mobile-menu-btn" onclick="toggleMobileMenu(event)" aria-expanded="false" class="lg:hidden text-white focus:outline-none transition-colors" aria-label="Menu mobile">
                 <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
             </button>
         </div>
@@ -1243,6 +1248,13 @@
             </a>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button type="button" id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="fixed bottom-20 sm:bottom-8 right-4 sm:right-8 bg-brand hover:bg-orange-600 text-white p-3 rounded-full shadow-lg transition-all opacity-0 invisible pointer-events-none z-50" aria-label="Retour en haut de page">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+        </svg>
+    </button>
 
     <script src="config/site.js"></script>
     <script src="announcement.js"></script>

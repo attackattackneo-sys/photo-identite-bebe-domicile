@@ -22,7 +22,18 @@ window.siteConfig = siteConfig;
 
 
 // Global Mobile Menu Controller
-window.toggleMobileMenu = function() {
+var _mobileMenuJustToggled = false;
+
+window.toggleMobileMenu = function(e) {
+    _mobileMenuJustToggled = true;
+    setTimeout(function() { _mobileMenuJustToggled = false; }, 100);
+
+    if (e && e.stopPropagation) {
+        e.stopPropagation();
+    }
+    if (window.event && window.event.stopPropagation) {
+        window.event.stopPropagation();
+    }
     var menu = document.getElementById('mobile-menu');
     var nav = document.getElementById('main-nav') || document.querySelector('nav');
     var btn = document.getElementById('mobile-menu-btn');
@@ -77,15 +88,44 @@ window.closeMobileMenu = function() {
     }
 };
 
-document.addEventListener('click', function(e) {
-    var menu = document.getElementById('mobile-menu');
-    var btn = document.getElementById('mobile-menu-btn');
-    if (menu && !menu.classList.contains('hidden')) {
-        if (!menu.contains(e.target) && (!btn || !btn.contains(e.target))) {
-            window.closeMobileMenu();
-        }
+if (!window._mobileMenuListenerBound) {
+    window._mobileMenuListenerBound = true;
+    document.addEventListener('click', function(e) {
+        if (_mobileMenuJustToggled) return;
+        var menu = document.getElementById('mobile-menu');
+        var btn = document.getElementById('mobile-menu-btn');
+        if (!menu || menu.classList.contains('hidden')) return;
+        if (e.target && !e.target.isConnected) return;
+        if (btn && (btn === e.target || btn.contains(e.target))) return;
+        if (e.target && e.target.closest && e.target.closest('#mobile-menu-btn')) return;
+        if (menu && (menu === e.target || menu.contains(e.target))) return;
+        if (e.target && e.target.closest && e.target.closest('#mobile-menu')) return;
+        window.closeMobileMenu();
+    });
+}
+
+// Global modal and action helpers (guarantees buttons work across all pages)
+window.openBookingModal = function() {
+    var modal = document.getElementById('booking-modal');
+    if (!modal) return;
+    modal.classList.remove('hidden');
+    modal.style.display = 'flex';
+};
+
+window.closeBookingModal = function() {
+    var modal = document.getElementById('booking-modal');
+    if (modal) {
+        modal.classList.add('hidden');
+        modal.style.display = 'none';
     }
-});
+};
+
+window.scrollToSimulator = function() {
+    var el = document.getElementById('booking-funnel');
+    if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+    }
+};
 
 // Keyboard accessibility: Escape key closes modal and mobile menu
 document.addEventListener('keydown', function(e) {
