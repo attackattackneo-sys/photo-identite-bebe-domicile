@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQZSLDSMLZ"></script>
+        <!-- Google tag (gtag.js) with Google Consent Mode v2 -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied'
+      });
       gtag('js', new Date());
       gtag('config', 'G-ZQZSLDSMLZ');
     </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQZSLDSMLZ"></script>
+    <script src="/consent.js" defer></script>
+    <script src="/tracker.js" defer></script>
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -81,18 +89,19 @@
             }
           ],
           "areaServed": [
-            {"@type": "AdministrativeArea", "name": "Neuilly-sur-Marne"},
-            {"@type": "AdministrativeArea", "name": "Paris"},
-            {"@type": "AdministrativeArea", "name": "Seine-Saint-Denis"},
-            {"@type": "AdministrativeArea", "name": "Val-de-Marne"},
-            {"@type": "AdministrativeArea", "name": "Hauts-de-Seine"},
-            {"@type": "AdministrativeArea", "name": "Seine-et-Marne"}
+            { "@type": "AdministrativeArea", "name": "Île-de-France" },
+            { "@type": "AdministrativeArea", "name": "Paris", "identifier": "75" },
+            { "@type": "AdministrativeArea", "name": "Seine-Saint-Denis", "identifier": "93" },
+            { "@type": "AdministrativeArea", "name": "Val-de-Marne", "identifier": "94" },
+            { "@type": "AdministrativeArea", "name": "Seine-et-Marne", "identifier": "77" },
+            { "@type": "AdministrativeArea", "name": "Hauts-de-Seine", "identifier": "92" },
+            { "@type": "AdministrativeArea", "name": "Yvelines", "identifier": "78" },
+            { "@type": "AdministrativeArea", "name": "Essonne", "identifier": "91" },
+            { "@type": "AdministrativeArea", "name": "Val-d'Oise", "identifier": "95" }
           ],
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "reviewCount": "156"
-          },
+          "sameAs": [
+            "https://www.google.com/maps/place/16+Bd+Carnot,+93330+Neuilly-sur-Marne"
+          ],
           "serviceType": [
             "Photo d'identité bébé",
             "Photo d'identité nouveau-né",
@@ -115,28 +124,14 @@
           },
           "hasOfferCatalog": {
             "@type": "OfferCatalog",
-            "name": "Tarifs Photo Identité Bébé",
+            "name": "Prestations Photo Identité Bébé à Domicile",
             "itemListElement": [
               {
                 "@type": "Offer",
-                "name": "Photo d'identité bébé (0-12 mois)",
-                "price": "10",
+                "name": "Photo d'identité bébé et nouveau-né à domicile (Île-de-France)",
+                "price": "59",
                 "priceCurrency": "EUR",
-                "description": "6 photos imprimées + version numérique, conforme ANTS"
-              },
-              {
-                "@type": "Offer",
-                "name": "Photo identité nouveau-né (0-1 mois)",
-                "price": "10",
-                "priceCurrency": "EUR",
-                "description": "6 photos + version numérique, séances adaptées aux tout-petits"
-              },
-              {
-                "@type": "Offer",
-                "name": "Forfait naissance",
-                "price": "25",
-                "priceCurrency": "EUR",
-                "description": "Photo identité + 3 photos souvenirs de bébé"
+                "description": "Séance photo officielle conforme ANTS pour passeport et CNI, réalisée à domicile dès les premiers jours de vie. Remise sur place en 20 min du code e-photo numérique et de la planche papier."
               }
             ]
           }
@@ -150,7 +145,7 @@
               "name": "À quel âge peut-on faire la première photo d'identité pour un bébé ?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "La première photo d'identité pour un bébé est généralement nécessaire à partir de 6 mois pour les passeports. Pour les cartes d'identité (CNI), l'âge minimal est de 0 an (dès la naissance). Nous proposons des séances adaptées aux nouveau-nés dès les premiers jours de vie."
+                "text": "Un passeport individuel comme une carte d'identité (CNI) peuvent être demandés dès la naissance (0 mois) pour un nouveau-né amené à voyager. Nous réalisons des séances adaptées aux nouveau-nés dès leurs premiers jours de vie, à domicile."
               }
             },
             {
@@ -174,7 +169,7 @@
               "name": "Quelle est la durée de validité d'une photo d'identité pour bébé ?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "La validité d'une photo d'identité pour bébé dépend du document : 5 ans pour le passeport, 5 ans pour la CNI. Cependant, pour les bébés de moins de 1 an, nous recommandons de faire une nouvelle photo tous les 6 mois en raison des changements physiques rapides."
+                "text": "Concernant les documents officiels : le passeport pour mineur est valable 5 ans et la carte d'identité 10 ans. Au moment de déposer votre dossier en mairie, la planche photo ou le code e-photo doit dater de moins de 6 mois."
               }
             },
             {
@@ -307,32 +302,34 @@
 
 <body class="antialiased font-sans pb-24 sm:pb-0">
 
-    <!-- STICKY MOBILE BAR (Design Blanc Givré Premium CRO) -->
-    <div class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-gray-200 px-4 py-3 flex items-center justify-between gap-3 sm:hidden shadow-[0_-8px_30px_rgb(0,0,0,0.08)]">
-        <div class="text-left leading-tight">
-            <span class="text-[10px] text-gray-500 font-semibold block uppercase tracking-wider">Spécialiste Bébé</span>
-            <span id="sticky-price" class="text-base font-black text-brand">Dès 59 € domicile</span>
-        </div>
-        <div class="flex items-center gap-2">
-            <a href="tel:+33781757754" aria-label="Appeler le photographe au 07 81 75 77 54" class="w-11 h-11 bg-gray-100 hover:bg-gray-200 active:scale-95 text-dark rounded-xl flex items-center justify-center transition border border-gray-200 shrink-0">
-                <i data-lucide="phone" class="w-5 h-5 text-brand"></i>
-            </a>
-            <button type="button" onclick="openBookingModal()" class="bg-brand hover:bg-orange-600 text-white font-bold text-xs px-4 py-3 rounded-xl flex items-center gap-1.5 transition active:scale-95 shadow-md shadow-brand/20 min-h-[44px]">
-                <i data-lucide="calendar" class="w-4 h-4"></i> Prendre RDV
-            </button>
-        </div>
+        <!-- STICKY MOBILE BAR (Double CTA Appel & WhatsApp) -->
+<div class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-gray-200 px-4 py-3 flex items-center justify-between gap-3 sm:hidden shadow-[0_-8px_30px_rgb(0,0,0,0.08)]">
+    <div class="text-left leading-tight">
+        <span class="text-[10px] text-gray-600 font-bold block uppercase tracking-wider">Tarif séance</span>
+        <span id="sticky-price" class="text-base font-black text-brand">Dès 59 € domicile</span>
     </div>
+    <div class="flex items-center gap-2">
+        <a href="tel:+33781757754" aria-label="Appeler le photographe au 07 81 75 77 54" class="h-11 px-3 bg-gray-100 hover:bg-gray-200 active:scale-95 text-dark rounded-xl flex items-center justify-center gap-1.5 transition border border-gray-200 shrink-0 text-xs font-bold min-h-[44px]">
+            <i data-lucide="phone" class="w-4 h-4 text-brand"></i>
+            <span>Appeler</span>
+        </a>
+        <a href="https://wa.me/33781757754?text=Bonjour%20Greg,%20je%20souhaite%20des%20renseignements%20pour%20une%20photo%20d'identit%C3%A9%20b%C3%A9b%C3%A9%20%C3%A0%20domicile." target="_blank" rel="noopener noreferrer" aria-label="Écrire sur WhatsApp au photographe" class="h-11 px-3.5 bg-green-600 hover:bg-green-700 active:scale-95 text-white font-bold text-xs rounded-xl flex items-center gap-1.5 transition shadow-md shadow-green-600/20 shrink-0 min-h-[44px]">
+            <i data-lucide="message-circle" class="w-4 h-4 text-white"></i>
+            <span>WhatsApp</span>
+        </a>
+    </div>
+</div>
 
     <!-- Navigation -->
         <nav id="main-nav" class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent py-6 shadow-none" aria-label="Menu principal">
         <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
-            <a href="index.html" class="logo-text text-xl md:text-2xl font-serif font-bold flex items-center gap-2 text-white transition-colors">
+            <a href="/" class="logo-text text-xl md:text-2xl font-serif font-bold flex items-center gap-2 text-white transition-colors">
                 <img src="Images/logo.png" alt="Logo Photo Identité Bébé et Domicile" class="logo-img h-8 md:h-10 w-auto brightness-0 invert" width="200" height="135" fetchpriority="high">
                 <span class="hidden sm:inline text-lg md:text-xl font-serif">Photo-identite-bebe-domicile.fr</span>
             </a>
             
             <div class="nav-links-container hidden lg:flex gap-6 lg:gap-8 items-center text-white/90 transition-colors font-medium">
-                <a href="index.html" class="hover:text-brand transition">Accueil</a>
+                <a href="/" class="hover:text-brand transition">Accueil</a>
                 <a href="photo-identite-bebe-ile-de-france.html" class="hover:text-brand transition">Photo Bébé</a>
                 <a href="photographe-agree-ants-ile-de-france.html" class="hover:text-brand transition">Agréé ANTS</a>
                 <a href="photo-identite-a-domicile-ile-de-france.html" class="hover:text-brand transition">À Domicile</a>
@@ -346,7 +343,7 @@
         </div>
                 <div id="mobile-menu" class="hidden lg:hidden bg-white/95 backdrop-blur-md border-t border-gray-100 absolute top-full left-0 right-0 p-8 shadow-2xl space-y-6 transition-all duration-300">
             <div class="flex flex-col space-y-4">
-                <a onclick="toggleMobileMenu()" href="index.html" class="flex items-center gap-3 text-lg font-medium text-gray-800 hover:text-brand transition-colors py-2 border-b border-gray-50">
+                <a onclick="toggleMobileMenu()" href="/" class="flex items-center gap-3 text-lg font-medium text-gray-800 hover:text-brand transition-colors py-2 border-b border-gray-50">
                     🏠 Accueil
                 </a>
                 <a onclick="toggleMobileMenu()" href="photo-identite-bebe-ile-de-france.html" class="flex items-center gap-3 text-lg font-medium text-gray-800 hover:text-brand transition-colors py-2 border-b border-gray-50">
@@ -491,10 +488,10 @@
                 
                 <div class="bg-orange-50 p-6 rounded-2xl border border-orange-100 my-8">
                     <div class="flex items-start gap-4">
-                        <div class="text-3xl">⚠️</div>
+                        <div class="text-3xl">🛡️</div>
                         <div>
-                            <h4 class="font-bold text-dark mb-2">⚠️ 30% des photos de bébé sont refusées en préfecture</h4>
-                            <p>Avec un photographe <strong>spécialisé bébé</strong>, chaque critère biométrique est soigneusement maîtrisé malgré les mouvements et l'impatience naturelle des tout-petits. Si toutefois l'administration venait à rejeter le cliché, nous nous engageons à <strong>revenir gratuitement</strong> à votre domicile.</p>
+                            <h4 class="font-bold text-dark mb-2">Des critères biométriques exigeants pour les tout-petits</h4>
+                            <p>Les mairies et préfectures appliquent des critères stricts de biométrie : notre matériel mobile professionnel et notre patience avec les nourrissons garantissent une conformité parfaite dès la première prise. Si toutefois l'administration venait à rejeter le cliché, nous nous engageons à <strong>revenir gratuitement</strong> à votre domicile.</p>
                         </div>
                     </div>
                 </div>
@@ -516,7 +513,7 @@
                     <tbody>
                         <tr class="border-b border-gray-100">
                             <td class="p-4 font-medium">0-1 mois (Nouveau-né)</td>
-                            <td class="p-4 text-center font-bold">CNI</td>
+                            <td class="p-4 text-center font-bold">CNI, Passeport</td>
                             <td class="p-4 text-sm text-gray-600">Séance <strong>patiente dès la maternité</strong>, yeux ouverts et regard face caméra indispensables selon la norme</td>
                         </tr>
                         <tr class="border-b border-gray-100">
@@ -735,7 +732,7 @@
                 <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100">
                     <div class="text-4xl mb-4 text-brand">🎨</div>
                     <h3 class="text-xl font-bold text-dark mb-3">Fond réglementaire (gris clair / bleu clair)</h3>
-                    <p class="text-gray-600">Fond <strong>100% blanc et uniforme</strong>, conforme à la norme ISO/IEC 19794-5:2005, adaptable à votre intérieur.</p>
+                    <p class="text-gray-600">Fond <strong>uni réglementaire gris clair ou bleu clair</strong>, conforme à la norme ISO/IEC 19794-5 (le blanc pur étant formellement interdit en France par l'ANTS), adaptable à votre intérieur.</p>
                 </div>
             </div>
         </section>
@@ -750,8 +747,16 @@
                     <a href="prix-photo-identite.html" class="inline-flex items-center justify-center gap-2 bg-brand hover:bg-orange-600 text-white font-bold px-6 py-3.5 rounded-full transition-all">
                         💰 Consulter la page des tarifs
                     </a>
-                    <a href="index.html#booking-funnel" class="inline-flex items-center justify-center gap-2 bg-gray-100 hover:bg-gray-200 text-dark font-bold px-6 py-3.5 rounded-full transition-all">
+                    <a href="/#booking-funnel" class="inline-flex items-center justify-center gap-2 bg-gray-100 hover:bg-gray-200 text-dark font-bold px-6 py-3.5 rounded-full transition-all">
                         📅 Simuler le tarif de ma séance
+                    </a>
+                </div>
+                <div class="mt-6 pt-4 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-center gap-4 text-xs text-gray-600">
+                    <span class="inline-flex items-center gap-1.5 font-bold text-dark">
+                        <span class="text-brand">🛡️</span> Garantie 100% conforme ANTS ou ré-intervention offerte
+                    </span>
+                    <a href="https://www.google.com/maps/place/16+Bd+Carnot,+93330+Neuilly-sur-Marne" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-brand font-bold hover:underline">
+                        <span>★★★★★ 4.9/5 (156 avis Google)</span> ↗
                     </a>
                 </div>
             </div>
@@ -764,17 +769,20 @@
                 <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100 text-center">
                     <div class="text-5xl mb-4 text-brand">🛂</div>
                     <h3 class="text-xl font-bold text-dark mb-3">Passeport</h3>
-                    <p class="text-gray-600">Valable <strong>5 ans</strong> pour les bébés. <strong>Obligatoire</strong> pour les voyages hors Europe.</p>
+                    <!-- À VÉRIFIER par le propriétaire -->
+                    <p class="text-gray-600">Valable <strong>5 ans</strong> pour les mineurs. Réalisable <strong>dès la naissance</strong> pour tout voyage hors UE.</p>
                 </div>
                 <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100 text-center">
                     <div class="text-5xl mb-4 text-brand">🆔</div>
                     <h3 class="text-xl font-bold text-dark mb-3">Carte d'Identité (CNI)</h3>
-                    <p class="text-gray-600">Valable <strong>5 ans</strong> pour les mineurs. <strong>Gratuite</strong> depuis 2021.</p>
+                    <!-- À VÉRIFIER par le propriétaire -->
+                    <p class="text-gray-600">Valable <strong>10 ans</strong> pour les mineurs. <strong>Délivrée gratuitement</strong> en mairie.</p>
                 </div>
                 <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100 text-center">
                     <div class="text-5xl mb-4 text-brand">🏥</div>
                     <h3 class="text-xl font-bold text-dark mb-3">Carte Vitale</h3>
-                    <p class="text-gray-600">Pour les remboursements de santé. Photo nécessaire dès la naissance.</p>
+                    <!-- À VÉRIFIER par le propriétaire -->
+                    <p class="text-gray-600">Bébé est rattaché à la carte des parents (sans photo). Carte avec photo <strong>dès 12 ans</strong> sur demande.</p>
                 </div>
                 <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100 text-center">
                     <div class="text-5xl mb-4 text-brand">🏛️</div>
@@ -791,12 +799,6 @@
 
         
         <!-- ALTERNATIVE EN LIGNE (SITE B) -->
-        <div class="my-16 p-6 rounded-2xl bg-orange-50/50 border border-brand/20 text-center max-w-3xl mx-auto">
-            <p class="text-sm text-gray-750">
-                💡 <strong>Vous avez déjà réussi à photographier votre bébé vous-même ?</strong><br>
-                Découvrez notre solution partenaire de <a href="https://gregphotographe.fr/ID/" target="_blank" rel="noopener noreferrer" class="text-brand font-bold underline hover:text-orange-600">traitement photo d'identité bébé à distance</a> : validation de conformité en ligne et tirage papier livré à domicile, sans rendez-vous.
-            </p>
-        </div>
 
     <!-- FAQ Section -->
         <section id="faq" class="mb-20 bg-light py-12 px-6 rounded-3xl animate-on-scroll">
@@ -808,7 +810,8 @@
                         <span class="bg-orange-50 text-brand p-2 rounded-full transition-transform group-open:rotate-180 text-sm">▼</span>
                     </summary>
                     <div class="text-gray-600 mt-6 leading-relaxed border-t border-gray-50 pt-6">
-                        <p class="text-gray-600">La première photo d'identité pour un bébé est généralement nécessaire à partir de <strong>6 mois</strong> pour les passeports. Pour les cartes d'identité (CNI), <strong>l'âge minimal est de 0 an</strong> (dès la naissance). Nous proposons des séances adaptées aux nouveau-nés dès les premiers jours de vie.</p>
+                        <!-- À VÉRIFIER par le propriétaire -->
+                        <p class="text-gray-600">Un passeport individuel comme une carte d'identité (CNI) peuvent être demandés <strong>dès la naissance</strong> (0 mois) pour un nouveau-né amené à voyager. Nous réalisons des séances adaptées aux nourrissons dès les premiers jours de vie, dans le confort de votre domicile.</p>
                     </div>
                 </details>
                 <details class="group bg-white rounded-2xl p-6 cursor-pointer shadow-sm border border-gray-100 transition-all hover:shadow-md">
@@ -817,13 +820,12 @@
                         <span class="bg-orange-50 text-brand p-2 rounded-full transition-transform group-open:rotate-180 text-sm">▼</span>
                     </summary>
                     <div class="text-gray-600 mt-6 leading-relaxed border-t border-gray-50 pt-6">
-                        <p class="text-gray-600">Habillez votre bébé avec des <strong>vêtements de couleur unie</strong> :</p>
+                        <p class="text-gray-600">Habillez votre bébé avec des <strong>vêtements de couleur sombre et unie</strong> :</p>
                         <ul class="list-disc list-inside mt-2 ml-4 text-gray-600">
-                            <li>Blanc, bleu clair, rose pâle, gris clair</li>
-                            <li>Évitez les motifs et les couleurs vives</li>
-                            <li>Évitez les accessoires (bonnets, bandeaux, bijoux)</li>
-                            <li>Pour les nouveau-nés, un body simple suffit</li>
-                            <li>Évitez les couleurs qui se confondent avec le fond réglementaire (gris clair)</li>
+                            <li><strong>Couleurs recommandées :</strong> bleu marine, bordeaux, vert foncé, noir ou marron afin de créer un contraste net avec le fond réglementaire.</li>
+                            <li><strong>Couleurs à éviter absolument :</strong> blanc, beige et gris clair qui se fondent avec l'arrière-plan et entraînent un rejet administratif immédiat.</li>
+                            <li><strong>Tenue simple :</strong> pour les nouveau-nés, un body ou un gilet sombre uni et facile à ouvrir suffit.</li>
+                            <li><strong>Accessoires interdits :</strong> retirez tout accessoire sur la tête (bonnets, bandeaux, barrettes, tétine).</li>
                         </ul>
                     </div>
                 </details>
@@ -849,12 +851,13 @@
                         <span class="bg-orange-50 text-brand p-2 rounded-full transition-transform group-open:rotate-180 text-sm">▼</span>
                     </summary>
                     <div class="text-gray-600 mt-6 leading-relaxed border-t border-gray-50 pt-6">
-                        <p class="text-gray-600">La validité dépend du document :</p>
+                        <!-- À VÉRIFIER par le propriétaire -->
+                        <p class="text-gray-600">La validité du titre administratif officiel est de :</p>
                         <ul class="list-disc list-inside mt-2 ml-4 text-gray-600">
-                            <li><strong>Passeport</strong> : 5 ans (mais souvent renouvelé plus tôt pour les bébés)</li>
-                            <li><strong>CNI</strong> : 5 ans pour les mineurs</li>
+                            <li><strong>Passeport mineur</strong> : 5 ans</li>
+                            <li><strong>CNI mineur</strong> : 10 ans</li>
                         </ul>
-                        <p class="mt-2 text-gray-600"><strong>Conseil</strong> : Pour les bébés de moins de 1 an, nous recommandons de faire une nouvelle photo tous les <strong>6 mois</strong> en raison des changements physiques rapides.</p>
+                        <p class="mt-2 text-gray-600"><strong>Dépôt en mairie</strong> : La photo d'identité (ou le code e-photo) doit dater de <strong>moins de 6 mois</strong> lors du dépôt du dossier de demande de titre.</p>
                     </div>
                 </details>
                 <details class="group bg-white rounded-2xl p-6 cursor-pointer shadow-sm border border-gray-100 transition-all hover:shadow-md">
@@ -1099,13 +1102,6 @@
                 </ul>
             </div>
         </section>
-
-        <!-- PASSERELLE EXTERNE VERS LE STUDIO (CONFIGURABLE DANS config/site.js) -->
-        <div class="mt-8 p-4 rounded-2xl bg-white border border-gray-200 text-center max-w-xl mx-auto shadow-xs">
-            <p class="text-xs sm:text-sm text-gray-500 leading-relaxed">
-                Vous préférez venir en studio ? <a href="https://www.gregstudiophoto.fr/" data-studio-link target="_blank" rel="noopener noreferrer" aria-label="Voir les tarifs et prestations au studio sur le site externe de Greg Studio Photo" class="text-brand font-semibold hover:underline inline-flex items-center gap-1">Voir les tarifs sur <span data-studio-name>Greg Studio Photo</span> →</a>
-            </p>
-        </div>
     </main>
 
     <!-- FOTOSTUDIO LEAD FORM MODAL (Hidden by default, styled beautifully) -->
@@ -1199,8 +1195,7 @@
                     <div>
                         <label for="form-project-type" class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1.5">Type de séance *</label>
                         <select id="form-project-type" name="lead_form[project_type]" required class="w-full bg-gray-50 border border-gray-200 rounded-xl p-3 text-xs text-dark focus:border-brand focus:ring-1 focus:ring-brand outline-none">
-                            <option value="241706">Photo Identite à domicile</option>
-                            <option value="34544">Photos Identités Au STUDIO ⚠️</option>
+                            <option value="241706" selected>Photo Identité à domicile (Île-de-France)</option>
                         </select>
                     </div>
                     <div>
@@ -1218,12 +1213,6 @@
                     </div>
                 </div>
 
-                <!-- Newsletter option checkbox -->
-                <div class="flex items-start gap-2 pt-2">
-                    <input type="hidden" name="document_checkboxes[26597]" value="0">
-                    <input type="checkbox" name="document_checkboxes[26597]" value="1" id="newsletter-check" class="accent-brand w-4.5 h-4.5 rounded mt-0.5">
-                    <label for="newsletter-check" class="text-[10px] text-gray-500 cursor-pointer">J'accepte de recevoir des newsletters de Greg Studio Photo</label>
-                </div>
 
                 <!-- Anti-spam gotcha -->
                 <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
@@ -1244,7 +1233,7 @@
         <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12">
             <!-- Colonne 1: Identité -->
             <div>
-                <a href="index.html" class="font-serif text-2xl font-bold text-white mb-4 flex items-center gap-2 transition-colors">
+                <a href="/" class="font-serif text-2xl font-bold text-white mb-4 flex items-center gap-2 transition-colors">
                     <img src="Images/logo.png" alt="Logo Photo Identité Bébé et Domicile" class="logo-img h-10 w-auto" width="200" height="135" loading="lazy" style="aspect-ratio: 200/135;">
                     <span>Photo-identite-bebe-domicile.fr</span>
                 </a>
@@ -1255,9 +1244,7 @@
                     <p class="text-xs text-gray-400 leading-relaxed mb-2">
                         Du lundi au samedi sur rendez-vous à Paris et dans toute l'Île-de-France (93, 94, 77, 92...).
                     </p>
-                    <p class="text-xs text-gray-400">
-                        Studio fixe : 16 bd Carnot, 93330 Neuilly-sur-Marne — <a href="https://www.gregstudiophoto.fr/" data-studio-link target="_blank" rel="noopener noreferrer" aria-label="Voir les prestations au studio sur le site de Greg Studio Photo" class="text-brand hover:underline font-medium">Prestations au studio ↗</a>
-                    </p>
+                    <p class="text-xs text-gray-400">Siège social : 16 bd Carnot, 93330 Neuilly-sur-Marne (déplacement exclusivement à domicile sur toute l'Île-de-France)</p>
                 </div>
                 <div class="flex items-center gap-1 mt-4">
                     <span class="text-brand">★★★★★</span>
@@ -1308,14 +1295,6 @@
                     </li>
                 </ul>
             </div>
-        </div>
-
-        <!-- BARRE DISCRÈTE DE PIED DE PAGE : PASSERELLE STUDIO CONFIGURABLE -->
-        <div class="mt-12 pt-6 border-t border-gray-800 text-center text-xs text-gray-400">
-            <span>Vous préférez venir en studio ?</span>
-            <a href="https://www.gregstudiophoto.fr/" data-studio-link target="_blank" rel="noopener noreferrer" aria-label="Voir les tarifs sur le site du studio externe Greg Studio Photo" class="text-brand hover:underline font-semibold ml-1 inline-flex items-center gap-0.5">
-                Voir les tarifs sur <span data-studio-name>Greg Studio Photo</span> →
-            </a>
         </div>
     </footer>
 

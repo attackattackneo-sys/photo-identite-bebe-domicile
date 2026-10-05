@@ -240,6 +240,10 @@
         // 6. Restore real action URL just at the moment of submission
         const token = form.getAttribute('data-action');
         form.setAttribute('action', decodeAction(token));
+
+        if (typeof window.trackGenerateLead === 'function') {
+          window.trackGenerateLead(form);
+        }
       });
     });
 

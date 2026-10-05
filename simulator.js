@@ -559,6 +559,10 @@ function runIDCalculation() {
     const stickyPrice = document.getElementById('sticky-price');
     if (stickyPrice) stickyPrice.innerText = formattedTotal;
 
+    if (typeof window.trackSimulatorEstimate === 'function') {
+        window.trackSimulatorEstimate(state.detectedCity, state.detectedPostal, finalPrice, state.detectedDistance, state.detectedDuration);
+    }
+
     // Render buttons layout dynamically based on state
     renderCheckoutButtons();
 }
@@ -668,13 +672,9 @@ function openBookingModal() {
         if (formZip && state) formZip.value = state.detectedPostal || "";
         if (formCity && state) formCity.value = state.detectedCity || "";
 
-        // Mapped CRM Session Type selection automatically
-        if (projectSelect && state) {
-            if (state.locationType === 'studio') {
-                projectSelect.value = "34544"; // Studio Id
-            } else {
-                projectSelect.value = "241706"; // Domicile Id
-            }
+        // Mapped CRM Session Type selection automatically (always Domicile)
+        if (projectSelect) {
+            projectSelect.value = "241706"; // Domicile Id
         }
     } catch (err) {
         console.error("Error setting booking modal form fields:", err);
@@ -704,6 +704,13 @@ document.addEventListener('keydown', function(e) {
 
 // Booking on WhatsApp
 function triggerWhatsAppBooking() {
+    if (typeof window.trackGAEvent === 'function') {
+        window.trackGAEvent('click_whatsapp', {
+            button_location: 'simulator',
+            link_url: 'https://wa.me/33781757754',
+            page_path: window.location.pathname
+        });
+    }
     const bodyText = encodeURIComponent(
         `Bonjour Greg, je souhaite réserver une séance d'identité ${state.locationType === 'studio' ? 'au studio' : 'à domicile'}.\n\n` +
         getSummaryText() +

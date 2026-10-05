@@ -38,91 +38,135 @@
     <priority>0.9</priority>
   </url>
   
-  <url>
-    <loc>https://photo-identite-bebe-domicile.fr/studio-photo.html</loc>
-    <lastmod>2026-09-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
   
-  <!-- Pages Villes Desservies (Île-de-France) -->
+  <!-- Hub et Pages Villes Desservies (Île-de-France) -->
   <url>
-    <loc>https://photo-identite-bebe-domicile.fr/villes/neuilly-sur-marne.html</loc>
-    <lastmod>2026-09-09</lastmod>
+    <loc>https://photo-identite-bebe-domicile.fr/villes/</loc>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-
+  <url>
+    <loc>https://photo-identite-bebe-domicile.fr/villes/neuilly-sur-marne.html</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <url>
     <loc>https://photo-identite-bebe-domicile.fr/villes/noisy-le-grand.html</loc>
-    <lastmod>2026-09-09</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <url>
-    <loc>https://photo-identite-bebe-domicile.fr/villes/chelles.html</loc>
-    <lastmod>2026-09-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://photo-identite-bebe-domicile.fr/villes/paris.html</loc>
-    <lastmod>2026-09-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://photo-identite-bebe-domicile.fr/villes/boulogne-billancourt.html</loc>
-    <lastmod>2026-09-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://photo-identite-bebe-domicile.fr/villes/bussy-saint-georges.html</loc>
-    <lastmod>2026-09-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://photo-identite-bebe-domicile.fr/villes/creteil.html</loc>
-    <lastmod>2026-09-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
   <url>
     <loc>https://photo-identite-bebe-domicile.fr/villes/montreuil.html</loc>
-    <lastmod>2026-09-09</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
-  
-  <url>
-    <loc>https://photo-identite-bebe-domicile.fr/villes/neuilly-sur-seine.html</loc>
-    <lastmod>2026-09-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
   <url>
     <loc>https://photo-identite-bebe-domicile.fr/villes/saint-denis.html</loc>
-    <lastmod>2026-09-09</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
-  
+  <url>
+    <loc>https://photo-identite-bebe-domicile.fr/villes/chelles.html</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://photo-identite-bebe-domicile.fr/villes/bussy-saint-georges.html</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://photo-identite-bebe-domicile.fr/villes/vincennes.html</loc>
-    <lastmod>2026-09-09</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
-  
+  <url>
+    <loc>https://photo-identite-bebe-domicile.fr/villes/creteil.html</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://photo-identite-bebe-domicile.fr/villes/boulogne-billancourt.html</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://photo-identite-bebe-domicile.fr/villes/neuilly-sur-seine.html</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://photo-identite-bebe-domicile.fr/villes/paris.html</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://photo-identite-bebe-domicile.fr/villes/fontenay-sous-bois.html</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://photo-identite-bebe-domicile.fr/villes/nogent-sur-marne.html</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://photo-identite-bebe-domicile.fr/villes/saint-maur-des-fosses.html</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://photo-identite-bebe-domicile.fr/villes/champigny-sur-marne.html</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://photo-identite-bebe-domicile.fr/villes/gagny.html</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://photo-identite-bebe-domicile.fr/villes/villemomble.html</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://photo-identite-bebe-domicile.fr/villes/rosny-sous-bois.html</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://photo-identite-bebe-domicile.fr/villes/aulnay-sous-bois.html</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://photo-identite-bebe-domicile.fr/villes/levallois-perret.html</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Guides & Conseils Réglementaires -->
   <url>
     <loc>https://photo-identite-bebe-domicile.fr/aide/</loc>
@@ -141,6 +185,62 @@
   <url>
     <loc>https://photo-identite-bebe-domicile.fr/aide/pourquoi-pas-de-fond-blanc-sur-les-photos-didentite-en-france/</loc>
     <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://photo-identite-bebe-domicile.fr/aide/photo-identite-nouveau-ne-a-quel-age/</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://photo-identite-bebe-domicile.fr/aide/photo-identite-bebe-yeux-fermes-solutions/</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://photo-identite-bebe-domicile.fr/aide/passeport-bebe-pieces-et-photo/</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://photo-identite-bebe-domicile.fr/aide/carte-identite-bebe-pieces-et-photo/</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://photo-identite-bebe-domicile.fr/aide/photo-identite-bebe-maternite/</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://photo-identite-bebe-domicile.fr/aide/photo-bebe-refusee-que-faire/</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://photo-identite-bebe-domicile.fr/aide/vetements-et-fond-photo-identite-bebe/</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://photo-identite-bebe-domicile.fr/aide/photo-carte-vitale-enfant/</loc>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

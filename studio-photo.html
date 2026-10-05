@@ -17,17 +17,25 @@ POUR RÉACTIVER CETTE PAGE DANS LE MENU PRINCIPAL :
 -->
 <html lang="fr" class="scroll-smooth">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQZSLDSMLZ"></script>
+        <!-- Google tag (gtag.js) with Google Consent Mode v2 -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied'
+      });
       gtag('js', new Date());
-
       gtag('config', 'G-ZQZSLDSMLZ');
     </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQZSLDSMLZ"></script>
+    <script src="/consent.js" defer></script>
+    <script src="/tracker.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
     <title>Studio Photo à Neuilly-sur-Marne : Identité ANTS, Tirages & Numérisation</title>
     <meta name="description" content="Studio photo professionnel à Neuilly-sur-Marne. Photos d'identité agréées ANTS, tirages d'art, numérisation de souvenirs et photocopies. Service rapide et qualité pro.">
     <link rel="canonical" href="https://photo-identite-bebe-domicile.fr/studio-photo.html" />
@@ -215,13 +223,13 @@ POUR RÉACTIVER CETTE PAGE DANS LE MENU PRINCIPAL :
     <!-- NAVIGATION -->
         <nav id="main-nav" class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent py-6 shadow-none" aria-label="Menu principal">
         <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
-            <a href="index.html" class="logo-text text-xl md:text-2xl font-serif font-bold flex items-center gap-2 text-white transition-colors">
+            <a href="/" class="logo-text text-xl md:text-2xl font-serif font-bold flex items-center gap-2 text-white transition-colors">
                 <img src="Images/logo.png" alt="Logo Photo Identité Bébé et Domicile" class="logo-img h-8 md:h-10 w-auto brightness-0 invert" width="200" height="135" fetchpriority="high" style="aspect-ratio: 200/135;">
                 <span class="hidden sm:inline text-lg md:text-xl font-serif">Photo-identite-bebe-domicile.fr</span>
             </a>
             
             <div class="nav-links-container hidden lg:flex gap-6 lg:gap-8 items-center text-white/90 transition-colors font-medium">
-                <a href="index.html" class="hover:text-brand transition">Accueil</a>
+                <a href="/" class="hover:text-brand transition">Accueil</a>
                 <a href="photo-identite-bebe-ile-de-france.html" class="hover:text-brand transition">Photo Bébé</a>
                 <a href="photographe-agree-ants-ile-de-france.html" class="hover:text-brand transition">Agréé ANTS</a>
                 <a href="photo-identite-a-domicile-ile-de-france.html" class="hover:text-brand transition">À Domicile</a>
@@ -237,7 +245,7 @@ POUR RÉACTIVER CETTE PAGE DANS LE MENU PRINCIPAL :
 
                 <div id="mobile-menu" class="hidden lg:hidden bg-white/95 backdrop-blur-md border-t border-gray-100 absolute top-full left-0 right-0 p-8 shadow-2xl space-y-6 transition-all duration-300">
             <div class="flex flex-col space-y-4">
-                <a onclick="toggleMobileMenu()" href="index.html" class="flex items-center gap-3 text-lg font-medium text-gray-800 hover:text-brand transition-colors py-2 border-b border-gray-50">
+                <a onclick="toggleMobileMenu()" href="/" class="flex items-center gap-3 text-lg font-medium text-gray-800 hover:text-brand transition-colors py-2 border-b border-gray-50">
                     🏠 Accueil
                 </a>
                 <a onclick="toggleMobileMenu()" href="photo-identite-bebe-ile-de-france.html" class="flex items-center gap-3 text-lg font-medium text-gray-800 hover:text-brand transition-colors py-2 border-b border-gray-50">
@@ -523,7 +531,7 @@ POUR RÉACTIVER CETTE PAGE DANS LE MENU PRINCIPAL :
         <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12">
             <!-- Colonne 1: Identité -->
             <div>
-                <a href="index.html" class="font-serif text-2xl font-bold text-white mb-4 flex items-center gap-2 transition-colors">
+                <a href="/" class="font-serif text-2xl font-bold text-white mb-4 flex items-center gap-2 transition-colors">
                     <img src="Images/logo.png" alt="Logo Photo Identité Bébé et Domicile" class="logo-img h-10 w-auto" width="200" height="135" loading="lazy" style="aspect-ratio: 200/135;">
                     <span>Photo-identite-bebe-domicile.fr</span>
                 </a>

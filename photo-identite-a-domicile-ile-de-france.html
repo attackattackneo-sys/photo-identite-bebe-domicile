@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQZSLDSMLZ"></script>
+        <!-- Google tag (gtag.js) with Google Consent Mode v2 -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied'
+      });
       gtag('js', new Date());
       gtag('config', 'G-ZQZSLDSMLZ');
     </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQZSLDSMLZ"></script>
+    <script src="/consent.js" defer></script>
+    <script src="/tracker.js" defer></script>
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -81,23 +89,24 @@
             }
           ],
           "areaServed": [
-            {"@type": "AdministrativeArea", "name": "Neuilly-sur-Marne"},
-            {"@type": "AdministrativeArea", "name": "Paris"},
-            {"@type": "AdministrativeArea", "name": "Seine-Saint-Denis"},
-            {"@type": "AdministrativeArea", "name": "Val-de-Marne"},
-            {"@type": "AdministrativeArea", "name": "Hauts-de-Seine"},
-            {"@type": "AdministrativeArea", "name": "Seine-et-Marne"}
+            { "@type": "AdministrativeArea", "name": "Île-de-France" },
+            { "@type": "AdministrativeArea", "name": "Paris", "identifier": "75" },
+            { "@type": "AdministrativeArea", "name": "Seine-Saint-Denis", "identifier": "93" },
+            { "@type": "AdministrativeArea", "name": "Val-de-Marne", "identifier": "94" },
+            { "@type": "AdministrativeArea", "name": "Seine-et-Marne", "identifier": "77" },
+            { "@type": "AdministrativeArea", "name": "Hauts-de-Seine", "identifier": "92" },
+            { "@type": "AdministrativeArea", "name": "Yvelines", "identifier": "78" },
+            { "@type": "AdministrativeArea", "name": "Essonne", "identifier": "91" },
+            { "@type": "AdministrativeArea", "name": "Val-d'Oise", "identifier": "95" }
           ],
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "reviewCount": "156"
-          },
+          "sameAs": [
+            "https://www.google.com/maps/place/16+Bd+Carnot,+93330+Neuilly-sur-Marne"
+          ],
           "makesOffer": {
             "@type": "Offer",
-            "name": "Photo d'identité à domicile",
-            "description": "Séance complète de photo d'identité à votre domicile avec photographe professionnel agréé ANTS. Déplacement inclus dans un rayon de 20 km autour de Neuilly-sur-Marne.",
-            "price": "15",
+            "name": "Photo d'identité à domicile en Île-de-France",
+            "description": "Séance complète de photo d'identité à votre domicile avec photographe professionnel agréé ANTS.",
+            "price": "59",
             "priceCurrency": "EUR",
             "areaServed": {
               "@type": "AdministrativeArea",
@@ -119,28 +128,14 @@
           },
           "hasOfferCatalog": {
             "@type": "OfferCatalog",
-            "name": "Tarifs Photo Identité à Domicile",
+            "name": "Prestations Photo Identité à Domicile",
             "itemListElement": [
               {
                 "@type": "Offer",
-                "name": "Photo d'identité adulte à domicile",
-                "price": "15",
+                "name": "Photo d'identité officielle à domicile (Île-de-France)",
+                "price": "59",
                 "priceCurrency": "EUR",
-                "description": "4 photos imprimées + version numérique, conforme ANTS"
-              },
-              {
-                "@type": "Offer",
-                "name": "Photo d'identité enfant à domicile",
-                "price": "12",
-                "priceCurrency": "EUR",
-                "description": "4 photos imprimées + version numérique, conforme ANTS"
-              },
-              {
-                "@type": "Offer",
-                "name": "Photo d'identité bébé à domicile",
-                "price": "10",
-                "priceCurrency": "EUR",
-                "description": "6 photos imprimées + version numérique, conforme ANTS"
+                "description": "Séance photo officielle conforme ANTS (e-photo ou papier), réalisée à domicile dès 59 €."
               }
             ]
           }
@@ -264,32 +259,34 @@
 
 <body class="antialiased font-sans pb-24 sm:pb-0">
 
-    <!-- STICKY MOBILE BAR (Design Blanc Givré Premium CRO) -->
-    <div class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-gray-200 px-4 py-3 flex items-center justify-between gap-3 sm:hidden shadow-[0_-8px_30px_rgb(0,0,0,0.08)]">
-        <div class="text-left leading-tight">
-            <span class="text-[10px] text-gray-500 font-semibold block uppercase tracking-wider">Service Domicile</span>
-            <span id="sticky-price" class="text-base font-black text-brand">Dès 59 € domicile</span>
-        </div>
-        <div class="flex items-center gap-2">
-            <a href="tel:+33781757754" aria-label="Appeler le photographe au 07 81 75 77 54" class="w-11 h-11 bg-gray-100 hover:bg-gray-200 active:scale-95 text-dark rounded-xl flex items-center justify-center transition border border-gray-200 shrink-0">
-                <i data-lucide="phone" class="w-5 h-5 text-brand"></i>
-            </a>
-            <button type="button" onclick="openBookingModal()" class="bg-brand hover:bg-orange-600 text-white font-bold text-xs px-4 py-3 rounded-xl flex items-center gap-1.5 transition active:scale-95 shadow-md shadow-brand/20 min-h-[44px]">
-                <i data-lucide="calendar" class="w-4 h-4"></i> Prendre RDV
-            </button>
-        </div>
+        <!-- STICKY MOBILE BAR (Double CTA Appel & WhatsApp) -->
+<div class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-gray-200 px-4 py-3 flex items-center justify-between gap-3 sm:hidden shadow-[0_-8px_30px_rgb(0,0,0,0.08)]">
+    <div class="text-left leading-tight">
+        <span class="text-[10px] text-gray-600 font-bold block uppercase tracking-wider">Tarif séance</span>
+        <span id="sticky-price" class="text-base font-black text-brand">Dès 59 € domicile</span>
     </div>
+    <div class="flex items-center gap-2">
+        <a href="tel:+33781757754" aria-label="Appeler le photographe au 07 81 75 77 54" class="h-11 px-3 bg-gray-100 hover:bg-gray-200 active:scale-95 text-dark rounded-xl flex items-center justify-center gap-1.5 transition border border-gray-200 shrink-0 text-xs font-bold min-h-[44px]">
+            <i data-lucide="phone" class="w-4 h-4 text-brand"></i>
+            <span>Appeler</span>
+        </a>
+        <a href="https://wa.me/33781757754?text=Bonjour%20Greg,%20je%20souhaite%20des%20renseignements%20pour%20une%20photo%20d'identit%C3%A9%20b%C3%A9b%C3%A9%20%C3%A0%20domicile." target="_blank" rel="noopener noreferrer" aria-label="Écrire sur WhatsApp au photographe" class="h-11 px-3.5 bg-green-600 hover:bg-green-700 active:scale-95 text-white font-bold text-xs rounded-xl flex items-center gap-1.5 transition shadow-md shadow-green-600/20 shrink-0 min-h-[44px]">
+            <i data-lucide="message-circle" class="w-4 h-4 text-white"></i>
+            <span>WhatsApp</span>
+        </a>
+    </div>
+</div>
 
     <!-- Navigation -->
     <nav id="main-nav" class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent py-6 shadow-none" aria-label="Menu principal">
         <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
-            <a href="index.html" class="logo-text text-xl md:text-2xl font-serif font-bold flex items-center gap-2 text-white transition-colors">
+            <a href="/" class="logo-text text-xl md:text-2xl font-serif font-bold flex items-center gap-2 text-white transition-colors">
                 <img src="Images/logo.png" alt="Logo Photo Identité Bébé et Domicile" class="logo-img h-8 md:h-10 w-auto brightness-0 invert" width="200" height="135" fetchpriority="high">
                 <span class="hidden sm:inline text-lg md:text-xl font-serif">Photo-identite-bebe-domicile.fr</span>
             </a>
             
             <div class="nav-links-container hidden lg:flex gap-6 lg:gap-8 items-center text-white/90 transition-colors font-medium">
-                <a href="index.html" class="hover:text-brand transition">Accueil</a>
+                <a href="/" class="hover:text-brand transition">Accueil</a>
                 <a href="photo-identite-bebe-ile-de-france.html" class="hover:text-brand transition">Photo Bébé</a>
                 <a href="photographe-agree-ants-ile-de-france.html" class="hover:text-brand transition">Agréé ANTS</a>
                 <a href="photo-identite-a-domicile-ile-de-france.html" class="hover:text-brand transition">À Domicile</a>
@@ -303,7 +300,7 @@
         </div>
         <div id="mobile-menu" class="hidden lg:hidden bg-white/95 backdrop-blur-md border-t border-gray-100 absolute top-full left-0 right-0 p-8 shadow-2xl space-y-6 transition-all duration-300">
             <div class="flex flex-col space-y-4">
-                <a onclick="toggleMobileMenu()" href="index.html" class="flex items-center gap-3 text-lg font-medium text-gray-800 hover:text-brand transition-colors py-2 border-b border-gray-50">
+                <a onclick="toggleMobileMenu()" href="/" class="flex items-center gap-3 text-lg font-medium text-gray-800 hover:text-brand transition-colors py-2 border-b border-gray-50">
                     🏠 Accueil
                 </a>
                 <a onclick="toggleMobileMenu()" href="photo-identite-bebe-ile-de-france.html" class="flex items-center gap-3 text-lg font-medium text-gray-800 hover:text-brand transition-colors py-2 border-b border-gray-50">
@@ -583,7 +580,7 @@
                             <tr class="border-b border-gray-100">
                                 <td class="p-4 font-medium">Conformité ANTS</td>
                                 <td class="p-4 text-center text-green-600 font-bold">✅ 22 critères vérifiés (séance offerte si refus)</td>
-                                <td class="p-4 text-center text-red-600">❌ 30% de refus</td>
+                                <td class="p-4 text-center text-red-600">❌ Risque de rejet fréquent</td>
                             </tr>
                             <tr class="border-b border-gray-100">
                                 <td class="p-4 font-medium">Qualité d'image</td>
@@ -613,65 +610,6 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="text-center mt-8">
-                    <p class="text-gray-600">💡 <strong>Avec un photographe pro, vous économisez du temps et des tracas !</strong> Un refus en préfecture = <strong>nouveau déplacement et nouveau paiement</strong>.</p>
-                    <p class="mt-4"><a href="/aide/photomaton-vs-photographe/" class="inline-flex items-center gap-1.5 text-brand font-bold hover:underline text-sm">➔ Lire notre comparatif détaillé : Photomaton vs Photographe d'Identité</a></p>
-                </div>
-            </section>
-
-            <!-- Section: Témoignages -->
-            <section class="mb-20 animate-on-scroll">
-                <h2 class="text-4xl font-serif font-bold text-dark mb-8 text-center">💬 Témoignages Clients</h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
-                        <div class="flex items-center mb-4">
-                            <div class="text-4xl text-brand">"</div>
-                        </div>
-                        <p class="text-gray-700 mb-4 italic">"Super expérience ! Le photographe est venu à la maison et a réussi à prendre une photo parfaite de mon bébé de 3 mois en 10 minutes. Conforme ANTS, livraison rapide. Je recommande !"</p>
-                        <p class="font-bold text-dark">- Marie, Paris 20ème</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
-                        <div class="flex items-center mb-4">
-                            <div class="text-4xl text-brand">"</div>
-                        </div>
-                        <p class="text-gray-700 mb-4 italic">"Plus besoin de stresser pour les photos de passeport des enfants. Le photographe est professionnel et patient. Merci !"</p>
-                        <p class="font-bold text-dark">- Thomas, Neuilly-sur-Marne</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
-                        <div class="flex items-center mb-4">
-                            <div class="text-4xl text-brand">"</div>
-                        </div>
-                        <p class="text-gray-700 mb-4 italic">"Service impeccable ! Le photographe est arrivé à l'heure avec tout le matériel. Photos conformes, livraison rapide. Parfait !"</p>
-                        <p class="font-bold text-dark">- Sophie, Bobigny</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Section: Tarifs -->
-            <section class="mb-20 bg-light p-8 rounded-3xl animate-on-scroll">
-                <h2 class="text-4xl font-serif font-bold text-dark mb-8 text-center">💰 Tarifs & Devis</h2>
-                <div class="bg-white rounded-2xl p-8 shadow-md text-center max-w-2xl mx-auto">
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        Nos tarifs pour les photos d'identité à domicile en Île-de-France dépendent de votre localisation et du nombre de planches souhaitées.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="prix-photo-identite.html" class="inline-flex items-center justify-center gap-2 bg-brand hover:bg-orange-600 text-white font-bold px-6 py-3.5 rounded-full transition-all">
-                            💰 Consulter la page des tarifs
-                        </a>
-                        <a href="index.html#booking-funnel" class="inline-flex items-center justify-center gap-2 bg-gray-100 hover:bg-gray-200 text-dark font-bold px-6 py-3.5 rounded-full transition-all">
-                            📅 Simuler le tarif de ma séance
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            
-        <!-- ALTERNATIVE EN LIGNE (SITE B) -->
-        <div class="my-16 p-6 rounded-2xl bg-gray-50 border border-gray-200 text-center max-w-3xl mx-auto">
-            <p class="text-sm text-gray-600">
-                Vous avez déjà votre photo ? Découvrez notre solution de <a href="https://gregphotographe.fr/ID/" target="_blank" rel="noopener noreferrer" class="text-brand font-semibold underline hover:text-orange-600">traitement photo d'identité à distance</a> (service 100% en ligne sans déplacement pour valider et imprimer vos clichés officiels).
-            </p>
-        </div>
 
     <!-- FAQ Section -->
             <section id="faq" class="mb-20 bg-light py-12 px-6 rounded-3xl animate-on-scroll">
@@ -957,13 +895,6 @@
                 </ul>
             </div>
         </section>
-
-        <!-- PASSERELLE EXTERNE VERS LE STUDIO (CONFIGURABLE DANS config/site.js) -->
-        <div class="mt-8 p-4 rounded-2xl bg-white border border-gray-200 text-center max-w-xl mx-auto shadow-xs">
-            <p class="text-xs sm:text-sm text-gray-500 leading-relaxed">
-                Vous préférez venir en studio ? <a href="https://www.gregstudiophoto.fr/" data-studio-link target="_blank" rel="noopener noreferrer" aria-label="Voir les tarifs et prestations au studio sur le site externe de Greg Studio Photo" class="text-brand font-semibold hover:underline inline-flex items-center gap-1">Voir les tarifs sur <span data-studio-name>Greg Studio Photo</span> →</a>
-            </p>
-        </div>
     </main>
 
     <!-- FOTOSTUDIO LEAD FORM MODAL (Hidden by default, styled beautifully) -->
@@ -1057,8 +988,7 @@
                     <div>
                         <label for="form-project-type" class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1.5">Type de séance *</label>
                         <select id="form-project-type" name="lead_form[project_type]" required class="w-full bg-gray-50 border border-gray-200 rounded-xl p-3 text-xs text-dark focus:border-brand focus:ring-1 focus:ring-brand outline-none">
-                            <option value="241706">Photo Identite à domicile</option>
-                            <option value="34544">Photos Identités Au STUDIO ⚠️</option>
+                            <option value="241706" selected>Photo Identité à domicile (Île-de-France)</option>
                         </select>
                     </div>
                     <div>
@@ -1076,12 +1006,6 @@
                     </div>
                 </div>
 
-                <!-- Newsletter option checkbox -->
-                <div class="flex items-start gap-2 pt-2">
-                    <input type="hidden" name="document_checkboxes[26597]" value="0">
-                    <input type="checkbox" name="document_checkboxes[26597]" value="1" id="newsletter-check" class="accent-brand w-4.5 h-4.5 rounded mt-0.5">
-                    <label for="newsletter-check" class="text-[10px] text-gray-500 cursor-pointer">J'accepte de recevoir des newsletters de Greg Studio Photo</label>
-                </div>
 
                 <!-- Anti-spam gotcha -->
                 <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
@@ -1101,7 +1025,7 @@
         <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12">
             <!-- Colonne 1: Identité -->
             <div>
-                <a href="index.html" class="font-serif text-2xl font-bold text-white mb-4 flex items-center gap-2 transition-colors">
+                <a href="/" class="font-serif text-2xl font-bold text-white mb-4 flex items-center gap-2 transition-colors">
                     <img src="Images/logo.png" alt="Logo Photo Identité Bébé et Domicile" class="logo-img h-10 w-auto" width="200" height="135" loading="lazy" style="aspect-ratio: 200/135;">
                     <span>Photo-identite-bebe-domicile.fr</span>
                 </a>
@@ -1112,9 +1036,7 @@
                     <p class="text-xs text-gray-400 leading-relaxed mb-2">
                         Du lundi au samedi sur rendez-vous à Paris et dans toute l'Île-de-France (93, 94, 77, 92...).
                     </p>
-                    <p class="text-xs text-gray-400">
-                        Studio fixe : 16 bd Carnot, 93330 Neuilly-sur-Marne — <a href="https://www.gregstudiophoto.fr/" data-studio-link target="_blank" rel="noopener noreferrer" aria-label="Voir les prestations au studio sur le site de Greg Studio Photo" class="text-brand hover:underline font-medium">Prestations au studio ↗</a>
-                    </p>
+                    <p class="text-xs text-gray-400">Siège social : 16 bd Carnot, 93330 Neuilly-sur-Marne (déplacement exclusivement à domicile sur toute l'Île-de-France)</p>
                 </div>
                 <div class="flex items-center gap-1 mt-4">
                     <span class="text-brand">★★★★★</span>
@@ -1165,14 +1087,6 @@
                     </li>
                 </ul>
             </div>
-        </div>
-
-        <!-- BARRE DISCRÈTE DE PIED DE PAGE : PASSERELLE STUDIO CONFIGURABLE -->
-        <div class="mt-12 pt-6 border-t border-gray-800 text-center text-xs text-gray-400">
-            <span>Vous préférez venir en studio ?</span>
-            <a href="https://www.gregstudiophoto.fr/" data-studio-link target="_blank" rel="noopener noreferrer" aria-label="Voir les tarifs sur le site du studio externe Greg Studio Photo" class="text-brand hover:underline font-semibold ml-1 inline-flex items-center gap-0.5">
-                Voir les tarifs sur <span data-studio-name>Greg Studio Photo</span> →
-            </a>
         </div>
     </footer>
 

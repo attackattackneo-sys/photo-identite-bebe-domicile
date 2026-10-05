@@ -1,0 +1,762 @@
+[
+  {
+    "slug": "neuilly-sur-marne",
+    "nom": "Neuilly-sur-Marne",
+    "departement": "93 - Seine-Saint-Denis",
+    "code_postal": "93330",
+    "frais_deplacement": 59,
+    "frais_deplacement_label": "Tarif de base 59 € (déplacement inclus)",
+    "coordonnees": {
+      "lat": 48.8566,
+      "lon": 2.5361
+    },
+    "delai_intervention": "Intervention ultra-rapide sous 24h à domicile",
+    "mairie_nom": "Hôtel de Ville de Neuilly-sur-Marne",
+    "mairie_adresse": "1 place François-Mitterrand, 93330 Neuilly-sur-Marne",
+    "mairie_service": "Service des Démarches Citoyennes et Titres Sécurisés",
+    "maternite_proche": "Maternité de Montfermeil (CHI Le Raincy-Montfermeil)",
+    "hopital_proche": "Hôpital Privé de Marne-la-Vallée (Bry-sur-Marne) & CHI Montfermeil",
+    "source_url": "https://www.neuillysurmarne.fr/demarches-administratives/titres-didentite/",
+    "verified": true,
+    "voisines": [
+      {
+        "slug": "noisy-le-grand",
+        "nom": "Noisy-le-Grand"
+      },
+      {
+        "slug": "gagny",
+        "nom": "Gagny"
+      }
+    ],
+    "elements_locaux_factuels": [
+      "Commune d'implantation du photographe : déplacement immédiat sans frais kilométriques supplémentaires sur l'ensemble de la ville (bords de Marne, centre-ville, Fauvettes).",
+      "Dépôt des dossiers de CNI et passeports directement à l'Hôtel de Ville de Neuilly-sur-Marne situé 1 place François-Mitterrand.",
+      "Prise en charge quotidienne des nouveau-nés de retour de la maternité de Montfermeil ou de Bry-sur-Marne."
+    ],
+    "description_locale": "À Neuilly-sur-Marne, berceau de notre activité professionnelle, bénéficiez d'une réactivité maximale pour vos photos d'identité officielles. Que vous résidiez dans le quartier du Centre-Ville, des 24 Arpents ou à proximité du Parc du Croissant Vert, nous intervenons directement chez vous sous 24h avec notre studio mobile complet.",
+    "conseil_local": "La mairie de Neuilly-sur-Marne exige une prise de rendez-vous en ligne pour les passeports. Présentez-vous avec notre planche papier non découpée et le code e-photo : vos photos sont validées du premier coup.",
+    "contexte_mobilite": "Habitants des bords de Marne ou du centre-ville, vous profitez de notre proximité directe pour une intervention sans attente."
+  },
+  {
+    "slug": "noisy-le-grand",
+    "nom": "Noisy-le-Grand",
+    "departement": "93 - Seine-Saint-Denis",
+    "code_postal": "93160",
+    "frais_deplacement": 75,
+    "frais_deplacement_label": "Forfait direct 75 € (déplacement inclus)",
+    "coordonnees": {
+      "lat": 48.8477,
+      "lon": 2.5528
+    },
+    "delai_intervention": "Intervention sous 24h à 48h à domicile",
+    "mairie_nom": "Hôtel de Ville de Noisy-le-Grand",
+    "mairie_adresse": "Place de la Libération, 93160 Noisy-le-Grand",
+    "mairie_service": "Direction de la Citoyenneté et de l'État Civil (sur RDV)",
+    "maternite_proche": "Maternité de l'Hôpital Privé de Marne-la-Vallée (Bry-sur-Marne)",
+    "hopital_proche": "Hôpital Privé de Marne-la-Vallée (33 rue Léon-Menu, Bry-sur-Marne)",
+    "source_url": "https://www.noisylegrand.fr/demarches-en-ligne/etat-civil-et-citoyennete/cni-et-passeports",
+    "verified": true,
+    "voisines": [
+      {
+        "slug": "neuilly-sur-marne",
+        "nom": "Neuilly-sur-Marne"
+      },
+      {
+        "slug": "champigny-sur-marne",
+        "nom": "Champigny-sur-Marne"
+      }
+    ],
+    "elements_locaux_factuels": [
+      "Application du forfait direct fixe à 75 € sans calcul kilométrique sur tous les quartiers noiséens (Mont d'Est, Richardets, Pavé-Neuf, bords de Marne).",
+      "Dépôt officiel des titres biométriques à l'Hôtel de Ville de Noisy-le-Grand (Place de la Libération) ou dans les mairies annexes du Champy et des Richardets.",
+      "Proximité immédiate (moins de 10 min) de la maternité de Bry-sur-Marne où naissent une grande partie des nourrissons noiséens."
+    ],
+    "description_locale": "Noisy-le-Grand est une commune limitrophe de notre siège où nous intervenons très fréquemment. Des Pavillons des Richardets aux résidences du Mont d'Est, nous évitons aux familles les embouteillages de l'A4 et l'attente en cabine publique grâce à notre service de prise de vue à domicile.",
+    "conseil_local": "Pensez à anticiper votre pré-demande ANTS : la mairie de Noisy-le-Grand dispose de créneaux dédiés pour les familles avec nouveau-nés.",
+    "contexte_mobilite": "Des résidences du Mont d'Est aux pavillons des Richardets, évitez les encombrements des sorties d'autoroute A4 et bénéficiez d'une séance dans votre cocon familial."
+  },
+  {
+    "slug": "montreuil",
+    "nom": "Montreuil",
+    "departement": "93 - Seine-Saint-Denis",
+    "code_postal": "93100",
+    "frais_deplacement": 89,
+    "frais_deplacement_label": "Forfait direct 89 € (déplacement inclus)",
+    "coordonnees": {
+      "lat": 48.8624,
+      "lon": 2.4439
+    },
+    "delai_intervention": "Intervention sous 24h à 48h à domicile",
+    "mairie_nom": "Centre administratif Opale de Montreuil",
+    "mairie_adresse": "3 rue de Rosny, 93100 Montreuil",
+    "mairie_service": "Pôle État Civil, Élections et Démarches Administratives",
+    "maternite_proche": "Maternité du CHI André Grégoire (56 boulevard de la Boissière, Montreuil)",
+    "hopital_proche": "Centre Hospitalier Intercommunal André Grégoire de Montreuil",
+    "source_url": "https://www.montreuil.fr/demarches-administratives/carte-nationale-didentite-et-passeport",
+    "verified": true,
+    "voisines": [
+      {
+        "slug": "rosny-sous-bois",
+        "nom": "Rosny-sous-Bois"
+      },
+      {
+        "slug": "vincennes",
+        "nom": "Vincennes"
+      }
+    ],
+    "elements_locaux_factuels": [
+      "Tarification fixe forfaitaire à 89 € couvrant l'ensemble du territoire montreuillois (Bas-Montreuil, Croix de Chavaux, Mairie, Signac, Boissière).",
+      "Dépôt des dossiers CNI et passeport au Centre Administratif Opale (3 rue de Rosny) face à la place Jean-Jaurès.",
+      "Accompagnement fréquent des familles ayant accouché à la maternité de Montreuil (CHI André Grégoire) dès les premiers jours du retour à la maison."
+    ],
+    "description_locale": "À Montreuil, plus grande ville de Seine-Saint-Denis, circuler et stationner avec un nouveau-né peut vite devenir un parcours du combattant. Notre photographe se déplace directement chez vous, du Bas-Montreuil jusqu'aux hauteurs de la Boissière, avec tout le matériel de prise de vue certifié.",
+    "conseil_local": "Le Centre Opale de Montreuil applique une vérification biométrique informatique stricte : notre fond gris clair réglementaire et nos réglages lumière évitent tout rejet en mairie.",
+    "contexte_mobilite": "Entre le Bas-Montreuil, la Croix de Chavaux et la Boissière, le stationnement et la circulation avec une poussette sont évités grâce à notre arrivée directement à votre porte."
+  },
+  {
+    "slug": "saint-denis",
+    "nom": "Saint-Denis",
+    "departement": "93 - Seine-Saint-Denis",
+    "code_postal": "93200",
+    "frais_deplacement": 89,
+    "frais_deplacement_label": "Forfait direct 89 € (déplacement inclus)",
+    "coordonnees": {
+      "lat": 48.9356,
+      "lon": 2.3539
+    },
+    "delai_intervention": "Intervention sous 24h à 48h à domicile",
+    "mairie_nom": "Centre administratif municipal de Saint-Denis",
+    "mairie_adresse": "2 place du Caquet, 93200 Saint-Denis",
+    "mairie_service": "Direction de la Citoyenneté et du Droit des Usagers",
+    "maternite_proche": "Maternité de l'Hôpital Delafontaine (Centre Hospitalier de Saint-Denis)",
+    "hopital_proche": "Centre Hospitalier Delafontaine (2 rue du Docteur-Delafontaine)",
+    "source_url": "https://ville-saint-denis.fr/vos-demarches/passeport-cni",
+    "verified": true,
+    "voisines": [
+      {
+        "slug": "paris",
+        "nom": "Paris"
+      },
+      {
+        "slug": "aulnay-sous-bois",
+        "nom": "Aulnay-sous-Bois"
+      }
+    ],
+    "elements_locaux_factuels": [
+      "Intervention à domicile sur toute la commune dyonysienne (Centre-ville, Plaine Saint-Denis, Pleyel, Franc-Moisin).",
+      "Dépôt officiel des titres biométriques au Centre Administratif municipal (2 place du Caquet) ou en mairies de quartier (Plaine, Courtille).",
+      "Prise en charge de nombreux nourrissons nés à la maternité de l'Hôpital Delafontaine ou à la Maison de Santé de Saint-Denis."
+    ],
+    "description_locale": "À Saint-Denis, le service d'état civil connaît une très forte affluence. Pour ne pas risquer un rejet de dossier après des semaines d'attente pour un rendez-vous, nous réalisons les photos officielles de votre bébé chez vous, au calme et sans précipitation.",
+    "conseil_local": "Pour vos rendez-vous au centre administratif de la place du Caquet, venez munis de votre récapitulatif de pré-demande ANTS et de notre planche papier certifiée non découpée.",
+    "contexte_mobilite": "Du centre historique au Stade de France et Pleyel, gagnez un temps précieux sans affronter la densité urbaine ni les transports pour les photos de votre nourrisson."
+  },
+  {
+    "slug": "chelles",
+    "nom": "Chelles",
+    "departement": "77 - Seine-et-Marne",
+    "code_postal": "77500",
+    "frais_deplacement": 75,
+    "frais_deplacement_label": "Forfait direct 75 € (déplacement inclus)",
+    "coordonnees": {
+      "lat": 48.88,
+      "lon": 2.593
+    },
+    "delai_intervention": "Intervention sous 24h à 48h à domicile",
+    "mairie_nom": "Hôtel de Ville de Chelles",
+    "mairie_adresse": "Parc du Souvenir Émile Fouchard, 77500 Chelles",
+    "mairie_service": "Pôle Population et Démarches Administratives (sur RDV)",
+    "maternite_proche": "Maternité du CHI Le Raincy-Montfermeil (Montfermeil)",
+    "hopital_proche": "Groupe Hospitalier de l'Est Francilien (Site de Marne-la-Vallée à Jossigny)",
+    "source_url": "https://www.chelles.fr/demarches/carte-nationale-didentite-passeport/",
+    "verified": true,
+    "voisines": [
+      {
+        "slug": "neuilly-sur-marne",
+        "nom": "Neuilly-sur-Marne"
+      },
+      {
+        "slug": "gagny",
+        "nom": "Gagny"
+      }
+    ],
+    "elements_locaux_factuels": [
+      "Forfait direct préférentiel à 75 € sur l'ensemble de la commune de Chelles (bords de Marne, Castermant, Mont-Chalâts, Abbaye).",
+      "Dépôt des dossiers CNI et passeport au pôle administratif de l'Hôtel de Ville de Chelles situé dans le Parc du Souvenir Émile Fouchard.",
+      "Accès direct en 12 minutes depuis le studio de Neuilly-sur-Marne permettant des interventions très rapides sous 24 heures."
+    ],
+    "description_locale": "À Chelles, première ville de Seine-et-Marne limitrophe du 93, nous offrons une disponibilité quasi-quotidienne. Notre formule à domicile permet aux jeunes parents chellois de rester au chaud avec leur tout-petit tout en obtenant des photos biométriques irréprochables.",
+    "conseil_local": "Les agents de la mairie de Chelles dans le Parc du Souvenir vérifient minutieusement le contraste des tenues : grâce à nos conseils et notre fond clair certifié, votre passage en mairie est 100% réussi.",
+    "contexte_mobilite": "Que vous résidiez côté Mont-Chalâts, Abbaye ou Castermant, profitez d'une prise en charge rapide à domicile sans devoir vous déplacer jusqu'au Raincy ou à Meaux."
+  },
+  {
+    "slug": "bussy-saint-georges",
+    "nom": "Bussy-Saint-Georges",
+    "departement": "77 - Seine-et-Marne",
+    "code_postal": "77600",
+    "frais_deplacement": 85,
+    "frais_deplacement_label": "Forfait direct 85 € (déplacement inclus)",
+    "coordonnees": {
+      "lat": 48.8425,
+      "lon": 2.6983
+    },
+    "delai_intervention": "Intervention sous 24h à 48h à domicile",
+    "mairie_nom": "Mairie de Bussy-Saint-Georges",
+    "mairie_adresse": "Passage Carter, Place de la Mairie, 77600 Bussy-Saint-Georges",
+    "mairie_service": "Service Citoyenneté et Titres Sécurisés",
+    "maternite_proche": "Maternité du Grand Hôpital de l'Est Francilien (GHEF Jossigny)",
+    "hopital_proche": "Grand Hôpital de l'Est Francilien (Site de Marne-la-Vallée, 2-4 rue Albert-Camus, Jossigny)",
+    "source_url": "https://www.bussysaintgeorges.fr/demarches-administratives/titres-didentite/",
+    "verified": true,
+    "voisines": [
+      {
+        "slug": "chelles",
+        "nom": "Chelles"
+      },
+      {
+        "slug": "noisy-le-grand",
+        "nom": "Noisy-le-Grand"
+      }
+    ],
+    "elements_locaux_factuels": [
+      "Dessertes régulières du secteur de Marne-la-Vallée (Bussy, Ferrières, Val d'Europe) avec forfait direct de 85 €.",
+      "Dépôt officiel des dossiers à la mairie centrale de Bussy-Saint-Georges, Passage Carter.",
+      "Proximité directe avec la maternité du GHEF de Jossigny située à moins de 8 minutes où naissent la majorité des bébés buxangeorgiens."
+    ],
+    "description_locale": "Bussy-Saint-Georges est une ville familiale et dynamique où les naissances sont nombreuses. Notre photographe se déplace directement dans vos résidences et pavillons pour photographier nourrissons et fratries sans aucune contrainte de déplacement.",
+    "conseil_local": "Les délais de délivrance en mairie de Bussy-Saint-Georges pouvant s'allonger avant les vacances d'été, anticipez votre séance dès le premier mois du nourrisson.",
+    "contexte_mobilite": "Dans les éco-quartiers ou le secteur du Golf, notre passage à domicile évite aux jeunes parents le trajet le long de l'autoroute A4 ou les centres commerciaux."
+  },
+  {
+    "slug": "vincennes",
+    "nom": "Vincennes",
+    "departement": "94 - Val-de-Marne",
+    "code_postal": "94300",
+    "frais_deplacement": 85,
+    "frais_deplacement_label": "Forfait direct 85 € (déplacement inclus)",
+    "coordonnees": {
+      "lat": 48.8475,
+      "lon": 2.4389
+    },
+    "delai_intervention": "Intervention sous 24h à 48h à domicile",
+    "mairie_nom": "Hôtel de Ville de Vincennes",
+    "mairie_adresse": "53 bis rue de Fontenay, 94300 Vincennes",
+    "mairie_service": "Service État Civil et Démarches Administratives",
+    "maternite_proche": "Maternité de l'Hôpital Armand-Trousseau (AP-HP Paris 12e) & Maternité des Bluets",
+    "hopital_proche": "Hôpital d'Instruction des Armées Bégin (Saint-Mandé) & Hôpital Trousseau",
+    "source_url": "https://www.vincennes.fr/demarches/carte-nationale-didentite-passeport",
+    "verified": true,
+    "voisines": [
+      {
+        "slug": "montreuil",
+        "nom": "Montreuil"
+      },
+      {
+        "slug": "fontenay-sous-bois",
+        "nom": "Fontenay-sous-Bois"
+      }
+    ],
+    "elements_locaux_factuels": [
+      "Intervention à domicile sur l'ensemble des quartiers vincennois (Carré historique, Diderot, Vignerons, Château).",
+      "Dépôt des titres à l'Hôtel de Ville de Vincennes, 53 bis rue de Fontenay, face à l'esplanade.",
+      "Prise en charge fréquente des nouveau-nés nés aux maternités parisiennes limitrophes de l'Est parisien (Trousseau, Les Bluets, Diaconesses)."
+    ],
+    "description_locale": "À Vincennes, entre le Château et le Bois, le stationnement difficile et la densité urbaine compliquent les sorties avec un bébé de quelques jours. Grâce à notre déplacement à domicile, vous profitez d'une prestation haut de gamme dans le calme de votre appartement.",
+    "conseil_local": "La mairie de Vincennes utilise les scanners de dernière génération du ministère de l'Intérieur : nos planches biométriques garantissent une conformité sans réserve.",
+    "contexte_mobilite": "Entre le Bois, le château et les rues commerçantes où le stationnement est très complexe, notre visite à domicile garantit calme et respect du rythme de votre tout-petit."
+  },
+  {
+    "slug": "creteil",
+    "nom": "Créteil",
+    "departement": "94 - Val-de-Marne",
+    "code_postal": "94000",
+    "frais_deplacement": 89,
+    "frais_deplacement_label": "Forfait direct 89 € (déplacement inclus)",
+    "coordonnees": {
+      "lat": 48.7904,
+      "lon": 2.4556
+    },
+    "delai_intervention": "Intervention sous 24h à 48h à domicile",
+    "mairie_nom": "Hôtel de Ville de Créteil",
+    "mairie_adresse": "1 place Salvador-Allende, 94000 Créteil",
+    "mairie_service": "Direction de la Citoyenneté et de la Population (sur RDV)",
+    "maternite_proche": "Maternité du Centre Hospitalier Intercommunal de Créteil (CHIC)",
+    "hopital_proche": "Hôpital Henri-Mondor (AP-HP) & Centre Hospitalier Intercommunal de Créteil (CHIC)",
+    "source_url": "https://www.ville-creteil.fr/passeport-cni",
+    "verified": true,
+    "voisines": [
+      {
+        "slug": "saint-maur-des-fosses",
+        "nom": "Saint-Maur-des-Fossés"
+      },
+      {
+        "slug": "champigny-sur-marne",
+        "nom": "Champigny-sur-Marne"
+      }
+    ],
+    "elements_locaux_factuels": [
+      "Déplacement direct sur toute la préfecture du Val-de-Marne (Mont-Mesly, Bords de Marne, Front de Lac, Brévannes).",
+      "Dépôt officiel des titres biométriques à l'Hôtel de Ville de Créteil (1 place Salvador-Allende) ou dans les relais-mairie.",
+      "Rattachement médical direct avec la maternité du CHIC de Créteil, centre périnatal de référence de niveau 3."
+    ],
+    "description_locale": "Préfecture du Val-de-Marne, Créteil est une commune où les démarches administratives nécessitent une préparation minutieuse. Nous évitons aux jeunes parents christoliens le stress des trajets avec un nourrisson en apportant le studio photographique chez eux.",
+    "conseil_local": "Pour votre rendez-vous à l'Hôtel de Ville de Créteil, pensez à vous munir de votre justificatif de domicile de moins d'un an et de la pièce d'identité du parent présent.",
+    "contexte_mobilite": "Du bord du lac au quartier de l'Échat, évitez l'agitation des centres commerciaux et offrez à votre bébé une séance sans bruit et sans attente."
+  },
+  {
+    "slug": "boulogne-billancourt",
+    "nom": "Boulogne-Billancourt",
+    "departement": "92 - Hauts-de-Seine",
+    "code_postal": "92100",
+    "frais_deplacement": 119,
+    "frais_deplacement_label": "Forfait direct 119 € (déplacement inclus)",
+    "coordonnees": {
+      "lat": 48.8353,
+      "lon": 2.2411
+    },
+    "delai_intervention": "Intervention sous 24h à 48h à domicile",
+    "mairie_nom": "Hôtel de Ville de Boulogne-Billancourt",
+    "mairie_adresse": "26 avenue André-Morizet, 92100 Boulogne-Billancourt",
+    "mairie_service": "Direction des Titres Sécurisés et de la Citoyenneté",
+    "maternite_proche": "Maternité de l'Hôpital Ambroise-Paré (AP-HP) & Maternité Notre-Dame de Bon Secours",
+    "hopital_proche": "Hôpital Ambroise-Paré (9 avenue Charles-de-Gaulle, Boulogne-Billancourt)",
+    "source_url": "https://www.boulognebillancourt.com/mes-demarches/etat-civil-et-citoyennete/carte-didentite-passeport",
+    "verified": true,
+    "voisines": [
+      {
+        "slug": "paris",
+        "nom": "Paris"
+      },
+      {
+        "slug": "neuilly-sur-seine",
+        "nom": "Neuilly-sur-Seine"
+      }
+    ],
+    "elements_locaux_factuels": [
+      "Couverture de l'ensemble des quartiers boulonnais (Point du Jour, Silly-Gallieni, Trapèze, Parchamp, Billancourt).",
+      "Dépôt officiel des demandes de passeport à l'Hôtel de Ville (26 avenue André-Morizet) ou en mairie annexe.",
+      "Prise en charge régulière des nouveau-nés nés à l'hôpital Ambroise-Paré ou dans les maternités de l'ouest parisien."
+    ],
+    "description_locale": "À Boulogne-Billancourt, première commune des Hauts-de-Seine, nous proposons un service sur-mesure d'exception. Fini les attentes interminables en cabine automatique inadaptée : votre photographe agréé ANTS vous livre planches conformes et code numérique en 20 minutes dans votre salon.",
+    "conseil_local": "Les agents instructeurs de l'avenue André-Morizet sont particulièrement attentifs au port de la tête des bébés : notre matériel ergonomique garantit un maintien parfait sans aucune main apparente.",
+    "contexte_mobilite": "Des quais de Seine à Marcel Sembat et Roland-Garros, vous vous épargnez la circulation dense des Hauts-de-Seine et le portage de cosy dans les étages."
+  },
+  {
+    "slug": "neuilly-sur-seine",
+    "nom": "Neuilly-sur-Seine",
+    "departement": "92 - Hauts-de-Seine",
+    "code_postal": "92200",
+    "frais_deplacement": 119,
+    "frais_deplacement_label": "Forfait direct 119 € (déplacement inclus)",
+    "coordonnees": {
+      "lat": 48.8848,
+      "lon": 2.2687
+    },
+    "delai_intervention": "Intervention sous 24h à 48h à domicile",
+    "mairie_nom": "Hôtel de Ville de Neuilly-sur-Seine",
+    "mairie_adresse": "96 avenue Achille-Peretti, 92200 Neuilly-sur-Seine",
+    "mairie_service": "Service des Titres Sécurisés et Affaires Générales",
+    "maternite_proche": "Maternité de l'Hôpital Américain de Paris & Centre Hospitalier Rives de Seine",
+    "hopital_proche": "Hôpital Américain de Paris (63 boulevard Victor-Hugo, Neuilly-sur-Seine)",
+    "source_url": "https://www.neuillysurseine.fr/demarches-administratives/passeport-et-cni",
+    "verified": true,
+    "voisines": [
+      {
+        "slug": "levallois-perret",
+        "nom": "Levallois-Perret"
+      },
+      {
+        "slug": "paris",
+        "nom": "Paris"
+      }
+    ],
+    "elements_locaux_factuels": [
+      "Intervention haut de gamme à domicile sur tous les secteurs de Neuilly (Saint-James, Bagatelle, Sablons, Pont de Neuilly).",
+      "Dépôt officiel des titres à l'Hôtel de Ville de Neuilly-sur-Seine situé 96 avenue Achille-Peretti.",
+      "Réalisation fréquente de photos pour les nouveau-nés nés à la maternité de l'Hôpital Américain ou pour des formalités consulaires internationales (passeports binationaux, USA, Canada)."
+    ],
+    "description_locale": "À Neuilly-sur-Seine, nous accompagnons les familles pour la réalisation de photos biométriques répondant aux standards les plus exigeants. Nous adaptons la prise de vue aux normes françaises (ANTS) ainsi qu'aux normes internationales spécifiques des ambassades étrangères.",
+    "conseil_local": "Si votre demande concerne un passeport étranger ou un visa consulaire, prévenez-nous lors de la réservation : nous calibrons le format (ex: 5x5 cm américain sur fond blanc) en direct.",
+    "contexte_mobilite": "Entre les boulevards arborés, l'avenue Charles-de-Gaulle et Bagatelle, bénéficiez d'une prestation soignée et discrète directement à votre résidence."
+  },
+  {
+    "slug": "paris",
+    "nom": "Paris",
+    "departement": "75 - Paris",
+    "code_postal": "75000",
+    "frais_deplacement": 129,
+    "frais_deplacement_label": "Forfait Paris intra-muros 129 € (déplacement inclus)",
+    "coordonnees": {
+      "lat": 48.8566,
+      "lon": 2.3522
+    },
+    "delai_intervention": "Intervention sous 24h à 48h à domicile",
+    "mairie_nom": "Mairies d'Arrondissement de Paris",
+    "mairie_adresse": "Toutes les mairies des 20 arrondissements parisiens",
+    "mairie_service": "Pôle Titres d'Identité et État Civil de la Ville de Paris",
+    "maternite_proche": "Maternité Port-Royal (14e), Maternité Robert-Debré (19e), Hôpital Necker (15e)",
+    "hopital_proche": "Hôpital Necker-Enfants Malades (AP-HP, Paris 15e)",
+    "source_url": "https://www.paris.fr/pages/papiers-d-identite-2035",
+    "verified": true,
+    "voisines": [
+      {
+        "slug": "vincennes",
+        "nom": "Vincennes"
+      },
+      {
+        "slug": "boulogne-billancourt",
+        "nom": "Boulogne-Billancourt"
+      }
+    ],
+    "elements_locaux_factuels": [
+      "Forfait fixe Paris intra-muros de 129 € incluant le déplacement et le stationnement dans les 20 arrondissements.",
+      "Dépôt des dossiers possible dans n'importe quelle mairie d'arrondissement parisienne (sur rendez-vous via le portail paris.fr).",
+      "Accompagnement fréquent des familles après un accouchement dans les grands centres périnataux parisiens (Port-Royal, Necker, Robert-Debré, Trousseau, Diaconesses)."
+    ],
+    "description_locale": "À Paris, affronter le métro ou les embouteillages avec une poussette et un nouveau-né relève de l'épreuve de force. Notre photographe professionnel vient directement chez vous avec son studio complet dans n'importe quel arrondissement parisien pour une prise de vue tout en douceur.",
+    "conseil_local": "À Paris, les rendez-vous en mairie sont prisés : évitez toute déconvenue lors de votre passage au guichet en confiant la photo de votre bébé à un expert agréé par le ministère de l'Intérieur.",
+    "contexte_mobilite": "Dans tous les arrondissements de la capitale, évitez les couloirs du métro avec poussette, les escaliers sans ascenseur et l'attente en mairie d'arrondissement."
+  },
+  {
+    "slug": "fontenay-sous-bois",
+    "nom": "Fontenay-sous-Bois",
+    "departement": "94 - Val-de-Marne",
+    "code_postal": "94120",
+    "frais_deplacement": 79,
+    "frais_deplacement_label": "Forfait direct 79 € (déplacement inclus)",
+    "coordonnees": {
+      "lat": 48.8517,
+      "lon": 2.4764
+    },
+    "delai_intervention": "Intervention sous 24h à 48h à domicile",
+    "mairie_nom": "Hôtel de Ville de Fontenay-sous-Bois",
+    "mairie_adresse": "4 esplanade Louis-Bayeurte, 94120 Fontenay-sous-Bois",
+    "mairie_service": "Service des Démarches Administratives et Citoyenneté",
+    "maternite_proche": "Maternité de l'Hôpital Privé Armand-Brillard (Nogent) & Maternité de Saint-Maurice",
+    "hopital_proche": "Hôpital Bégin (Saint-Mandé) & CHI André Grégoire (Montreuil)",
+    "source_url": "https://www.fontenay.fr/demarches-administratives/passeport-cni",
+    "verified": true,
+    "voisines": [
+      {
+        "slug": "vincennes",
+        "nom": "Vincennes"
+      },
+      {
+        "slug": "nogent-sur-marne",
+        "nom": "Nogent-sur-Marne"
+      }
+    ],
+    "elements_locaux_factuels": [
+      "Dessertes régulières du secteur fontenaysien (Village, Val de Fontenay, Rigollots, Parapluies) au tarif direct de 79 €.",
+      "Dépôt officiel des dossiers à l'Hôtel de Ville (4 esplanade Louis-Bayeurte) ou à la Maison du Citoyen au Val de Fontenay.",
+      "Situation limitrophe directe avec Vincennes, Montreuil et Neuilly-sur-Marne assurant une grande rapidité d'intervention."
+    ],
+    "description_locale": "À Fontenay-sous-Bois, entre ville et forêt, nous nous déplaçons directement chez les jeunes parents pour réaliser les photos d'identité officielles de leurs tout-petits. Confortablement installé dans son salon, le bébé reste détendu tout au long de la séance.",
+    "conseil_local": "La mairie de Fontenay-sous-Bois accepte les pré-demandes en ligne : avec notre code e-photo officiel, vos démarches sont traitées rapidement sans risque d'erreur.",
+    "contexte_mobilite": "Du Village aux Alouettes, les parents fontenayens apprécient une prise de vue relaxante à domicile, sans trajet en voiture jusqu'aux centres urbains voisins."
+  },
+  {
+    "slug": "nogent-sur-marne",
+    "nom": "Nogent-sur-Marne",
+    "departement": "94 - Val-de-Marne",
+    "code_postal": "94130",
+    "frais_deplacement": 79,
+    "frais_deplacement_label": "Forfait direct 79 € (déplacement inclus)",
+    "coordonnees": {
+      "lat": 48.8372,
+      "lon": 2.4831
+    },
+    "delai_intervention": "Intervention sous 24h à 48h à domicile",
+    "mairie_nom": "Hôtel de Ville de Nogent-sur-Marne",
+    "mairie_adresse": "Place Roland-Nungesser, 94130 Nogent-sur-Marne",
+    "mairie_service": "Service des Titres Sécurisés et Affaires Générales",
+    "maternite_proche": "Maternité de l'Hôpital Privé Armand-Brillard (3 avenue Watteau, Nogent-sur-Marne)",
+    "hopital_proche": "Hôpital Privé Armand-Brillard de Nogent-sur-Marne",
+    "source_url": "https://ville-nogentsurmarne.com/mes-demarches/papiers-citoyennete/titres-didentite/",
+    "verified": true,
+    "voisines": [
+      {
+        "slug": "fontenay-sous-bois",
+        "nom": "Fontenay-sous-Bois"
+      },
+      {
+        "slug": "champigny-sur-marne",
+        "nom": "Champigny-sur-Marne"
+      }
+    ],
+    "elements_locaux_factuels": [
+      "Forfait déplacement fixe à 79 € sur toute la commune (Village, Bords de Marne, Baltard, Viselets).",
+      "Dépôt officiel des titres biométriques à l'Hôtel de Ville, Place Roland-Nungesser.",
+      "Implantation directe à Nogent de la maternité réputée de l'Hôpital Privé Armand-Brillard, d'où proviennent de nombreux nourrissons que nous photographions à domicile."
+    ],
+    "description_locale": "À Nogent-sur-Marne, commune réputée pour sa douceur de vivre le long de la Marne, nous offrons aux jeunes familles un service photo haut de gamme à domicile. Pas de sortie précipitée par temps frais : le photographe s'occupe de tout chez vous en 20 minutes.",
+    "conseil_local": "Les officiers d'état civil de la mairie de Nogent vérifient attentivement que les oreilles et le front du bébé soient dégagés : nous préparons le cadrage au millimètre près.",
+    "contexte_mobilite": "Sur les coteaux de la Marne ou autour du port de plaisance, préservez la tranquillité de bébé sans vous soucier des créneaux de stationnement en centre-ville."
+  },
+  {
+    "slug": "saint-maur-des-fosses",
+    "nom": "Saint-Maur-des-Fossés",
+    "departement": "94 - Val-de-Marne",
+    "code_postal": "94100",
+    "frais_deplacement": 85,
+    "frais_deplacement_label": "Forfait direct 85 € (déplacement inclus)",
+    "coordonnees": {
+      "lat": 48.8033,
+      "lon": 2.4861
+    },
+    "delai_intervention": "Intervention sous 24h à 48h à domicile",
+    "mairie_nom": "Hôtel de Ville de Saint-Maur-des-Fossés",
+    "mairie_adresse": "Place Charles-de-Gaulle, 94100 Saint-Maur-des-Fossés",
+    "mairie_service": "Direction des Relations Citoyennes et Titres d'Identité",
+    "maternite_proche": "Maternité de l'Hôpital Privé Armand-Brillard (Nogent) & Maternité du CHIC (Créteil)",
+    "hopital_proche": "Centre Hospitalier Intercommunal de Créteil & Hôpital Henri-Mondor",
+    "source_url": "https://www.saint-maur.com/demarches/titres-didentite",
+    "verified": true,
+    "voisines": [
+      {
+        "slug": "creteil",
+        "nom": "Créteil"
+      },
+      {
+        "slug": "champigny-sur-marne",
+        "nom": "Champigny-sur-Marne"
+      }
+    ],
+    "elements_locaux_factuels": [
+      "Prise en charge de l'ensemble des 8 quartiers saint-mauriens (La Varenne, Adamville, Le Parc, Champignol, etc.) avec forfait direct à 85 €.",
+      "Dépôt officiel des titres biométriques à l'Hôtel de Ville (Place Charles-de-Gaulle) ou dans les mairies annexes de quartier.",
+      "Localisation dans la boucle de la Marne permettant une intervention rapide depuis Neuilly-sur-Marne par l'ex-N34."
+    ],
+    "description_locale": "À Saint-Maur-des-Fossés, ville pavillonnaire et familiale par excellence, nous réalisons les photos d'identité de votre bébé dans l'intimité de votre maison. Profitez d'une prise de vue respectueuse du rythme de votre enfant, sans attente.",
+    "conseil_local": "La mairie de Saint-Maur exige une rigueur absolue sur la neutralité faciale du nourrisson : notre expérience garantit une expression calme et une bouche bien fermée.",
+    "contexte_mobilite": "Dans cette boucle de la Marne aux huit quartiers pavillonnaires, la séance à domicile s'intègre naturellement entre deux tétées dans un cadre familier."
+  },
+  {
+    "slug": "champigny-sur-marne",
+    "nom": "Champigny-sur-Marne",
+    "departement": "94 - Val-de-Marne",
+    "code_postal": "94500",
+    "frais_deplacement": 79,
+    "frais_deplacement_label": "Forfait direct 79 € (déplacement inclus)",
+    "coordonnees": {
+      "lat": 48.8172,
+      "lon": 2.5156
+    },
+    "delai_intervention": "Intervention sous 24h à 48h à domicile",
+    "mairie_nom": "Hôtel de Ville de Champigny-sur-Marne",
+    "mairie_adresse": "14 rue Louis-Talamoni, 94500 Champigny-sur-Marne",
+    "mairie_service": "Direction de la Citoyenneté et de la Population",
+    "maternite_proche": "Maternité Armand-Brillard (Nogent) & Maternité du CHIC (Créteil)",
+    "hopital_proche": "Centre Hospitalier Intercommunal de Créteil (CHIC)",
+    "source_url": "https://www.champigny94.fr/demarches/carte-nationale-didentite-passeport",
+    "verified": true,
+    "voisines": [
+      {
+        "slug": "noisy-le-grand",
+        "nom": "Noisy-le-Grand"
+      },
+      {
+        "slug": "saint-maur-des-fosses",
+        "nom": "Saint-Maur-des-Fossés"
+      }
+    ],
+    "elements_locaux_factuels": [
+      "Tarif forfaitaire direct à 79 € couvrant toute la commune (Cœuilly, Plant, Centre-ville, Fourchette).",
+      "Dépôt officiel des demandes de passeports et CNI à l'Hôtel de Ville (14 rue Louis-Talamoni) ou dans les mairies annexes.",
+      "Commune limitrophe directe de Noisy-le-Grand et du Val-de-Marne accessible en quelques minutes."
+    ],
+    "description_locale": "À Champigny-sur-Marne, nous intervenons au chevet des tout-petits dès leur première semaine. Évitez les cabines automatiques des centres commerciaux qui refusent 9 photos sur 10 : notre photographe agréé vous garantit une validation immédiate.",
+    "conseil_local": "La mairie de Champigny applique des délais stricts : avec nos tirages remis sur place en 20 minutes, votre dossier est déposé sans aucun retard.",
+    "contexte_mobilite": "Des bords de Marne aux coteaux du plateau, nous apportons notre matériel d'éclairage directement chez vous, sans contrainte de transport."
+  },
+  {
+    "slug": "gagny",
+    "nom": "Gagny",
+    "departement": "93 - Seine-Saint-Denis",
+    "code_postal": "93220",
+    "frais_deplacement": 65,
+    "frais_deplacement_label": "Forfait direct 65 € (déplacement inclus)",
+    "coordonnees": {
+      "lat": 48.8833,
+      "lon": 2.5333
+    },
+    "delai_intervention": "Intervention sous 24h à domicile",
+    "mairie_nom": "Hôtel de Ville de Gagny",
+    "mairie_adresse": "1 place Foch, 93220 Gagny",
+    "mairie_service": "Service État Civil, Élections et Démarches Citoyennes",
+    "maternite_proche": "Maternité de Montfermeil (CHI Le Raincy-Montfermeil)",
+    "hopital_proche": "Groupe Hospitalier Intercommunal Le Raincy-Montfermeil (10 rue du Général-Leclerc)",
+    "source_url": "https://www.gagny.fr/demarches-administratives/cni-et-passeport/",
+    "verified": true,
+    "voisines": [
+      {
+        "slug": "neuilly-sur-marne",
+        "nom": "Neuilly-sur-Marne"
+      },
+      {
+        "slug": "chelles",
+        "nom": "Chelles"
+      }
+    ],
+    "elements_locaux_factuels": [
+      "Commune limitrophe directe de Neuilly-sur-Marne permettant un tarif très avantageux de 65 € déplacement inclus.",
+      "Dépôt officiel des titres à l'Hôtel de Ville de Gagny (1 place Foch) sur rendez-vous en ligne.",
+      "Proximité immédiate (moins de 5 km) du CHI Le Raincy-Montfermeil où accouchent de nombreuses familles gabiniennes."
+    ],
+    "description_locale": "À Gagny, voisine directe de notre siège, nous offrons une réactivité exceptionnelle pour photographier votre nouveau-né. Des quartiers de l'Époque au Chenay en passant par Maison-Blanche, nous arrivons chez vous en quelques minutes pour une séance détendue.",
+    "conseil_local": "La mairie de Gagny utilise les bornes de recueil ANTS les plus récentes : grâce à notre fond gris clair certifié ISO/IEC 19794-5, votre dossier passe avec succès.",
+    "contexte_mobilite": "Du quartier Jean Bouin à l'Époque, notre proximité immédiate avec Gagny nous permet d'arriver rapidement pour vos urgences de passeport bébé."
+  },
+  {
+    "slug": "villemomble",
+    "nom": "Villemomble",
+    "departement": "93 - Seine-Saint-Denis",
+    "code_postal": "93250",
+    "frais_deplacement": 65,
+    "frais_deplacement_label": "Forfait direct 65 € (déplacement inclus)",
+    "coordonnees": {
+      "lat": 48.8839,
+      "lon": 2.5117
+    },
+    "delai_intervention": "Intervention sous 24h à domicile",
+    "mairie_nom": "Hôtel de Ville de Villemomble",
+    "mairie_adresse": "13 bis rue d'Avron, 93250 Villemomble",
+    "mairie_service": "Service des Démarches Administratives et Titres Sécurisés",
+    "maternite_proche": "Maternité du CHI André Grégoire (Montreuil) & Maternité de Montfermeil",
+    "hopital_proche": "Hôpital Jean-Verdier (Bondy) & CHI Montfermeil",
+    "source_url": "https://www.villemomble.fr/demarches-administratives/passeport-cni/",
+    "verified": true,
+    "voisines": [
+      {
+        "slug": "gagny",
+        "nom": "Gagny"
+      },
+      {
+        "slug": "rosny-sous-bois",
+        "nom": "Rosny-sous-Bois"
+      }
+    ],
+    "elements_locaux_factuels": [
+      "Tarif de proximité de 65 € déplacement inclus sur l'ensemble de la commune de Villemomble (Centre, Plateau, Coquet, Benards).",
+      "Dépôt officiel des dossiers à l'Hôtel de Ville, 13 bis rue d'Avron.",
+      "Accès rapide depuis Neuilly-sur-Marne par l'avenue de Rosny et l'ex-N302."
+    ],
+    "description_locale": "À Villemomble, nous intervenons très fréquemment pour immortaliser les premiers jours des nourrissons selon les critères biométriques stricts. La prise de vue à domicile évite tout déplacement fatigant avec un nouveau-né.",
+    "conseil_local": "Pensez à habiller votre bébé avec un haut uni sombre (bleu marine, vert foncé, noir) : c'est la clé d'un contraste parfait avec notre fond clair réglementaire.",
+    "contexte_mobilite": "Du plateau d'Avron au centre commerçant, le photographe s'installe dans votre salon pour photographier votre enfant dans les meilleures conditions."
+  },
+  {
+    "slug": "rosny-sous-bois",
+    "nom": "Rosny-sous-Bois",
+    "departement": "93 - Seine-Saint-Denis",
+    "code_postal": "93110",
+    "frais_deplacement": 69,
+    "frais_deplacement_label": "Forfait direct 69 € (déplacement inclus)",
+    "coordonnees": {
+      "lat": 48.8731,
+      "lon": 2.4853
+    },
+    "delai_intervention": "Intervention sous 24h à 48h à domicile",
+    "mairie_nom": "Hôtel de Ville de Rosny-sous-Bois",
+    "mairie_adresse": "20 rue Claude-Pernès, 93110 Rosny-sous-Bois",
+    "mairie_service": "Direction de la Population et des Titres d'Identité",
+    "maternite_proche": "Maternité du CHI André Grégoire (Montreuil)",
+    "hopital_proche": "Centre Hospitalier Intercommunal André Grégoire (Montreuil) & Hôpital Jean-Verdier",
+    "source_url": "https://www.rosnysousbois.fr/demarches/carte-nationale-didentite-et-passeport/",
+    "verified": true,
+    "voisines": [
+      {
+        "slug": "montreuil",
+        "nom": "Montreuil"
+      },
+      {
+        "slug": "villemomble",
+        "nom": "Villemomble"
+      }
+    ],
+    "elements_locaux_factuels": [
+      "Forfait préférentiel à 69 € couvrant tout Rosny-sous-Bois (Centre, Bois-Perrier, Pré-Gentil, Golf).",
+      "Dépôt officiel des demandes de passeport et CNI au centre administratif municipal, 20 rue Claude-Pernès.",
+      "Proximité directe avec la maternité de Montreuil (CHI André Grégoire) située à quelques centaines de mètres de la limite communale."
+    ],
+    "description_locale": "À Rosny-sous-Bois, nos déplacements à domicile apportent un confort précieux aux jeunes parents. Pas besoin de vous garer dans les parkings bondés de Rosny 2 pour chercher un photomaton : votre photographe agréé se déplace chez vous avec du matériel de studio doux.",
+    "conseil_local": "La mairie de Rosny applique une tolérance zéro sur les bavoirs ou tétines : nous prenons le temps nécessaire pour que bébé soit détendu et conforme.",
+    "contexte_mobilite": "À deux pas du centre-ville et des hauts de Rosny, épargnez à votre nourrisson l'ambiance bruyante des galeries commerciales pour ses photos officielles."
+  },
+  {
+    "slug": "aulnay-sous-bois",
+    "nom": "Aulnay-sous-Bois",
+    "departement": "93 - Seine-Saint-Denis",
+    "code_postal": "93600",
+    "frais_deplacement": 89,
+    "frais_deplacement_label": "Forfait direct 89 € (déplacement inclus)",
+    "coordonnees": {
+      "lat": 48.9386,
+      "lon": 2.4939
+    },
+    "delai_intervention": "Intervention sous 24h à 48h à domicile",
+    "mairie_nom": "Centre administratif municipal d'Aulnay-sous-Bois",
+    "mairie_adresse": "16 boulevard Félix-Faure, 93600 Aulnay-sous-Bois",
+    "mairie_service": "Direction de l'Accueil et des Démarches Administratives",
+    "maternite_proche": "Maternité du Centre Hospitalier Robert-Ballanger (Aulnay-sous-Bois)",
+    "hopital_proche": "Centre Hospitalier Intercommunal Robert-Ballanger (boulevard Robert-Ballanger)",
+    "source_url": "https://www.aulnay-sous-bois.fr/mes-demarches/etat-civil-et-citoyennete/cni-et-passeport/",
+    "verified": true,
+    "voisines": [
+      {
+        "slug": "saint-denis",
+        "nom": "Saint-Denis"
+      },
+      {
+        "slug": "gagny",
+        "nom": "Gagny"
+      }
+    ],
+    "elements_locaux_factuels": [
+      "Forfait direct fixe de 89 € déplacement inclus sur l'ensemble d'Aulnay-sous-Bois (Nord, Sud, Chanteloup, Vieux-Pays).",
+      "Dépôt officiel des titres biométriques au Centre Administratif municipal (16 boulevard Félix-Faure) ou dans les mairies annexes.",
+      "Implantation directe à Aulnay de la maternité de référence Robert-Ballanger où naissent de nombreux bébés de la zone."
+    ],
+    "description_locale": "À Aulnay-sous-Bois, troisième ville du département, nous offrons un accompagnement photographique officiel d'une rigueur absolue. Avec notre intervention à domicile, vos photos de passeport ou de CNI sont remises sur place en 20 minutes chrono.",
+    "conseil_local": "Les agents de la mairie du boulevard Félix-Faure inspectent soigneusement les photos : notre matériel calibré garantit une validation immédiate dès le premier dépôt.",
+    "contexte_mobilite": "Du quartier de la Rose des Vents au secteur de l'Hôtel de Ville, notre service à domicile répond aux besoins de rapidité des familles aulnaysiennes."
+  },
+  {
+    "slug": "levallois-perret",
+    "nom": "Levallois-Perret",
+    "departement": "92 - Hauts-de-Seine",
+    "code_postal": "92300",
+    "frais_deplacement": 119,
+    "frais_deplacement_label": "Forfait direct 119 € (déplacement inclus)",
+    "coordonnees": {
+      "lat": 48.8936,
+      "lon": 2.2881
+    },
+    "delai_intervention": "Intervention sous 24h à 48h à domicile",
+    "mairie_nom": "Hôtel de Ville de Levallois-Perret",
+    "mairie_adresse": "Place de la République, 92300 Levallois-Perret",
+    "mairie_service": "Direction des Affaires Générales et Titres Sécurisés",
+    "maternite_proche": "Maternité de l'Hôpital Franco-Britannique (Institut Franco-Britannique)",
+    "hopital_proche": "Hôpital Franco-Britannique (3-4 rue Barbès / 4 rue Kléber, Levallois-Perret)",
+    "source_url": "https://www.ville-levallois.fr/demarches/carte-nationale-didentite-passeport/",
+    "verified": true,
+    "voisines": [
+      {
+        "slug": "neuilly-sur-seine",
+        "nom": "Neuilly-sur-Seine"
+      },
+      {
+        "slug": "paris",
+        "nom": "Paris"
+      }
+    ],
+    "elements_locaux_factuels": [
+      "Déplacement direct sur toute la commune de Levallois-Perret (Front de Seine, Trézel, Alsace, Centre-Ville) avec forfait de 119 €.",
+      "Dépôt des titres sécurisés à l'Hôtel de Ville, Place de la République.",
+      "Prise en charge régulière des nouveau-nés nés à la maternité de l'Hôpital Franco-Britannique situé en plein cœur de Levallois."
+    ],
+    "description_locale": "À Levallois-Perret, commune dense et animée, sortir avec un nourrisson par mauvais temps peut être source d'inquiétude. Notre photographe agréé ANTS se déplace dans votre appartement avec tout le matériel de studio pour une séance sereine et rapide.",
+    "conseil_local": "La mairie de Levallois-Perret est très vigilante sur la conformité de la signature numérique et de la photo e-photo : nos planches sont certifiées conformes au millimètre près.",
+    "contexte_mobilite": "Au cœur de la commune la plus dense de France, la formule à domicile résout tous les problèmes de stationnement et de déplacement avec un nouveau-né."
+  }
+]
