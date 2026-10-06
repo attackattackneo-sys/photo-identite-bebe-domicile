@@ -81,39 +81,81 @@ if (!window._mobileMenuListenerBound) {
 // Coordinates of Greg Studio in Neuilly-sur-Marne
 const STUDIO_COORDS = { lat: 48.8569, lon: 2.5317 };
 
+// ---------------------------------------------------------------------------
+// Acces DOM tolerant. Toutes les pages n'hebergent pas l'integralite du
+// recapitulatif : les 20 pages villes n'ont ni selecteur studio/domicile, ni
+// ligne "deplacement", ni encadre d'itineraire. Sans ces garde-fous, le calcul
+// levait une exception et l'estimation ne s'affichait jamais.
+// ---------------------------------------------------------------------------
+function setText(id, value) {
+    const el = document.getElementById(id);
+    if (el) el.innerText = value;
+}
+function addClass(id, cls) {
+    const el = document.getElementById(id);
+    if (el) el.classList.add(cls);
+}
+function removeClass(id, cls) {
+    const el = document.getElementById(id);
+    if (el) el.classList.remove(cls);
+}
+
 // Original financial config structure
 const config = {
-    "priceStudio": 59, // Tarif de base inchangé pour la prestation sur place
-    "localMaxKm": 5,
-    "localMaxMin": 25,
-    "priceLocal": 65, // Aligné sur votre objectif pour Noisy et Chelles
-    "localExtraKmPrice": 1.5,
-    "localExtraMinPrice": 0.75,
-    "metroMaxKm": 10,
-    "metroMaxMin": 50,
-    "priceMetro": 79, // Aligné sur votre objectif pour Montreuil et Aulnay
-    "metroExtraKmPrice": 1.5,
-    "metroExtraMinPrice": 0.75,
-    "extendedMaxKm": 15,
-    "extendedMaxMin": 75,
-    "priceExtended": 99, // 129€ de base pour la zone Paris
-    "parisSupplement": 30, // +30€ de forfait Paris = 159€ au total pour l'intra-muros
-    "extendedExtraKmPrice": 1.5,
-    "extendedExtraMinPrice": 0.75,
-    "priceBaby": 15,
-    "priceExtraPers": 15,
-    "priceAnts": 5,
+    // ---- MODELE TARIFAIRE (arbitrage proprietaire du 6 octobre 2026) -------------
+    // Prix = 59 EUR la 1re heure sur place (59 EUR/h)
+    //      + supplement de profil (technicite : bebe, nourrisson, e-photo)
+    //      + deplacement = km A/R x 0,40 EUR + minutes A/R x 25 EUR/h + stationnement
+    // Toute modification doit etre repercutee dans data/communes.json (pages villes).
+    // -----------------------------------------------------------------------------
+    "priceStudio": 59,           // 1re heure sur place (ex-"prix de base" ; 59 EUR/h)
+    "travelPerKm": 0.40,         // cout vehicule au km (carburant, usure, assurance, decote)
+    "travelPerHour": 35,         // valorisation du temps de trajet (59 % du tarif de pose)
+    "parkingParis": 20,          // stationnement intra-muros (cout reel)
+    // Stationnement reel par code postal (Paris + 92 ouest). Source : data/communes.json.
+    "parkingByPostal": {
+        "75000": 20, "92000": 20, "92100": 20, "92110": 20, "92200": 20,
+        "92300": 20, "92400": 20, "92500": 20, "92600": 20, "92800": 20,
+    },
+    "freeTravelPostal": "93330", // seule commune sans frais de deplacement : le siege
+    "roundUpTo": 10,             // arrondi commercial du deplacement (paliers de 10 EUR)
+    "priceExtraPers": 20,
     "postalPrices": {
-        "77500": 75, // Chelles (Forfait Direct à 75€)
-        "93160": 75, // Noisy-le-Grand (Forfait Direct à 75€)
-        "93100": 89, // Montreuil (Forfait Direct à 89€)
-        "93600": 89  // Aulnay-sous-Bois (Forfait Direct à 89€)
+        "75000": 129,
+        "77500": 79,
+        "77600": 99,
+        "78000": 149,
+        "78100": 149,
+        "92000": 149,
+        "92100": 139,
+        "92110": 129,
+        "92200": 139,
+        "92300": 129,
+        "92400": 139,
+        "92500": 149,
+        "92600": 129,
+        "92800": 139,
+        "93100": 89,
+        "93110": 79,
+        "93160": 69,
+        "93200": 109,
+        "93220": 69,
+        "93250": 69,
+        "93270": 89,
+        "93330": 59,
+        "93600": 99,
+        "94000": 99,
+        "94100": 89,
+        "94120": 79,
+        "94130": 79,
+        "94300": 89,
+        "94500": 79,
     }
 };
 
 // System states
 let state = {
-    locationType: 'studio', // 'studio' or 'home'
+    locationType: 'home', // 'studio' or 'home' — le site est 100 % à domicile : 'home' par défaut, quelle que soit la présence de data-default-location
     calculatedTravelCost: 0,
     calculatedTravelZone: "Neuilly-sur-Marne (93330)",
     detectedDistance: 0,
@@ -121,7 +163,7 @@ let state = {
     detectedPostal: "93330",
     detectedCity: "Neuilly-sur-Marne",
     participants: [
-        { id: 1, type: 'classic' } // profiles: 'classic', 'ants', 'visa', 'toddler', 'baby', 'newborn'
+        { id: 1, type: 'toddler' } // défaut : bébé 3 mois-3 ans, pour que l'estimation initiale (69 €) corresponde au prix d'appel affiché — profiles: 'classic', 'ants', 'visa', 'toddler', 'baby', 'newborn'
     ]
 };
 
@@ -133,34 +175,34 @@ const profileGroups = [
     {
         groupLabel: "👶 Bébés & Nourrissons",
         profiles: [
-            { key: 'newborn', label: "Nourrisson (3 jours à 1 mois)", price: 30, optionCost: 20, desc: "Séance ultra-douce de 30 min" },
-            { key: 'baby', label: "Bébé (1 à 3 mois)", price: 25, optionCost: 15, desc: "Séance adaptée de 10-20 min" },
-            { key: 'toddler', label: "Bébé (3 mois à 3 ans)", price: 20, optionCost: 10, desc: "Séance adaptée de 10 à 20 minutes" }
+            { key: 'newborn', label: "Nourrisson (3 jours à 1 mois)", price: 30, optionCost: 30, desc: "Prise de vue au rythme du nouveau-né" },
+            { key: 'baby', label: "Bébé (1 à 3 mois)", price: 25, optionCost: 20, desc: "Prise de vue adaptée au rythme de bébé" },
+            { key: 'toddler', label: "Bébé (3 mois à 3 ans)", price: 20, optionCost: 10, desc: "Prise de vue adaptée à la motricité de l'enfant" }
         ]
     },
     {
         groupLabel: "👤 Enfants & Adultes (+3 ans)",
         profiles: [
             { key: 'classic', label: "Adulte / Enfant +3 ans (Classique)", price: 10, optionCost: 0, desc: "Planche de 6 photos" },
-            { key: 'ants', label: "Adulte / Enfant +3 ans (ANTS e-photo)", price: 15, optionCost: 5, desc: "Planche + Code e-photo" }
+            { key: 'ants', label: "Adulte / Enfant +3 ans (ANTS e-photo)", price: 15, optionCost: 10, desc: "Planche + Code e-photo" }
         ]
     },
     {
         groupLabel: "🌍 International & Spécifique",
         profiles: [
-            { key: 'visa', label: "Visas Internationaux (USA, Inde, etc.)", price: 15, optionCost: 5, desc: "Format 5x5 cm / Spécifique" }
+            { key: 'visa', label: "Visas Internationaux (USA, Inde, etc.)", price: 15, optionCost: 10, desc: "Format 5x5 cm / Spécifique" }
         ]
     }
 ];
 
 // Mapping d'accès direct par identifiant
 const profiles = {
-    newborn: { label: "Nourrisson (3 jours à 1 mois)", price: 30, optionCost: 20, desc: "Séance ultra-douce de 30 min" },
-    baby: { label: "Bébé (1 à 3 mois)", price: 25, optionCost: 15, desc: "Séance adaptée de 10-20 min" },
-    toddler: { label: "Bébé (3 mois à 3 ans)", price: 20, optionCost: 10, desc: "Séance adaptée de 10 à 20 minutes" },
+    newborn: { label: "Nourrisson (3 jours à 1 mois)", price: 30, optionCost: 30, desc: "Prise de vue au rythme du nouveau-né" },
+    baby: { label: "Bébé (1 à 3 mois)", price: 25, optionCost: 20, desc: "Prise de vue adaptée au rythme de bébé" },
+    toddler: { label: "Bébé (3 mois à 3 ans)", price: 20, optionCost: 10, desc: "Prise de vue adaptée à la motricité de l'enfant" },
     classic: { label: "Adulte / Enfant +3 ans (Classique)", price: 10, optionCost: 0, desc: "Planche de 6 photos" },
-    ants: { label: "Adulte / Enfant +3 ans (ANTS e-photo)", price: 15, optionCost: 5, desc: "Planche + Code e-photo" },
-    visa: { label: "Visas Internationaux (USA, etc.)", price: 15, optionCost: 5, desc: "Format 5x5 cm / Spécifique" }
+    ants: { label: "Adulte / Enfant +3 ans (ANTS e-photo)", price: 15, optionCost: 10, desc: "Planche + Code e-photo" },
+    visa: { label: "Visas Internationaux (USA, etc.)", price: 15, optionCost: 10, desc: "Format 5x5 cm / Spécifique" }
 };
 
 function scrollToSimulator() {
@@ -200,7 +242,7 @@ function debounceSearch(query) {
     const clearBtn = document.getElementById('clear-search-btn');
     
     if (!query || query.trim().length < 3) {
-        document.getElementById('autocomplete-results').classList.add('hidden');
+        addClass('autocomplete-results', 'hidden');
         if (clearBtn) clearBtn.classList.add('hidden');
         return;
     }
@@ -215,10 +257,10 @@ function debounceSearch(query) {
 function clearAddressSearch() {
     const input = document.getElementById('address-input');
     if (input) input.value = '';
-    document.getElementById('autocomplete-results').classList.add('hidden');
+    addClass('autocomplete-results', 'hidden');
     const clearBtn = document.getElementById('clear-search-btn');
     if (clearBtn) clearBtn.classList.add('hidden');
-    document.getElementById('route-calc-info').classList.add('hidden');
+    addClass('route-calc-info', 'hidden');
     
     // Reset to Neuilly defaults
     state.detectedDistance = 0;
@@ -274,12 +316,12 @@ async function fetchAddressSuggestions(query) {
 
 // Handle selected autocomplete item
 async function selectAddress(lat, lon, city, postcode, displayName) {
-    document.getElementById('autocomplete-results').classList.add('hidden');
+    addClass('autocomplete-results', 'hidden');
     const addrInput = document.getElementById('address-input');
     if (addrInput) addrInput.value = displayName;
     
     const infoBox = document.getElementById('route-calc-info');
-    if (!infoBox) return;
+    if (infoBox) {
     infoBox.classList.remove('hidden');
     infoBox.innerHTML = `
         <div class="flex items-center gap-2 text-gray-500">
@@ -290,6 +332,7 @@ async function selectAddress(lat, lon, city, postcode, displayName) {
             <span>Calcul de l'itinéraire le plus rapide en cours...</span>
         </div>
     `;
+    }
 
     try {
         // Calculate real road distance and time via OSRM API (No keys required, reliable open routing)
@@ -308,7 +351,7 @@ async function selectAddress(lat, lon, city, postcode, displayName) {
             state.detectedCity = city || "Paris";
 
             // Update UI info badge
-            infoBox.innerHTML = `
+            if (infoBox) infoBox.innerHTML = `
                 <div class="flex items-center justify-between text-dark">
                     <div class="flex items-center gap-1.5 font-semibold">
                         <i data-lucide="navigation" class="w-4 h-4 text-brand"></i>
@@ -329,7 +372,7 @@ async function selectAddress(lat, lon, city, postcode, displayName) {
             state.detectedPostal = postcode || "75000";
             state.detectedCity = city || "Paris";
 
-            infoBox.innerHTML = `
+            if (infoBox) infoBox.innerHTML = `
                 <div class="flex items-center justify-between text-dark">
                     <div class="flex items-center gap-1.5 font-semibold">
                         <i data-lucide="navigation" class="w-4 h-4 text-brand"></i>
@@ -350,7 +393,7 @@ async function selectAddress(lat, lon, city, postcode, displayName) {
         state.detectedPostal = postcode || "75000";
         state.detectedCity = city || "Paris";
         
-        infoBox.innerHTML = `
+        if (infoBox) infoBox.innerHTML = `
             <div class="flex items-center justify-between text-dark">
                 <div class="flex items-center gap-1.5 font-semibold">
                     <i data-lucide="navigation" class="w-4 h-4 text-brand"></i>
@@ -409,7 +452,7 @@ function renderParticipantsUI() {
 
     state.participants.forEach((p, index) => {
         const div = document.createElement('div');
-        div.className = "flex items-center justify-between p-3 rounded-xl bg-white border border-gray-150 gap-3 shadow-sm";
+        div.className = "flex items-center justify-between p-3 rounded-xl bg-white border border-gray-200 gap-3 shadow-sm";
         
         let selectOptions = '';
         profileGroups.forEach(group => {
@@ -454,7 +497,7 @@ function runIDCalculation() {
     recapPeopleList.innerHTML = '';
 
     if (state.locationType === 'studio') {
-        document.getElementById('recap-location-type').innerText = "Au Studio (Neuilly-sur-Marne)";
+        setText('recap-location-type', "Au Studio (Neuilly-sur-Marne)");
         
         state.participants.forEach((p) => {
             const profile = profiles[p.type];
@@ -467,7 +510,7 @@ function runIDCalculation() {
         });
 
     } else {
-        document.getElementById('recap-location-type').innerText = "À Domicile (Chez vous)";
+        setText('recap-location-type', "À Domicile (Chez vous)");
 
         const firstParticipant = state.participants[0];
         const firstProfile = profiles[firstParticipant.type];
@@ -505,59 +548,42 @@ function runIDCalculation() {
         const normalizedCity = state.detectedCity.toLowerCase();
         const normalizedPostal = state.detectedPostal;
 
-        if (normalizedCity.includes("neuilly-sur-marne") || normalizedPostal === "93330" || state.detectedDistance === 0) {
-            // Neuilly-sur-Marne has 0€ travel supplement! Total base = 59€
+        const forfaitPostal = config.postalPrices[normalizedPostal];
+        const isNeuilly = normalizedCity.includes("neuilly-sur-marne") || normalizedPostal === "93330";
+
+        if (forfaitPostal !== undefined) {
+            // Forfait direct : le prix affiché sur la page ville et le prix calculé
+            // ici proviennent de la même donnée (data/communes.json). Aucun écart possible.
+            travelCost = forfaitPostal - config.priceStudio;
+            travelZoneName = `${state.detectedCity} (${normalizedPostal}) — forfait déplacement inclus`;
+        } else if (isNeuilly || state.detectedDistance === 0) {
+            // Siège (déplacement inclus) ou itinéraire non calculé : aucun supplément appliqué
             travelCost = 0;
-            travelZoneName = "Neuilly-sur-Marne (93330)";
-        } else if (normalizedPostal === "77500") {
-            travelCost = config.postalPrices["77500"] - config.priceStudio; // 75 - 59 = 16€
-            travelZoneName = "Chelles (77500) - Forfait Direct";
-        } else if (normalizedPostal === "93160") {
-            travelCost = config.postalPrices["93160"] - config.priceStudio; // 75 - 59 = 16€
-            travelZoneName = "Noisy-le-Grand (93160) - Forfait Direct";
+            travelZoneName = isNeuilly
+                ? "Neuilly-sur-Marne (93330) — déplacement inclus"
+                : "Déplacement inclus (itinéraire non calculé)";
         } else {
-            // General algorithm matching Greg's original vercel app config rules
-            let calculatedBase = config.priceLocal; // default 65€ starting local
-            let currentIsParis = normalizedPostal.startsWith("75") || normalizedCity.includes("paris");
-
-            if (state.detectedDistance <= config.localMaxKm && state.detectedDuration <= config.localMaxMin) {
-                calculatedBase = config.priceLocal;
-                let extraKm = Math.max(0, state.detectedDistance - config.localMaxKm);
-                let extraMin = Math.max(0, (state.detectedDuration * 2) - config.localMaxMin);
-                calculatedBase += (extraKm * config.localExtraKmPrice) + (extraMin * config.localExtraMinPrice);
-            } else if (state.detectedDistance <= config.metroMaxKm && state.detectedDuration <= config.metroMaxMin) {
-                calculatedBase = config.priceMetro;
-                let extraKm = Math.max(0, state.detectedDistance - config.metroMaxKm);
-                let extraMin = Math.max(0, (state.detectedDuration * 2) - config.metroMaxMin);
-                calculatedBase += (extraKm * config.metroExtraKmPrice) + (extraMin * config.metroExtraMinPrice);
-            } else {
-                calculatedBase = config.priceExtended;
-                let extraKm = Math.max(0, state.detectedDistance - config.extendedMaxKm);
-                let extraMin = Math.max(0, (state.detectedDuration * 2) - config.extendedMaxMin);
-                calculatedBase += (extraKm * config.extendedExtraKmPrice) + (extraMin * config.extendedExtraMinPrice);
-            }
-
-            if (currentIsParis) {
-                calculatedBase += config.parisSupplement;
-            }
-
-            // Arrondi aux 5 € supérieurs pour simplifier le tarif client
-            calculatedBase = Math.ceil(calculatedBase / 5) * 5;
-
-            travelCost = calculatedBase - config.priceStudio;
-            travelZoneName = `${state.detectedCity} (${state.detectedDistance.toFixed(1)} km / ${state.detectedDuration} min aller, ${state.detectedDuration * 2} min A/R)`;
+            // Meme modele que les forfaits : km A/R + temps de trajet A/R + stationnement
+            const isParisZone = normalizedPostal.startsWith("75") || normalizedCity.includes("paris");
+            const parking = config.parkingByPostal[normalizedPostal] !== undefined
+                ? config.parkingByPostal[normalizedPostal]
+                : (isParisZone ? config.parkingParis : 0);
+            const travelRaw = (state.detectedDistance * 2 * config.travelPerKm)
+                            + ((state.detectedDuration * 2 / 60) * config.travelPerHour)
+                            + parking;
+            travelCost = Math.ceil(travelRaw / config.roundUpTo) * config.roundUpTo;
+            travelZoneName = `${state.detectedCity} (${state.detectedDistance.toFixed(1)} km et ${state.detectedDuration} min par trajet)`;
         }
 
         finalPrice += travelCost;
 
-        document.getElementById('recap-travel-zone').innerText = travelZoneName;
-        document.getElementById('recap-travel-price').innerText = travelCost === 0 ? "Offert" : `+${travelCost} €`;
+        setText('recap-travel-zone', travelZoneName);
+        setText('recap-travel-price', travelCost === 0 ? "Offert" : `+${travelCost} €`);
     }
 
     const formattedTotal = `${finalPrice} €`;
-    document.getElementById('total-price').innerText = formattedTotal;
-    const stickyPrice = document.getElementById('sticky-price');
-    if (stickyPrice) stickyPrice.innerText = formattedTotal;
+    setText('total-price', formattedTotal);
+    setText('sticky-price', formattedTotal);
 
     if (typeof window.trackSimulatorEstimate === 'function') {
         window.trackSimulatorEstimate(state.detectedCity, state.detectedPostal, finalPrice, state.detectedDistance, state.detectedDuration);
@@ -589,9 +615,13 @@ function renderCheckoutButtons() {
             <button type="button" onclick="triggerWhatsAppBooking()" class="w-full bg-[#25D366] hover:bg-[#20ba59] active:scale-98 text-white font-bold py-3.5 rounded-xl transition flex items-center justify-center gap-2 text-xs shadow-md shadow-emerald-600/10 min-h-[44px]">
                 <i data-lucide="message-square" class="w-4 h-4 shrink-0"></i> Réserver par WhatsApp (Rapide)
             </button>
-            <button type="button" onclick="openBookingModal()" class="w-full bg-brand hover:bg-orange-600 active:scale-98 text-white font-bold py-3 rounded-xl transition flex items-center justify-center gap-2 text-xs shadow-sm min-h-[44px]">
+            ${document.getElementById('booking-modal')
+                ? `<button type="button" onclick="openBookingModal()" class="w-full bg-brand hover:bg-orange-600 active:scale-98 text-white font-bold py-3 rounded-xl transition flex items-center justify-center gap-2 text-xs shadow-sm min-h-[44px]">
                 <i data-lucide="calendar" class="w-4 h-4 shrink-0"></i> Faire une demande de créneau
-            </button>
+            </button>`
+                : `<a href="/#booking-funnel" class="w-full bg-brand hover:bg-orange-600 active:scale-98 text-white font-bold py-3 rounded-xl transition flex items-center justify-center gap-2 text-xs shadow-sm min-h-[44px]">
+                <i data-lucide="calendar" class="w-4 h-4 shrink-0"></i> Demander un créneau
+            </a>`}
         `;
     }
     if (window.lucide) window.lucide.createIcons();
@@ -816,7 +846,7 @@ function initSimulatorApp() {
     // Init Simulator reading dynamic config attributes from container
     const funnel = document.getElementById('booking-funnel');
     if (funnel) {
-        const defaultLoc = funnel.getAttribute('data-default-location') || 'studio';
+        const defaultLoc = funnel.getAttribute('data-default-location') || 'home';
         const defaultCity = funnel.getAttribute('data-default-city');
         const defaultPostal = funnel.getAttribute('data-default-postal');
         const defaultLat = funnel.getAttribute('data-default-lat');
@@ -834,7 +864,7 @@ function initSimulatorApp() {
             renderParticipantsUI();
         }
     } else {
-        selectLocationType('studio');
+        selectLocationType('home');
         renderParticipantsUI();
     }
 }
