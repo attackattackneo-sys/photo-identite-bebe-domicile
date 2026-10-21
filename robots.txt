@@ -8,3 +8,9 @@ Sitemap: https://photo-identite-bebe-domicile.fr/sitemap.xml
 Disallow: *.bak
 Disallow: *.tmp
 Disallow: /.DS_Store
+
+# Dossiers techniques (non publics)
+Disallow: /templates/
+Disallow: /scripts/
+Disallow: /data/
+Disallow: /backup/

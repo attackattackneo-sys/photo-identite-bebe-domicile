@@ -99,11 +99,11 @@ def build_city_page(idx, c):
     lon = c['coordonnees']['lon']
 
     # Unique title and description (strictly under limits)
-    title = f"Photo Identité Bébé à Domicile {nom} ({dept_code}) | Habilité ANTS"
+    title = f"Photo Identité Bébé à Domicile {nom} ({dept_code}) | ANTS"
     if len(title) > 60:
-        title = f"Photo Identité Bébé {nom} ({dept_code}) | Habilité ANTS"
+        title = f"Photo Identité Bébé à Domicile {nom} ({dept_code})"
     if len(title) > 60:
-        title = f"Photo Identité Bébé {nom} | Habilité ANTS"
+        title = f"Photo Identité Bébé à Domicile {nom}"
 
     meta_desc = f"Photographe habilité ANTS à domicile à {nom} ({dept_code}). Spécialiste bébés et nouveau-nés : code e-photo et tirages livrés chez vous en 20 min."
     if len(meta_desc) > 155:
